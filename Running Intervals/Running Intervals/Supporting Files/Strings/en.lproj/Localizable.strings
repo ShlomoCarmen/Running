@@ -1,0 +1,51 @@
+/* 
+  Localizable.strings
+  Running Intervals
+
+  Created by Shlomo Carmen on 01/06/2020.
+  Copyright © 2020 Running. All rights reserved.
+*/
+
+"mainAppTitel" = "Music To Run With";
+"runByTime" = "Run By Time";
+"runByDistance" = "Run By Distance";
+"buildProgram" = "Build a Training Program";
+"statistics" = "Statistics";
+
+"insertTimeForRuning" = "Insert Time For Runing:";
+"insertTimeForWalking" = "Insert Time For Walking:";
+"insertTotalTime" = "Insert Total Training Time:";
+
+"timeInSecons" = "In Secons";
+"timeInMinuts" = "In Minuts";
+
+"insertDistanceForRuning" = "Insert Distance For Runing:";
+"insertDistanceForWalking" = "Insert Distance For Walking:";
+"insertTotalDistance" = "Insert Total Distance:";
+
+"distanceInMetter" = "In Meters";
+"distanceInKM" = "In Kilometers";
+
+"runCaps" = "RUN!";
+"stopCaps" = "STOP!";
+
+"runningTimeLeft" = "Running Time Left: %@ Secons";
+"walkingTimeLeft" = "Walking Time Left: %@ Secons";
+"totalTimeLeft" = "Total Time Left:";
+"runningDistanceLeft" = "Running Distance Left: %@ Meter";
+"walkingDistanceLeft" = "Walking Distance Left: %@ Meter";
+"totalDistanceLeft" = "Total Distance Left: %@ Meter";
+
+"mustSelectMusic" = "You Must Select Music";
+"myMusic" = "My Music";
+"selectMusic" = "Select Music";
+"selectRunningSong" = "Select For Running";
+"selectedRunningSong" = "Running Song Selected";
+"selectWalkingSong" = "Select For Walking";
+"selectedWalkingSong" = "Walking Song Selected";
+"myRunningMusic" = "My Running Music";
+"myWalkingMusic" = "My Walking Music";
+
+"back" = "Back";
+"save" = "Save";
+"cancel"= "Cancel";

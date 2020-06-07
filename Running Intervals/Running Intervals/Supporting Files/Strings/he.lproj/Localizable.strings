@@ -1,0 +1,52 @@
+/* 
+  Localizable.strings
+  Running Intervals
+
+  Created by Shlomo Carmen on 01/06/2020.
+  Copyright © 2020 Running. All rights reserved.
+*/
+
+"mainAppTitel" = "מוזיקה לרוץ איתה";
+"runByTime" = "רוץ לפי זמן";
+"runByDistance" = "רוץ לפי מרחק";
+"buildProgram" = "בנה תוכנית אימון";
+"statistics" = "סטטיסטיקה";
+
+"insertTimeForRuning" = "הכנס זמן לריצה:";
+"insertTimeForWalking" = "הכנס זמן להליכה:";
+"insertTotalTime" = "סה״כ זמן לאימון:";
+
+"timeInSecons" = "זמן בשניות";
+"timeInMinuts" = "זמן בדקות";
+
+"insertDistanceForRuning" = "הכנס מרחק לריצה:";
+"insertDistanceForWalking" = "הכנס מרחק להליכה:";
+"insertTotalDistance" = "הכנס סה״כ מרחק לאימון:";
+
+"distanceInMetter" = "מרחק במטרים";
+"distanceInKM" = "מרחק בקילומטרים";
+
+"runCaps" = "רוץ!";
+"stopCaps" = "עצור!";
+
+"runningTimeLeft" = "זמן נשאר לריצה: %@ שניות";
+"walkingTimeLeft" = "זמן נשאר להליכה: %@ שניות";
+"totalTimeLeft" = "זמן נשאר לאימון:";
+
+"runningDistanceLeft" = "מרחק נשאר לריצה: %@ מטר";
+"walkingDistanceLeft" = "מרחק נשאר להליכה: %@ מטר";
+"totalDistanceLeft" = "מרחק נשאר לאימון: %@ מטר";
+
+"mustSelectMusic" = "עליך לבחור מוזיקה";
+"myMusic" = "המוזיקה שלי";
+"selectMusic" = "בחר מוזיקה";
+"selectRunningSong" = "בחר שיר לריצה";
+"selectedRunningSong" = "שיר נבחר לריצה";
+"selectWalkingSong" = "בחר שיר להליכה";
+"selectedWalkingSong" = "שיר נבחר להליכה";
+"myRunningMusic" = "מוזיקת הריצה שלי";
+"myWalkingMusic" = "מוזיקת ההליכה שלי";
+
+"back" = "חזור";
+"save" = "שמור";
+"cancel"= "ביטול";

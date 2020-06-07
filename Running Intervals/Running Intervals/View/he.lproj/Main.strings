@@ -1,0 +1,69 @@
+
+/* Class = "UIButton"; normalTitle = "Back"; ObjectID = "44q-rL-749"; */
+"44q-rL-749.normalTitle" = "Back";
+
+/* Class = "UIButton"; normalTitle = "רוץ"; ObjectID = "4fj-7G-Mr4"; */
+"4fj-7G-Mr4.normalTitle" = "רוץ";
+
+/* Class = "UILabel"; text = "הכנס זמן לריצה:"; ObjectID = "4hT-Rj-GfG"; */
+"4hT-Rj-GfG.text" = "הכנס זמן לריצה:";
+
+/* Class = "UILabel"; text = "My Music"; ObjectID = "CQh-b5-JVk"; */
+"CQh-b5-JVk.text" = "My Music";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "EeM-fo-vjW"; */
+"EeM-fo-vjW.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "זמן בשניות"; ObjectID = "F0q-8p-bKW"; */
+"F0q-8p-bKW.placeholder" = "זמן בשניות";
+
+/* Class = "UILabel"; text = "סה״כ זמן לאימון:"; ObjectID = "FYQ-2W-NVB"; */
+"FYQ-2W-NVB.text" = "סה״כ זמן לאימון:";
+
+/* Class = "UILabel"; text = "Select Music"; ObjectID = "HDu-p3-hgj"; */
+"HDu-p3-hgj.text" = "Select Music";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Nxw-nJ-Y3a"; */
+"Nxw-nJ-Y3a.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Select For Running"; ObjectID = "SxN-y3-rVg"; */
+"SxN-y3-rVg.normalTitle" = "Select For Running";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "V8K-w7-63O"; */
+"V8K-w7-63O.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "VDU-bY-sw3"; */
+"VDU-bY-sw3.text" = "Label";
+
+/* Class = "UILabel"; text = "הכנס זמן להליכה:"; ObjectID = "ZUv-kr-aym"; */
+"ZUv-kr-aym.text" = "הכנס זמן להליכה:";
+
+/* Class = "UITextField"; placeholder = "זמן בדקות"; ObjectID = "aaJ-RM-viM"; */
+"aaJ-RM-viM.placeholder" = "זמן בדקות";
+
+/* Class = "UIButton"; normalTitle = "Back"; ObjectID = "bDV-Gb-8fo"; */
+"bDV-Gb-8fo.normalTitle" = "Back";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "fTQ-Yo-zGq"; */
+"fTQ-Yo-zGq.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "My Music"; ObjectID = "gGo-6V-eyt"; */
+"gGo-6V-eyt.normalTitle" = "My Music";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "jhg-Zl-26t"; */
+"jhg-Zl-26t.normalTitle" = "Done";
+
+/* Class = "UIButton"; normalTitle = "Select For Walking"; ObjectID = "p5N-DJ-gv7"; */
+"p5N-DJ-gv7.normalTitle" = "Select For Walking";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "un2-mU-bW0"; */
+"un2-mU-bW0.normalTitle" = "Done";
+
+/* Class = "UITextField"; placeholder = "זמן בשניות"; ObjectID = "xNA-xh-cZC"; */
+"xNA-xh-cZC.placeholder" = "זמן בשניות";
+
+/* Class = "UIButton"; normalTitle = "Select Music"; ObjectID = "xZ1-wu-nNk"; */
+"xZ1-wu-nNk.normalTitle" = "Select Music";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ySP-Hn-ulf"; */
+"ySP-Hn-ulf.text" = "Label";
