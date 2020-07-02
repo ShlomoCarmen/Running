@@ -2,10 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSHealthUpdateUsageDescription</key>
-	<string>To get your health informaition for plans and statistics</string>
-	<key>NSHealthShareUsageDescription</key>
-	<string>To get your health informaition for plans and statistics</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -28,6 +24,12 @@
 	<true/>
 	<key>MKDirectionsApplicationSupportedModes</key>
 	<array/>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>need to recive phone music</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>To get your health informaition for plans and statistics</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>To get your health informaition for plans and statistics</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>This app uses your location to help you send more accurate report.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
@@ -36,8 +38,6 @@
 	<string>This app uses your location to help you send more accurate report.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>This app uses your location to help you send more accurate report.</string>
-	<key>NSAppleMusicUsageDescription</key>
-	<string>need to recive phone music</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -73,8 +73,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

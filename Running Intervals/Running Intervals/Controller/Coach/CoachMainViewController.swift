@@ -42,15 +42,17 @@ class CoachMainViewController: UIViewController {
     @IBOutlet weak var selectedWeightLabel: UILabel!
     @IBOutlet weak var selectWeightButton: UIButton!
     
+    @IBOutlet weak var bmiLabel: UILabel!
     @IBOutlet weak var continueButton: UIButton!
     
     //============================================================
     // MARK: - Properties
     //============================================================
     
-    private var datePicker: UIDatePicker?
     private var dataPicker: UIPickerView?
     var toolBar = UIToolbar()
+    var user: User?
+    let gender = ["Male", "Female"]
     
     //============================================================
     // MARK: - LifeCycle
@@ -61,8 +63,10 @@ class CoachMainViewController: UIViewController {
 
         self.setText()
         self.setCornerRadius()
-        self.initDatePicker()
         self.initDataPicker()
+        self.user = UserDefaultsProvider.shared.user
+        self.setBmi()
+        self.setUserInfoText()
     }
     override func viewWillLayoutSubviews() {
         self.setCornerRadius()
@@ -81,6 +85,14 @@ class CoachMainViewController: UIViewController {
         self.ageTitelLabel.text = "Your Age"
         self.heightTitelLabel.text = "Your Height"
         self.weightTitelLabel.text = "Your Weight"
+    }
+    
+    func setUserInfoText() {
+        guard let user = self.user else { return }
+        self.selectedGenderLabel.text = user.gender
+        self.selectedAgeLabel.text = "\(user.age)"
+        self.selectedHeightLabel.text = "\(user.height) cm"
+        self.selectedWeightLabel.text = "\(user.weight) kg"
     }
     
     func setCornerRadius() {
@@ -110,6 +122,39 @@ class CoachMainViewController: UIViewController {
         
     }
     
+    func createUser() {
+        guard let gender = self.selectedGenderLabel.text,
+              let age = self.selectedAgeLabel.text,
+              let height = self.selectedHeightLabel.text,
+              let weight = self.selectedWeightLabel.text else { return }
+        if let userHeight = height.components(separatedBy: " ").first, let userWeight = weight.components(separatedBy: " ").first {
+            let values = ["gender": gender, "age": Int(age), "height": Int(userHeight), "weight": Int(userWeight)] as [String : Any]
+            self.user = User(values: values)
+            UserDefaultsProvider.shared.user = self.user
+            setBmi()
+        }
+    }
+    
+    func setBmi() {
+        guard let user = self.user else { return }
+        let height = Double(user.height) / 100
+        let bmi = Double(user.weight) / (height * height)
+        if bmi < 18.5 {
+            self.bmiLabel.textColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
+            self.bmiLabel.text = "your BNI is \(Int(bmi)) It's too low, you better start eating 😉"
+        } else if bmi >= 18.5 && bmi < 25 {
+            self.bmiLabel.textColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+            self.bmiLabel.text = "your BNI is \(Int(bmi)) You're on average, well done 👏"
+        } else if bmi > 24  && bmi < 30 {
+            self.bmiLabel.text = "your BNI is \(Int(bmi)) It's a bit high, if you have background illnesses think seriously about a serious diet 🤔"
+            self.bmiLabel.textColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
+        } else {
+            self.bmiLabel.text = "your BNI is \(Int(bmi)) It's a to high, you realy need to start a serious diet 😡, unless you are a bodybuilder 💪"
+            self.bmiLabel.textColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
+        }
+        
+    }
+    
     //============================================================
     // MARK: - @IBActions
     //============================================================
@@ -128,10 +173,7 @@ class CoachMainViewController: UIViewController {
                     print(error)
                 } else {
                     if sucsses {
-                        self.getAgeAndGender()
-                        self.getHeight()
                         self.getWeight()
-                        
                     } else {
                         print(sucsses)
                     }
@@ -140,23 +182,20 @@ class CoachMainViewController: UIViewController {
         }
     }
     
-    
     @IBAction func selectAgeButtonPressed(_ sender: Any) {
-        self.dataPicker?.tag = 0
-        self.setInputViews()
+        self.setInputViews(0)
     }
     
     @IBAction func selectGenderButtonPressed(_ sender: Any) {
-        self.dataPicker?.tag = 1
-        self.setInputViews()
+        self.setInputViews(1)
     }
     
     @IBAction func selectHeightButtonPressed(_ sender: Any) {
-    
+        self.setInputViews(2)
     }
     
     @IBAction func selectWeightButtonPressed(_ sender: Any) {
-    
+        self.setInputViews(3)
     }
     
     @IBAction func continueButtonPressed(_ sender: Any) {
@@ -167,31 +206,24 @@ class CoachMainViewController: UIViewController {
     // MARK: - Actions
     //============================================================
     
-    @objc func handleDatePicker(sender: UIDatePicker) {
-        let dateFormatter = DateFormatter()
-        //        dateFormatter.dateFormat = "dd MMM yyyy"
-        dateFormatter.dateFormat = "yyyy"
-        
-    }
-    
-    @objc func donePressed(_ sender: UITextField) {
-        guard let date = self.datePicker?.date else { return }
-        let dateFormatter = DateFormatter()
-        //        dateFormatter.dateFormat = "dd/MM/yyyy"
-        dateFormatter.dateFormat = "yyyy"
-        let age = dateFormatter.string(from: date)
-        self.selectedAgeLabel.text = age
-        
-        self.view.endEditing(true)
-    }
-    
     @objc func keyboardDonePressed(_ sender: Any) {
-        if let index = self.dataPicker?.selectedRow(inComponent: 0) {
-            
-        }
         if let pickerView = self.dataPicker {
+            if let index = self.dataPicker?.selectedRow(inComponent: 0) {
+                print(index)
+                if pickerView.tag == 0 {
+                    self.selectedAgeLabel.text = "\(index + 10)"
+                } else if pickerView.tag == 1 {
+                    self.selectedGenderLabel.text = self.gender[index]
+                } else if pickerView.tag == 2 {
+                    self.selectedHeightLabel.text = "\(index + 50) cm"
+                } else if pickerView.tag == 3 {
+                    self.selectedWeightLabel.text = "\(index + 50) kg"
+                }
+            }
+            self.createUser()
             pickerView.removeFromSuperview()
             self.toolBar.removeFromSuperview()
+            
         }
         
     }
@@ -206,31 +238,27 @@ class CoachMainViewController: UIViewController {
     // MARK: - Data Picker
     //============================================================
     
-    private func initDatePicker() {
-        self.datePicker = UIDatePicker()
-        self.datePicker?.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-
-    }
-    
     private func initDataPicker() {
         self.dataPicker = UIPickerView()
         self.dataPicker?.backgroundColor = #colorLiteral(red: 0.9764705882, green: 0.9764705882, blue: 0.9764705882, alpha: 1)
         self.dataPicker?.dataSource = self
         self.dataPicker?.delegate = self
+        
     }
     
-    
-    
-    private func setInputViews() {
+    private func setInputViews(_ tag: Int) {
+        self.initDataPicker()
         if let pickerView = self.dataPicker {
             pickerView.frame = CGRect(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 300)
             pickerView.autoresizingMask = .flexibleWidth
             pickerView.contentMode = .center
+            pickerView.tag = tag
             self.view.addSubview(pickerView)
             
             self.setToolBar()
         }
     }
+    
     private func setToolBar() {
         toolBar = UIToolbar.init(frame: CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 50))
         
@@ -255,6 +283,7 @@ class CoachMainViewController: UIViewController {
                 if let result = results.first as? HKQuantitySample {
                     DispatchQueue.main.async {
                         self.selectedWeightLabel.text = "\(result.quantity)"
+                        self.getHeight()
                     }
                 }
             }
@@ -269,6 +298,7 @@ class CoachMainViewController: UIViewController {
                 if let result = results.first as? HKQuantitySample {
                     DispatchQueue.main.async {
                         self.selectedHeightLabel.text = "\(result.quantity)"
+                        self.getAgeAndGender()
                     }
                 }
             }
@@ -286,6 +316,7 @@ class CoachMainViewController: UIViewController {
                 } else {
                     self.selectedGenderLabel.text = "Female"
                 }
+                self.createUser()
             }
         } catch {
             print("unabeld to get parameters")
@@ -294,53 +325,35 @@ class CoachMainViewController: UIViewController {
     
 }
 
-extension CoachMainViewController: UITextFieldDelegate {
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        if textField.tag == 1 {
-            if let genderPickerView = self.dataPicker {
-                textField.inputView = genderPickerView
-            }
-        }
-        if textField.tag == 2 {
-            if let datePickerView = self.datePicker {
-                
-                datePickerView.datePickerMode = .date
-                datePickerView.maximumDate = Date()
-                textField.inputView = datePickerView
-                datePickerView.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
-                let keyboardToolbar = UIToolbar()
-                keyboardToolbar.sizeToFit()
-                let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-                let doneBarButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.donePressed(_:)))
-                keyboardToolbar.items = [flexBarButton, doneBarButton]
-                textField.inputAccessoryView = keyboardToolbar
-            }
-            
-        }
-        
-    }
-        
-}
-
 extension CoachMainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 2
+        if pickerView.tag == 1 {
+            return 2
+        } else if pickerView.tag == 2 {
+            return 180
+        } else {
+            return 100
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView.tag == 0 {
-            print("age picker view")
+            return "\(row + 10)"
         }
         if pickerView.tag == 1 {
-            print("gender picker view")
+            return self.gender[row]
         }
-        let gender = ["Male", "Female"]
-        
-        return gender[row]
+        if pickerView.tag == 2 {
+            return "\(row + 50)"
+        }
+        if pickerView.tag == 3 {
+            return "\(row + 50)"
+        }
+        return ""
     }
     
 }
