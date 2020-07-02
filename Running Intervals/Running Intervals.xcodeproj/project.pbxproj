@@ -41,6 +41,7 @@
 		83CCA87F2487E28500B9B0E8 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CCA87E2487E28500B9B0E8 /* HealthKitManager.swift */; };
 		83CCA8812488D59100B9B0E8 /* CoachDifficultyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CCA8802488D59100B9B0E8 /* CoachDifficultyViewController.swift */; };
 		83CCA8832488D66500B9B0E8 /* CoachRunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CCA8822488D66500B9B0E8 /* CoachRunViewController.swift */; };
+		83FE419324ACDC820028744F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FE419224ACDC820028744F /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +85,7 @@
 		83CCA87E2487E28500B9B0E8 /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
 		83CCA8802488D59100B9B0E8 /* CoachDifficultyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachDifficultyViewController.swift; sourceTree = "<group>"; };
 		83CCA8822488D66500B9B0E8 /* CoachRunViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachRunViewController.swift; sourceTree = "<group>"; };
+		83FE419224ACDC820028744F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				83239E2B247EB95900C63760 /* MySong.swift */,
+				83FE419224ACDC820028744F /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				830D7F572483AE3F00467227 /* MyMusicViewController.swift in Sources */,
 				83239E27247E6E1800C63760 /* UserDefaultsProvider.swift in Sources */,
 				83CCA86E24861FA600B9B0E8 /* RunByDistanceViewController.swift in Sources */,
+				83FE419324ACDC820028744F /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

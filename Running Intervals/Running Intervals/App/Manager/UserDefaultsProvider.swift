@@ -14,6 +14,7 @@ class UserDefaultsProvider {
         case fastSongs = "FastSongs"
         case slowSongs = "SlowSongs"
         case appLanguages = "AppleLanguages"
+        case user = "User"
     }
     
     static private var provider: UserDefaultsProvider?
@@ -60,6 +61,18 @@ class UserDefaultsProvider {
         }
         set (mediaItems){
             self.defaults.set(mediaItems, forKey: UserDefaultsKeys.slowSongs.rawValue)
+            self.defaults.synchronize()
+        }
+    }
+    
+    var user: User? {
+        get {
+            guard let values = self.defaults.object(forKey: UserDefaultsKeys.user.rawValue) as? [String:Any] else { return nil }
+            return User(values: values)
+            
+        }
+        set (user){
+            self.defaults.set(user?.values, forKey: UserDefaultsKeys.user.rawValue)
             self.defaults.synchronize()
         }
     }
