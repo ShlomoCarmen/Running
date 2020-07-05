@@ -64,7 +64,7 @@ class MainViewController: UIViewController {
     }
 
     func setText() {
-        self.titelLabel.text = Strings.mainAppTitel
+        self.titelLabel.text = Strings.mainAppTitle
         self.myMusicButton.setTitle(Strings.myMusic, for: .normal)
         self.selectMusicButton.setTitle(Strings.selectMusic, for: .normal)
         

@@ -6,7 +6,7 @@
   Copyright © 2020 Running. All rights reserved.
 */
 
-"mainAppTitel" = "מוזיקה לרוץ איתה";
+"mainAppTitle" = "מוזיקה לרוץ איתה";
 "runByTime" = "רוץ לפי זמן";
 "runByDistance" = "רוץ לפי מרחק";
 "buildProgram" = "בנה תוכנית אימון";
@@ -50,3 +50,17 @@
 "back" = "חזור";
 "save" = "שמור";
 "cancel"= "ביטול";
+
+"personalInformaition" = "נתונים אישיים";
+"descreptionTitle" = "הכנס/י מדדים פיזיים על מנת שנוכל ליצור לך את התוכנית הטובה ביותר בשבילך";
+"appelHealth" = "❤️ יבא נתונים מאפל בריאות";
+"fillManually" = "או מלא באופן ידני";
+"gender" = "מגדר";
+"male" = "זכר";
+"female" = "נקבה";
+"age" = "הגיל שלך";
+"height" = "הגובה שלך";
+"weight" = "המשקל שלך";
+"centimeter" = "ס״מ";
+"kilogram" = "ק״ג";
+"continue" = "המשך";

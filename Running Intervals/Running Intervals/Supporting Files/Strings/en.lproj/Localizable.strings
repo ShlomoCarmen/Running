@@ -6,7 +6,7 @@
   Copyright © 2020 Running. All rights reserved.
 */
 
-"mainAppTitel" = "Music To Run With";
+"mainAppTitle" = "Music To Run With";
 "runByTime" = "Run By Time";
 "runByDistance" = "Run By Distance";
 "buildProgram" = "Build a Training Program";
@@ -49,3 +49,17 @@
 "back" = "Back";
 "save" = "Save";
 "cancel"= "Cancel";
+
+"personalInformaition" = "Personal Informaition";
+"descreptionTitle" = "Enter physical metrics so we can create the best plan for you";
+"appelHealth" = "❤️  Import from Appel Health";
+"fillManually" = "Or fill out manually";
+"gender" = "Gender";
+"male" = "Male";
+"female" = "Female";
+"age" = "Your Age";
+"height" = "Your Height";
+"weight" = "Your Weight";
+"centimeter" = "cm";
+"kilogram" = "kg";
+"continue" = "Continue";

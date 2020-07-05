@@ -10,8 +10,8 @@ import Foundation
 
 class Strings {
     
-    class var mainAppTitel: String {
-        return NSLocalizedString("mainAppTitel", comment: "")
+    class var mainAppTitle: String {
+        return NSLocalizedString("mainAppTitle", comment: "")
     }
     
     class var runByTime: String {
@@ -149,4 +149,58 @@ class Strings {
     class var cancel: String {
         return NSLocalizedString("cancel", comment: "")
     }
+    
+    
+    class var personalInformaition: String {
+        return NSLocalizedString("personalInformaition", comment: "")
+    }
+    
+    class var descreptionTitle: String {
+        return NSLocalizedString("descreptionTitle", comment: "")
+    }
+    
+    class var appelHealth: String {
+        return NSLocalizedString("appelHealth", comment: "")
+    }
+    
+    class var fillManually: String {
+        return NSLocalizedString("fillManually", comment: "")
+    }
+    
+    class var gender: String {
+        return NSLocalizedString("gender", comment: "")
+    }
+    
+    class var male: String {
+        return NSLocalizedString("male", comment: "")
+    }
+    
+    class var female: String {
+        return NSLocalizedString("female", comment: "")
+    }
+    
+    class var age: String {
+        return NSLocalizedString("age", comment: "")
+    }
+    
+    class var height: String {
+        return NSLocalizedString("height", comment: "")
+    }
+    
+    class var weight: String {
+        return NSLocalizedString("weight", comment: "")
+    }
+    
+    class var centimeter: String {
+        return NSLocalizedString("centimeter", comment: "")
+    }
+    
+    class var kilogram: String {
+        return NSLocalizedString("kilogram", comment: "")
+    }
+    
+    class var continueTitle: String {
+        return NSLocalizedString("continue", comment: "")
+    }
+
 }

@@ -52,7 +52,7 @@ class CoachMainViewController: UIViewController {
     private var dataPicker: UIPickerView?
     var toolBar = UIToolbar()
     var user: User?
-    let gender = ["Male", "Female"]
+    let gender = [Strings.male, Strings.female]
     
     //============================================================
     // MARK: - LifeCycle
@@ -77,22 +77,24 @@ class CoachMainViewController: UIViewController {
     //============================================================
     
     func setText() {
-        self.headerLabel.text = "Build Plan"
-        self.titleLabel.text = "הכנס/י מדדים פיזיים על מנת שנוכל ליצור לך את התוכנית הטובה ביותר בשבילך"
-        self.importButton.setTitle("❤️  Import from Appel Health", for: .normal)
-        self.fillManuallyLabel.text = "Or fill out manually"
-        self.genderTitelLabel.text = "Gender"
-        self.ageTitelLabel.text = "Your Age"
-        self.heightTitelLabel.text = "Your Height"
-        self.weightTitelLabel.text = "Your Weight"
+        self.backButton.setTitle(Strings.back, for: .normal)
+        self.headerLabel.text = Strings.personalInformaition
+        self.titleLabel.text = Strings.descreptionTitle
+        self.importButton.setTitle(Strings.appelHealth, for: .normal)
+        self.fillManuallyLabel.text = Strings.fillManually
+        self.ageTitelLabel.text = Strings.age
+        self.genderTitelLabel.text = Strings.gender
+        self.heightTitelLabel.text = Strings.height
+        self.weightTitelLabel.text = Strings.weight
+        self.continueButton.setTitle(Strings.continueTitle, for: .normal)
     }
     
     func setUserInfoText() {
         guard let user = self.user else { return }
         self.selectedGenderLabel.text = user.gender
         self.selectedAgeLabel.text = "\(user.age)"
-        self.selectedHeightLabel.text = "\(user.height) cm"
-        self.selectedWeightLabel.text = "\(user.weight) kg"
+        self.selectedHeightLabel.text = "\(user.height) \(Strings.centimeter)"
+        self.selectedWeightLabel.text = "\(user.weight) \(Strings.kilogram)"
     }
     
     func setCornerRadius() {
@@ -164,10 +166,7 @@ class CoachMainViewController: UIViewController {
     }
     
     @IBAction func importButtonPressed(_ sender: Any) {
-        
         if HealthKitManager.shared.authorizeHealthKit() {
-            print("Health Kit Authorized")
-            
             HealthKitManager.shared.getUserAuthorization { (sucsses, error) in
                 if let error = error {
                     print(error)
@@ -215,9 +214,9 @@ class CoachMainViewController: UIViewController {
                 } else if pickerView.tag == 1 {
                     self.selectedGenderLabel.text = self.gender[index]
                 } else if pickerView.tag == 2 {
-                    self.selectedHeightLabel.text = "\(index + 50) cm"
+                    self.selectedHeightLabel.text = "\(index + 50) \(Strings.centimeter)"
                 } else if pickerView.tag == 3 {
-                    self.selectedWeightLabel.text = "\(index + 50) kg"
+                    self.selectedWeightLabel.text = "\(index + 50) \(Strings.kilogram)"
                 }
             }
             self.createUser()
@@ -282,8 +281,10 @@ class CoachMainViewController: UIViewController {
             } else {
                 if let result = results.first as? HKQuantitySample {
                     DispatchQueue.main.async {
-                        self.selectedWeightLabel.text = "\(result.quantity)"
-                        self.getHeight()
+                        if let weight = "\(result.quantity)".components(separatedBy: " ").first {
+                            self.selectedWeightLabel.text = "\(weight) \(Strings.kilogram)"
+                            self.getHeight()
+                        }
                     }
                 }
             }
@@ -297,8 +298,10 @@ class CoachMainViewController: UIViewController {
             } else {
                 if let result = results.first as? HKQuantitySample {
                     DispatchQueue.main.async {
-                        self.selectedHeightLabel.text = "\(result.quantity)"
-                        self.getAgeAndGender()
+                        if let height = "\(result.quantity)".components(separatedBy: " ").first {
+                            self.selectedHeightLabel.text = "\(height) \(Strings.centimeter)"
+                            self.getAgeAndGender()
+                        }
                     }
                 }
             }
@@ -312,9 +315,9 @@ class CoachMainViewController: UIViewController {
                 self.selectedAgeLabel.text = "\(parameters.age)"
                 let gender = parameters.biologicalSex.rawValue
                 if gender == 2 {
-                    self.selectedGenderLabel.text = "Male"
+                    self.selectedGenderLabel.text = Strings.male
                 } else {
-                    self.selectedGenderLabel.text = "Female"
+                    self.selectedGenderLabel.text = Strings.female
                 }
                 self.createUser()
             }
