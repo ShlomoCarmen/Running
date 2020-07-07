@@ -46,6 +46,12 @@ class RunViewController: UIViewController {
     var total: Double = 0.0
     
     let locationManager = CLLocationManager()
+    private var seconds = 0
+    private var timer: Timer?
+    private var totalDistance = Measurement(value: 0, unit: UnitLength.meters)
+    private var walkingDistance = Measurement(value: 0, unit: UnitLength.meters)
+    private var runningDistance = Measurement(value: 0, unit: UnitLength.meters)
+    private var locationList: [CLLocation] = []
     var currentLocation: CLLocation?
     var startingPoint: CLLocation?
     
@@ -156,10 +162,12 @@ class RunViewController: UIViewController {
     }
     
     func playSlowSongForDistanceMode() {
+        self.isWalkingMode = true
         let string = String(format:Strings.walkingDistanceLeft, "\(self.walk)")
         self.timeLeftTitleLabel.text = string
         
-        self.isWalkingMode = true
+        locationManager.activityType = .fitness
+        locationManager.distanceFilter = 10
         self.locationManager.startUpdatingLocation()
         let mediaCollection = MPMediaItemCollection(items: self.walkingMediaItems)
         self.player.setQueue(with: mediaCollection)
@@ -167,11 +175,12 @@ class RunViewController: UIViewController {
     }
     
     func playFastSongForDistanceMode() {
+        self.isWalkingMode = false
         let string = String(format:Strings.runningDistanceLeft, "\(self.run)")
         self.timeLeftTitleLabel.text = string
-        
+        locationManager.activityType = .fitness
+        locationManager.distanceFilter = 10
         self.locationManager.startUpdatingLocation()
-        self.isWalkingMode = false
         let mediaCollection = MPMediaItemCollection(items: self.runningMediaItems)
         self.player.setQueue(with: mediaCollection)
         self.player.play()
@@ -243,6 +252,7 @@ class RunViewController: UIViewController {
             self.total = 0.0
             self.runButton.isEnabled = false
             self.runButton.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+            self.runButton.setTitle("Done", for: .normal)
             self.timeLeftTitleLabel.isHidden = true
             self.totalTimeLeftLabel.isHidden = true
             self.isPlaying = false
@@ -321,39 +331,46 @@ extension RunViewController: UITextFieldDelegate {
 extension RunViewController: CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let startingLocation = self.startingPoint else { return }
-        if self.isWalkingMode {
-            Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { (timer) in
-                let userLocation: CLLocation = locations[0] as CLLocation
-                let distance = startingLocation.distance(from: userLocation) // 1000
-//                let distance = userLocation.distance(from: startingLocation)
-                let string = String(format:Strings.walkingDistanceLeft, "\(Int(self.walk - distance))")
-                self.timeLeftTitleLabel.text = string
-                let total = self.total * 1000
-                self.setTotalDistanceLabel(distance: Int(total - distance))
-                if self.walk - distance ==  0.0 {
-                    self.player.stop()
-                    self.playFastSongForDistanceMode()
-                    self.locationManager.stopUpdatingLocation()
-                }
-            }
-        } else {
-            
-            Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { (timer) in
-                let userLocation: CLLocation = locations[0] as CLLocation
-                let distance = startingLocation.distance(from: userLocation) // 1000
-//                let distance = userLocation.distance(from: startingLocation)
-                let string = String(format:Strings.runningDistanceLeft, "\(Int(self.run - distance))")
-                self.timeLeftTitleLabel.text = string
-                let total = self.total * 1000
-                self.setTotalDistanceLabel(distance: Int(total - distance))
-                if self.run - distance == 0 {
-                    self.player.stop()
-                    self.playSlowSongForDistanceMode()
-                    self.locationManager.stopUpdatingLocation()
-                }
-            }
-        }
         
+        for newLocation in locations {
+            let howRecent = newLocation.timestamp.timeIntervalSinceNow
+            guard newLocation.horizontalAccuracy < 20 && abs(howRecent) < 10 else { continue }
+            
+            if let lastLocation = locationList.last {
+                let delta = newLocation.distance(from: lastLocation)
+                totalDistance = totalDistance + Measurement(value: delta, unit: UnitLength.meters)
+                if self.isWalkingMode {
+                    walkingDistance = walkingDistance + Measurement(value: delta, unit: UnitLength.meters)
+                    let string = String(format:Strings.walkingDistanceLeft, "\(Int(self.walk - walkingDistance.value))")
+                    self.timeLeftTitleLabel.text = string
+                    let total = self.total * 1000
+                    self.setTotalDistanceLabel(distance: Int(total - totalDistance.value))
+                    if self.walk - walkingDistance.value <= 0.0 {
+                        self.player.stop()
+                        walkingDistance = Measurement(value: 0, unit: UnitLength.meters)
+                        self.locationManager.stopUpdatingLocation()
+                        self.playFastSongForDistanceMode()
+                    }
+                } else {
+                    runningDistance = runningDistance + Measurement(value: delta, unit: UnitLength.meters)
+                    let string = String(format:Strings.runningDistanceLeft, "\(Int(self.run - runningDistance.value))")
+                    self.timeLeftTitleLabel.text = string
+                    let total = self.total * 1000
+                    self.setTotalDistanceLabel(distance: Int(total - totalDistance.value))
+                    if self.run - runningDistance.value <= 0.0 {
+                        self.player.stop()
+                        runningDistance = Measurement(value: 0, unit: UnitLength.meters)
+                        self.locationManager.stopUpdatingLocation()
+                        self.playSlowSongForDistanceMode()
+                    }
+                }
+                let total = self.total * 1000
+                if total - totalDistance.value <= 0 {
+                    self.trainingCompleted(0.0)
+                }
+            }
+            locationList.append(newLocation)
+        }
     }
+    
 }
