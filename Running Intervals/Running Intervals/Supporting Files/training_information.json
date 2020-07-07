@@ -1,0 +1,1084 @@
+[
+    {
+        "goal": "5 km",
+        "week": 1,
+        "training": 1,
+        "descreption": "Intervalse of 3 minutes walk, and 2 minutes run",
+        "timeForRun": 2,
+        "timeForWalk": 3,
+        "intervals": 5
+    },
+    {
+        "goal": "5 km",
+        "week": 1,
+        "training": 2,
+        "descreption": "Intervalse of 3 minutes walk, and 2 minutes run",
+        "timeForRun": 2,
+        "timeForWalk": 3,
+        "intervals": 5
+    },
+    {
+        "goal": "5 km",
+        "week": 1,
+        "training": 3,
+        "descreption": "Intervalse of 3 minutes walk, and 2 minutes run",
+        "timeForRun": 2,
+        "timeForWalk": 3,
+        "intervals": 5
+    },
+    {
+        "goal": "5 km",
+        "week": 2,
+        "training": 1,
+        "descreption": "Intervalse of 1 minutes walk, and 3 minutes run",
+        "timeForRun": 3,
+        "timeForWalk": 1,
+        "intervals": 6
+    },
+    {
+        "goal": "5 km",
+        "week": 2,
+        "training": 2,
+        "descreption": "Intervalse of 1 minutes walk, and 5 minutes run",
+        "timeForRun": 5,
+        "timeForWalk": 1,
+        "intervals": 4
+    },
+    {
+        "goal": "5 km",
+        "week": 2,
+        "training": 3,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 3
+    },
+    {
+        "goal": "5 km",
+        "week": 3,
+        "training": 1,
+        "descreption": "Intervalse of 1.5 minutes walk, and 12 minutes run",
+        "timeForRun": 12,
+        "timeForWalk": 1.5,
+        "intervals": 2
+    },
+    {
+        "goal": "5 km",
+        "week": 3,
+        "training": 2,
+        "descreption": "Intervalse of 2 minutes walk, and 15 minutes run",
+        "timeForRun": 5,
+        "timeForWalk": 1,
+        "intervals": 3
+    },
+    {
+        "goal": "5 km",
+        "week": 3,
+        "training": 3,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "5 km",
+        "week": 4,
+        "training": 1,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "5 km",
+        "week": 4,
+        "training": 2,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "5 km",
+        "week": 4,
+        "training": 3,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "5 km",
+        "week": 5,
+        "training": 1,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "5 km",
+        "week": 5,
+        "training": 2,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "5 km",
+        "week": 5,
+        "training": 3,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "5 km",
+        "week": 6,
+        "training": 1,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "5 km",
+        "week": 6,
+        "training": 2,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "5 km",
+        "week": 6,
+        "training": 3,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "5 km",
+        "week": 7,
+        "training": 1,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "5 km",
+        "week": 7,
+        "training": 2,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "5 km",
+        "week": 7,
+        "training": 3,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "5 km",
+        "week": 8,
+        "training": 1,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "5 km",
+        "week": 8,
+        "training": 2,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "5 km",
+        "week": 8,
+        "training": 3,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "10 km",
+        "week": 1,
+        "training": 1,
+        "descreption": "Intervalse of 3 minutes walk, and 2 minutes run",
+        "timeForRun": 2,
+        "timeForWalk": 3,
+        "intervals": 5
+    },
+    {
+        "goal": "10 km",
+        "week": 1,
+        "training": 2,
+        "descreption": "Intervalse of 3 minutes walk, and 2 minutes run",
+        "timeForRun": 2,
+        "timeForWalk": 3,
+        "intervals": 5
+    },
+    {
+        "goal": "10 km",
+        "week": 1,
+        "training": 3,
+        "descreption": "Intervalse of 3 minutes walk, and 2 minutes run",
+        "timeForRun": 2,
+        "timeForWalk": 3,
+        "intervals": 5
+    },
+    {
+        "goal": "10 km",
+        "week": 2,
+        "training": 1,
+        "descreption": "Intervalse of 1 minutes walk, and 3 minutes run",
+        "timeForRun": 3,
+        "timeForWalk": 1,
+        "intervals": 6
+    },
+    {
+        "goal": "10 km",
+        "week": 2,
+        "training": 2,
+        "descreption": "Intervalse of 1 minutes walk, and 5 minutes run",
+        "timeForRun": 5,
+        "timeForWalk": 1,
+        "intervals": 4
+    },
+    {
+        "goal": "10 km",
+        "week": 2,
+        "training": 3,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 3
+    },
+    {
+        "goal": "10 km",
+        "week": 3,
+        "training": 1,
+        "descreption": "Intervalse of 1.5 minutes walk, and 12 minutes run",
+        "timeForRun": 12,
+        "timeForWalk": 1.5,
+        "intervals": 2
+    },
+    {
+        "goal": "10 km",
+        "week": 3,
+        "training": 2,
+        "descreption": "Intervalse of 2 minutes walk, and 15 minutes run",
+        "timeForRun": 5,
+        "timeForWalk": 1,
+        "intervals": 3
+    },
+    {
+        "goal": "10 km",
+        "week": 3,
+        "training": 3,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "10 km",
+        "week": 4,
+        "training": 1,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "10 km",
+        "week": 4,
+        "training": 2,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "10 km",
+        "week": 4,
+        "training": 3,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "10 km",
+        "week": 5,
+        "training": 1,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "10 km",
+        "week": 5,
+        "training": 2,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "10 km",
+        "week": 5,
+        "training": 3,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "10 km",
+        "week": 6,
+        "training": 1,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "10 km",
+        "week": 6,
+        "training": 2,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "10 km",
+        "week": 6,
+        "training": 3,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "10 km",
+        "week": 7,
+        "training": 1,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "10 km",
+        "week": 7,
+        "training": 2,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "10 km",
+        "week": 7,
+        "training": 3,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "10 km",
+        "week": 8,
+        "training": 1,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "10 km",
+        "week": 8,
+        "training": 2,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "10 km",
+        "week": 8,
+        "training": 3,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "10 km",
+        "week": 9,
+        "training": 1,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "10 km",
+        "week": 9,
+        "training": 2,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "10 km",
+        "week": 9,
+        "training": 3,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "10 km",
+        "week": 10,
+        "training": 1,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "10 km",
+        "week": 10,
+        "training": 2,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "10 km",
+        "week": 10,
+        "training": 3,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "10 km",
+        "week": 11,
+        "training": 1,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "10 km",
+        "week": 11,
+        "training": 2,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "10 km",
+        "week": 11,
+        "training": 3,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "10 km",
+        "week": 12,
+        "training": 1,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "10 km",
+        "week": 12,
+        "training": 2,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "10 km",
+        "week": 12,
+        "training": 3,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "10 km",
+        "week": 13,
+        "training": 1,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "10 km",
+        "week": 13,
+        "training": 2,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "10 km",
+        "week": 13,
+        "training": 3,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "10 km",
+        "week": 14,
+        "training": 1,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "10 km",
+        "week": 14,
+        "training": 2,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "10 km",
+        "week": 14,
+        "training": 3,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 1,
+        "training": 1,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 1,
+        "training": 2,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 1,
+        "training": 3,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 2,
+        "training": 1,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 2,
+        "training": 2,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 2,
+        "training": 3,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 3,
+        "training": 1,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 3,
+        "training": 2,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 3,
+        "training": 3,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 4,
+        "training": 1,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 4,
+        "training": 2,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 4,
+        "training": 3,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 5,
+        "training": 1,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 5,
+        "training": 2,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 5,
+        "training": 3,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 6,
+        "training": 1,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 6,
+        "training": 2,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 6,
+        "training": 3,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 7,
+        "training": 1,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 7,
+        "training": 2,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 7,
+        "training": 3,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 8,
+        "training": 1,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 8,
+        "training": 2,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 8,
+        "training": 3,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 9,
+        "training": 1,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 9,
+        "training": 2,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 9,
+        "training": 3,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 10,
+        "training": 1,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 10,
+        "training": 2,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 10,
+        "training": 3,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 11,
+        "training": 1,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 11,
+        "training": 2,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 11,
+        "training": 3,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 12,
+        "training": 1,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 12,
+        "training": 2,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 12,
+        "training": 3,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 13,
+        "training": 1,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 13,
+        "training": 2,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 13,
+        "training": 3,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 14,
+        "training": 1,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 14,
+        "training": 2,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 14,
+        "training": 3,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 15,
+        "training": 1,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 15,
+        "training": 2,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 15,
+        "training": 3,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 16,
+        "training": 1,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 16,
+        "training": 2,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 16,
+        "training": 3,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 17,
+        "training": 1,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 17,
+        "training": 2,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 17,
+        "training": 3,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 18,
+        "training": 1,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 18,
+        "training": 2,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    },
+    {
+        "goal": "21 km",
+        "week": 18,
+        "training": 3,
+        "descreption": "Intervalse of 2 minutes walk, and 7 minutes run",
+        "timeForRun": 7,
+        "timeForWalk": 2,
+        "intervals": 4
+    }
+    
+    
+]

@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import AVKit
+import MediaPlayer
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, AVAudioPlayerDelegate {
 
     @IBOutlet weak var appImage: UIImageView!
     @IBOutlet weak var titelLabel: UILabel!
@@ -19,6 +21,8 @@ class MainViewController: UIViewController {
     @IBOutlet weak var selectMusicButton: UIButton!
     @IBOutlet weak var myMusicButton: UIButton!
     @IBOutlet weak var statisticsButton: UIButton!
+    
+    let allMediaItems = MPMediaQuery.songs().items
     
     override func viewDidLoad() {
         super.viewDidLoad()

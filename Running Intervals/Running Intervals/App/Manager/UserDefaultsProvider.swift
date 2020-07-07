@@ -15,6 +15,9 @@ class UserDefaultsProvider {
         case slowSongs = "SlowSongs"
         case appLanguages = "AppleLanguages"
         case user = "User"
+        case goal = "Goal"
+        case week = "Week"
+        case training = "Training"
     }
     
     static private var provider: UserDefaultsProvider?
@@ -76,4 +79,35 @@ class UserDefaultsProvider {
             self.defaults.synchronize()
         }
     }
+    
+    var goal: String? {
+        get {
+            return self.defaults.string(forKey: UserDefaultsKeys.goal.rawValue)
+        }
+        set (goal){
+            self.defaults.set(goal, forKey: UserDefaultsKeys.goal.rawValue)
+            self.defaults.synchronize()
+        }
+    }
+    
+    var week: Int {
+        get {
+            return self.defaults.integer(forKey: UserDefaultsKeys.week.rawValue)
+        }
+        set (week){
+            self.defaults.set(week, forKey: UserDefaultsKeys.week.rawValue)
+            self.defaults.synchronize()
+        }
+    }
+    
+    var training: Int {
+        get {
+            return self.defaults.integer(forKey: UserDefaultsKeys.training.rawValue)
+        }
+        set (training){
+            self.defaults.set(training, forKey: UserDefaultsKeys.training.rawValue)
+            self.defaults.synchronize()
+        }
+    }
+    
 }

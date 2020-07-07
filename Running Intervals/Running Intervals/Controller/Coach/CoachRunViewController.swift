@@ -7,64 +7,74 @@
 //
 
 import UIKit
+import AVFoundation
+import MediaPlayer
+import CoreLocation
 
 class CoachRunViewController: UIViewController {
     
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var timeButton: UIButton!
-    @IBOutlet weak var distanceButton: UIButton!
+    @IBOutlet weak var descriptionLabel: UILabel!
+
+    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var doneButton: UIButton!
     
-    var isTimeMode: Bool = true
+    var weekNumber: Int?
+    var training: [Training]?
+    var currentTraining: Training?
+    var goalType: GoalType?
+    
+    var runningMediaItems: [MPMediaItem] = []
+    var walkingMediaItems: [MPMediaItem] = []
+    
+    var fastSongsPersistentID: [String] = []
+    var slowSongsPersistentID: [String] = []
+    
+    var player = MPMusicPlayerController.applicationQueuePlayer
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.training = TrainingRepository.shared.getAllTraining()
         self.setText()
         self.setCornerRadius()
+    
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.runningMediaItems = MusicRepository.shared.runningMediaItems
+        self.walkingMediaItems = MusicRepository.shared.walkingMediaItems
+
     }
     
     func setText() {
-        self.headerLabel.text = "Start Running"
-        self.titleLabel.text = "בחר איזה סוג של אימון אתה רוצה"
-        self.timeButton.setTitle("לפי זמן", for: .normal)
-        self.distanceButton.setTitle("לפי מרחק", for: .normal)
+        let trainingNumber = UserDefaultsProvider.shared.training - 1
+        guard let traning = self.training?[trainingNumber] else { return }
+        self.currentTraining = traning
+        self.headerLabel.text = traning.goal
+        self.titleLabel.text = "Week \(traning.week), Training \(traning.training)"
+        self.descriptionLabel.text = traning.descreption
+        
     }
     
     func setCornerRadius() {
-        
-        self.timeButton.layer.cornerRadius = self.timeButton.bounds.height / 2
-        self.timeButton.layer.borderWidth = 2
-        self.timeButton.layer.borderColor = #colorLiteral(red: 0, green: 0.3012604127, blue: 0.6312049279, alpha: 1)
-        
-        self.distanceButton.layer.cornerRadius = self.distanceButton.bounds.height / 2
-        self.distanceButton.layer.borderWidth = 2
-        self.distanceButton.layer.borderColor = #colorLiteral(red: 0, green: 0.3012604127, blue: 0.6312049279, alpha: 1)
-        
+        self.startButton.layer.cornerRadius = self.startButton.bounds.height / 2
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func timeButtonPressed(_ sender: Any) {
-        self.isTimeMode = true
-        self.timeButton.backgroundColor = #colorLiteral(red: 0, green: 0.3012604127, blue: 0.6312049279, alpha: 1)
-        self.timeButton.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
+    @IBAction func startButtonPressed(_ sender: Any) {
         
-        self.distanceButton.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        self.distanceButton.setTitleColor(#colorLiteral(red: 0, green: 0.3012604127, blue: 0.6312049279, alpha: 1), for: .normal)
     }
     
-    @IBAction func distanceButtonPressed(_ sender: Any) {
-        self.isTimeMode = false
-        
-        self.distanceButton.backgroundColor = #colorLiteral(red: 0, green: 0.3012604127, blue: 0.6312049279, alpha: 1)
-        self.distanceButton.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
-        
-        self.timeButton.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        self.timeButton.setTitleColor(#colorLiteral(red: 0, green: 0.3012604127, blue: 0.6312049279, alpha: 1), for: .normal)
+    @IBAction func doneButtonPressed(_ sender: Any) {
+        if UserDefaultsProvider.shared.training <= 120 {
+            UserDefaultsProvider.shared.training += 1            
+        }  
     }
     
     

@@ -202,5 +202,10 @@ class Strings {
     class var continueTitle: String {
         return NSLocalizedString("continue", comment: "")
     }
+    
+    class var missingUserInfo: String {
+        return NSLocalizedString("missingUserInfo", comment: "")
+    }
+    
 
 }

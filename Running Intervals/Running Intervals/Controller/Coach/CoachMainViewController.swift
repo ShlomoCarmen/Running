@@ -148,7 +148,7 @@ class CoachMainViewController: UIViewController {
             self.bmiLabel.textColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
             self.bmiLabel.text = "your BNI is \(Int(bmi)) You're on average, well done 👏"
         } else if bmi > 24  && bmi < 30 {
-            self.bmiLabel.text = "your BNI is \(Int(bmi)) It's a bit high, if you have background illnesses think seriously about a serious diet 🤔"
+            self.bmiLabel.text = "your BNI is \(Int(bmi)) It's a bit high, if you have background illnesses think seriously about a diet 🤔"
             self.bmiLabel.textColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
         } else {
             self.bmiLabel.text = "your BNI is \(Int(bmi)) It's a to high, you realy need to start a serious diet 😡, unless you are a bodybuilder 💪"
@@ -198,6 +198,16 @@ class CoachMainViewController: UIViewController {
     }
     
     @IBAction func continueButtonPressed(_ sender: Any) {
+        guard self.user != nil else {
+            let message = Strings.missingUserInfo
+            Utils.showAlertMessage(message, viewControler: self)
+            return
+        }
+        self.performSegue(withIdentifier: "showGoal", sender: self)
+//        if UserDefaultsProvider.shared.goal != nil {
+//            self.performSegue(withIdentifier: "showDifficulty", sender: self)
+//        } else {
+//        }
         
     }
     

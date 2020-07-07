@@ -63,3 +63,4 @@
 "centimeter" = "cm";
 "kilogram" = "kg";
 "continue" = "Continue";
+"missingUserInfo" = "You must fill all fields in order to continue";
