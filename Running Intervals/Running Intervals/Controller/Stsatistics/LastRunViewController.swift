@@ -76,6 +76,24 @@ class LastRunViewController: UIViewController {
     @IBAction func backButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func screenshotButtonPressed(_ sender: Any) {
+        self.takeScreenshot(true)
+    }
+    
+    func takeScreenshot(_ shouldSave: Bool = true) {
+        var screenshotImage :UIImage?
+        let layer = UIApplication.shared.windows[0].layer
+        let scale = UIScreen.main.scale
+        UIGraphicsBeginImageContextWithOptions(layer.frame.size, false, scale);
+        guard let context = UIGraphicsGetCurrentContext() else { return }
+        layer.render(in:context)
+        screenshotImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        if let image = screenshotImage, shouldSave {
+            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        }
+    }
 
 }
 
