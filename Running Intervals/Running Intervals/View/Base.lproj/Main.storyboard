@@ -15,6 +15,14 @@
             </objects>
             <point key="canvasLocation" x="-2733" y="497"/>
         </scene>
+        <!--Statistics-->
+        <scene sceneID="fLH-z1-6RJ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Statistics" id="BwL-gl-wqP" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BXr-A0-DsK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-12" y="80"/>
+        </scene>
         <!--Main View Controller-->
         <scene sceneID="NCH-ZJ-h96">
             <objects>
@@ -286,6 +294,31 @@
                                     <constraint firstAttribute="height" constant="70" id="ycA-dH-Mys"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K26-0u-6Y2">
+                                <rect key="frame" x="20" y="488.5" width="374" height="319.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LCB-ON-oad">
+                                        <rect key="frame" x="166" y="20" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vNT-ob-I1q">
+                                        <rect key="frame" x="164" y="71" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="trainingDoneButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JEm-6D-Gnx"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="vNT-ob-I1q" firstAttribute="centerX" secondItem="K26-0u-6Y2" secondAttribute="centerX" id="AwT-dk-I8Z"/>
+                                    <constraint firstItem="LCB-ON-oad" firstAttribute="centerX" secondItem="K26-0u-6Y2" secondAttribute="centerX" id="KTC-MI-0y1"/>
+                                    <constraint firstItem="LCB-ON-oad" firstAttribute="top" secondItem="K26-0u-6Y2" secondAttribute="top" constant="20" id="cQb-yL-rq8"/>
+                                    <constraint firstItem="vNT-ob-I1q" firstAttribute="top" secondItem="LCB-ON-oad" secondAttribute="bottom" constant="30" id="yyC-Zf-Dm1"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -299,6 +332,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="F0q-8p-bKW" secondAttribute="trailing" constant="20" id="Df4-ZP-CXg"/>
                             <constraint firstItem="4hT-Rj-GfG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="EfU-kG-eNo"/>
                             <constraint firstItem="4fj-7G-Mr4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Fjh-uF-L3N"/>
+                            <constraint firstItem="K26-0u-6Y2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="IaS-4R-hdk"/>
                             <constraint firstItem="FYQ-2W-NVB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="KIf-2j-UOz"/>
                             <constraint firstItem="xZ1-wu-nNk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="Qsh-d9-4Oj"/>
                             <constraint firstItem="F0q-8p-bKW" firstAttribute="centerY" secondItem="ZUv-kr-aym" secondAttribute="centerY" id="YSD-eg-hN8"/>
@@ -313,8 +347,11 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xNA-xh-cZC" secondAttribute="trailing" constant="20" id="eMd-I9-oB2"/>
                             <constraint firstItem="rNt-0D-n5O" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="18" id="fW9-v3-Bfy"/>
                             <constraint firstItem="FYQ-2W-NVB" firstAttribute="top" secondItem="ZUv-kr-aym" secondAttribute="bottom" constant="50" id="iLm-zl-OYY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="K26-0u-6Y2" secondAttribute="bottom" id="jvy-tg-SJo"/>
                             <constraint firstItem="F0q-8p-bKW" firstAttribute="width" secondItem="aaJ-RM-viM" secondAttribute="width" id="lK0-fP-xgj"/>
+                            <constraint firstItem="K26-0u-6Y2" firstAttribute="top" secondItem="rNt-0D-n5O" secondAttribute="bottom" id="oAh-H2-9g6"/>
                             <constraint firstItem="rNt-0D-n5O" firstAttribute="top" secondItem="4fj-7G-Mr4" secondAttribute="bottom" constant="30" id="pMH-fe-Djb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="K26-0u-6Y2" secondAttribute="trailing" constant="20" id="wIf-Xy-7HL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -331,13 +368,17 @@
                         <outlet property="totalTimeLabel" destination="FYQ-2W-NVB" id="GLs-Nf-HdP"/>
                         <outlet property="totalTimeLeftLabel" destination="krY-4W-g6T" id="b9b-Ae-ypS"/>
                         <outlet property="totalTimeTF" destination="aaJ-RM-viM" id="qqU-jP-25q"/>
+                        <outlet property="trainingDoneButton" destination="vNT-ob-I1q" id="rW4-07-PdQ"/>
+                        <outlet property="trainingDoneLabel" destination="LCB-ON-oad" id="92y-4y-cw2"/>
+                        <outlet property="trainingDoneView" destination="K26-0u-6Y2" id="RSp-CS-n0s"/>
                         <segue destination="zFr-66-ZLm" kind="presentation" identifier="presentSelectMusic" modalPresentationStyle="fullScreen" id="0Lt-Wx-5CF"/>
                         <segue destination="Wvn-4h-Thq" kind="presentation" identifier="presentMyMusic" modalPresentationStyle="fullScreen" id="XTU-0j-amA"/>
+                        <segue destination="BwL-gl-wqP" kind="presentation" identifier="presentStatistics" modalPresentationStyle="fullScreen" id="2ZV-2B-Gse"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-699" y="80"/>
+            <point key="canvasLocation" x="-700" y="79.6875"/>
         </scene>
         <!--Run By Distance View Controller-->
         <scene sceneID="EWm-48-06A">
@@ -508,7 +549,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pbh-v2-fDG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1181" y="94"/>
+            <point key="canvasLocation" x="1179.7101449275362" y="93.75"/>
         </scene>
         <!--Select Music View Controller-->
         <scene sceneID="sOK-RV-X4O">
