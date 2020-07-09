@@ -40,11 +40,10 @@ class CoachGoalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+//        self.backButton.isHidden = true
         self.setText()
         self.setCornerRadius()
-        if UserDefaultsProvider.shared.goal != nil {
-            self.performSegue(withIdentifier: "showDifficulty", sender: self)
-        }
+
     }
     
     func setText() {
@@ -89,7 +88,8 @@ class CoachGoalViewController: UIViewController {
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+//        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func eazyButtonPressed(_ sender: Any) {
@@ -97,7 +97,8 @@ class CoachGoalViewController: UIViewController {
         UserDefaultsProvider.shared.goal = self.goalType?.rawValue
         UserDefaultsProvider.shared.week = 1
         UserDefaultsProvider.shared.training = 1
-        self.navigateToSelectWeek()
+//        self.navigateToSelectWeek()
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func mediumButtonPressed(_ sender: Any) {
@@ -105,7 +106,8 @@ class CoachGoalViewController: UIViewController {
         UserDefaultsProvider.shared.goal = self.goalType?.rawValue
         UserDefaultsProvider.shared.week = 1
         UserDefaultsProvider.shared.training = 24
-        self.navigateToSelectWeek()
+//        self.navigateToSelectWeek()
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func hardButtonPressed(_ sender: Any) {
@@ -113,7 +115,8 @@ class CoachGoalViewController: UIViewController {
         UserDefaultsProvider.shared.goal = self.goalType?.rawValue
         UserDefaultsProvider.shared.week = 1
         UserDefaultsProvider.shared.training = 65
-        self.navigateToSelectWeek()
+//        self.navigateToSelectWeek()
+        self.dismiss(animated: true, completion: nil)
     }
     
     //MARK: Navigation

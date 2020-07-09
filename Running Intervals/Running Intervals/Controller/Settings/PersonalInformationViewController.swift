@@ -1,5 +1,5 @@
 //
-//  TrainingMainViewController.swift
+//  PersonalInformationViewController.swift
 //  Running Intervals
 //
 //  Created by Shlomo Carmen on 03/06/2020.
@@ -9,7 +9,7 @@
 import UIKit
 import HealthKit
 
-class CoachMainViewController: UIViewController {
+class PersonalInformationViewController: UIViewController {
 
     //============================================================
     // MARK: - @IBOutlets
@@ -67,6 +67,7 @@ class CoachMainViewController: UIViewController {
         self.user = UserDefaultsProvider.shared.user
         self.setBmi()
         self.setUserInfoText()
+        self.backButton.isHidden = true
     }
     override func viewWillLayoutSubviews() {
         self.setCornerRadius()
@@ -203,7 +204,8 @@ class CoachMainViewController: UIViewController {
             Utils.showAlertMessage(message, viewControler: self)
             return
         }
-        self.performSegue(withIdentifier: "showGoal", sender: self)
+        self.dismiss(animated: true, completion: nil)
+//        self.performSegue(withIdentifier: "showGoal", sender: self)
 //        if UserDefaultsProvider.shared.goal != nil {
 //            self.performSegue(withIdentifier: "showDifficulty", sender: self)
 //        } else {
@@ -338,7 +340,7 @@ class CoachMainViewController: UIViewController {
     
 }
 
-extension CoachMainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+extension PersonalInformationViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }

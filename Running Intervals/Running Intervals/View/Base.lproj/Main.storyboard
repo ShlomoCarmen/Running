@@ -13,7 +13,7 @@
                 <viewControllerPlaceholder storyboardName="Coach" id="01p-ho-6uc" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DBB-KO-LWn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2733" y="497"/>
+            <point key="canvasLocation" x="-2354" y="518"/>
         </scene>
         <!--Statistics-->
         <scene sceneID="fLH-z1-6RJ">
@@ -22,6 +22,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BXr-A0-DsK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-12" y="80"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="vjW-AO-5ab">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Settings" id="TND-YS-GpK" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U79-DF-hl8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2057" y="512"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="NCH-ZJ-h96">
@@ -165,8 +173,8 @@
                         <outlet property="titelLabel" destination="WDj-K9-83u" id="WBb-pl-925"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="presentRunByTime" id="pCy-W6-R6Q"/>
                         <segue destination="zFr-66-ZLm" kind="presentation" identifier="presentSelectMusic" modalPresentationStyle="fullScreen" id="I2a-jC-MIR"/>
-                        <segue destination="Wvn-4h-Thq" kind="presentation" identifier="presentMyMusic" modalPresentationStyle="fullScreen" id="tmt-3D-7uM"/>
                         <segue destination="01p-ho-6uc" kind="presentation" identifier="presentTraining" modalPresentationStyle="fullScreen" id="d4s-tq-nYd"/>
+                        <segue destination="TND-YS-GpK" kind="presentation" identifier="presentSettings" modalPresentationStyle="fullScreen" id="Lds-UO-RtP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iAZ-wa-Dhs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -688,12 +696,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WsA-fJ-6xz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1591" y="953"/>
+            <point key="canvasLocation" x="-1729" y="946"/>
         </scene>
         <!--My Music View Controller-->
         <scene sceneID="Vue-8b-O7K">
             <objects>
-                <viewController id="Wvn-4h-Thq" customClass="MyMusicViewController" customModule="Running_Intervals" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyMusicViewController" id="Wvn-4h-Thq" customClass="MyMusicViewController" customModule="Running_Intervals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6w9-6v-Xjl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -802,12 +810,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QOW-cw-tBX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-865" y="946"/>
+            <point key="canvasLocation" x="-736" y="946"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="XTU-0j-amA"/>
-        <segue reference="0Lt-Wx-5CF"/>
+        <segue reference="I2a-jC-MIR"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="runningWithMusic" width="100" height="100"/>

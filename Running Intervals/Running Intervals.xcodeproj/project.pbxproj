@@ -19,6 +19,8 @@
 		8398793124B5F37500A99B37 /* RunningIntervals.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8398792F24B5F37500A99B37 /* RunningIntervals.xcdatamodeld */; };
 		8398793324B5FB7A00A99B37 /* FormatDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8398793224B5FB7A00A99B37 /* FormatDisplay.swift */; };
 		8398793524B6010500A99B37 /* UnitConverterPace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8398793424B6010500A99B37 /* UnitConverterPace.swift */; };
+		8398793724B73EDD00A99B37 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8398793624B73EDD00A99B37 /* Settings.storyboard */; };
+		8398793A24B73F2800A99B37 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8398793924B73F2800A99B37 /* SettingsViewController.swift */; };
 		8398AF6624B59880001420AC /* Statistics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8398AF6524B5987F001420AC /* Statistics.storyboard */; };
 		8398AF6924B598D0001420AC /* LastRunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8398AF6824B598D0001420AC /* LastRunViewController.swift */; };
 		83ADB94624B2FF8E009671A2 /* training_information.json in Resources */ = {isa = PBXBuildFile; fileRef = 83ADB94524B2FF8E009671A2 /* training_information.json */; };
@@ -47,7 +49,7 @@
 		83CCA8742486631900B9B0E8 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CCA8732486631900B9B0E8 /* Storyboards.swift */; };
 		83CCA878248688C400B9B0E8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83CCA877248688C400B9B0E8 /* MapKit.framework */; };
 		83CCA87A2487C1BA00B9B0E8 /* Coach.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83CCA8792487C1B900B9B0E8 /* Coach.storyboard */; };
-		83CCA87D2487C1FB00B9B0E8 /* CoachMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CCA87C2487C1FB00B9B0E8 /* CoachMainViewController.swift */; };
+		83CCA87D2487C1FB00B9B0E8 /* PersonalInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CCA87C2487C1FB00B9B0E8 /* PersonalInformationViewController.swift */; };
 		83CCA87F2487E28500B9B0E8 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CCA87E2487E28500B9B0E8 /* HealthKitManager.swift */; };
 		83CCA8812488D59100B9B0E8 /* CoachDifficultyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CCA8802488D59100B9B0E8 /* CoachDifficultyViewController.swift */; };
 		83CCA8832488D66500B9B0E8 /* CoachRunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CCA8822488D66500B9B0E8 /* CoachRunViewController.swift */; };
@@ -69,6 +71,8 @@
 		8398793024B5F37500A99B37 /* RunningIntervals.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RunningIntervals.xcdatamodel; sourceTree = "<group>"; };
 		8398793224B5FB7A00A99B37 /* FormatDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatDisplay.swift; sourceTree = "<group>"; };
 		8398793424B6010500A99B37 /* UnitConverterPace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitConverterPace.swift; sourceTree = "<group>"; };
+		8398793624B73EDD00A99B37 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		8398793924B73F2800A99B37 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8398AF6524B5987F001420AC /* Statistics.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Statistics.storyboard; sourceTree = "<group>"; };
 		8398AF6824B598D0001420AC /* LastRunViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastRunViewController.swift; sourceTree = "<group>"; };
 		83ADB94524B2FF8E009671A2 /* training_information.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = training_information.json; sourceTree = "<group>"; };
@@ -103,7 +107,7 @@
 		83CCA8732486631900B9B0E8 /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		83CCA877248688C400B9B0E8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		83CCA8792487C1B900B9B0E8 /* Coach.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Coach.storyboard; sourceTree = "<group>"; };
-		83CCA87C2487C1FB00B9B0E8 /* CoachMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachMainViewController.swift; sourceTree = "<group>"; };
+		83CCA87C2487C1FB00B9B0E8 /* PersonalInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInformationViewController.swift; sourceTree = "<group>"; };
 		83CCA87E2487E28500B9B0E8 /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
 		83CCA8802488D59100B9B0E8 /* CoachDifficultyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachDifficultyViewController.swift; sourceTree = "<group>"; };
 		83CCA8822488D66500B9B0E8 /* CoachRunViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachRunViewController.swift; sourceTree = "<group>"; };
@@ -205,6 +209,16 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		8398793824B73EFF00A99B37 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				8398793924B73F2800A99B37 /* SettingsViewController.swift */,
+				83CCA87C2487C1FB00B9B0E8 /* PersonalInformationViewController.swift */,
+				83FCFB1C24B1DE2100B5AFFD /* CoachGoalViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		8398AF6724B598B3001420AC /* Stsatistics */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +291,7 @@
 				83CCA8682485767D00B9B0E8 /* Main */,
 				83CCA87B2487C1DB00B9B0E8 /* Coach */,
 				83CCA86C24861F5200B9B0E8 /* Custom Plans */,
+				8398793824B73EFF00A99B37 /* Settings */,
 				83CCA86B24861F3600B9B0E8 /* Music */,
 			);
 			path = Controller;
@@ -288,6 +303,7 @@
 				83B3BC6E247A562500057A52 /* Main.storyboard */,
 				83CCA8792487C1B900B9B0E8 /* Coach.storyboard */,
 				8398AF6524B5987F001420AC /* Statistics.storyboard */,
+				8398793624B73EDD00A99B37 /* Settings.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -342,8 +358,6 @@
 			isa = PBXGroup;
 			children = (
 				8357ADE724B1B5CE00F8A635 /* Cells */,
-				83CCA87C2487C1FB00B9B0E8 /* CoachMainViewController.swift */,
-				83FCFB1C24B1DE2100B5AFFD /* CoachGoalViewController.swift */,
 				83CCA8802488D59100B9B0E8 /* CoachDifficultyViewController.swift */,
 				83CCA8822488D66500B9B0E8 /* CoachRunViewController.swift */,
 			);
@@ -420,6 +434,7 @@
 				83B3BC85247AB77E00057A52 /* fast-2.mp3 in Resources */,
 				83B3BC72247A562C00057A52 /* Assets.xcassets in Resources */,
 				83B3BC8D247AB7F400057A52 /* fast-4.mp3 in Resources */,
+				8398793724B73EDD00A99B37 /* Settings.storyboard in Resources */,
 				83B3BC8F247AB81900057A52 /* slow-4.mp3 in Resources */,
 				83B3BC7F247A57FF00057A52 /* slow-1.mp3 in Resources */,
 				83B3BC70247A562500057A52 /* Main.storyboard in Resources */,
@@ -443,7 +458,7 @@
 				83CCA86A2485769F00B9B0E8 /* MainViewController.swift in Sources */,
 				8398792E24B5ED5800A99B37 /* CoreDataManager.swift in Sources */,
 				8398793524B6010500A99B37 /* UnitConverterPace.swift in Sources */,
-				83CCA87D2487C1FB00B9B0E8 /* CoachMainViewController.swift in Sources */,
+				83CCA87D2487C1FB00B9B0E8 /* PersonalInformationViewController.swift in Sources */,
 				83ADB94824B31726009671A2 /* TrainingRepository.swift in Sources */,
 				83B3BC6D247A562500057A52 /* RunViewController.swift in Sources */,
 				83B3BC69247A562500057A52 /* AppDelegate.swift in Sources */,
@@ -457,6 +472,7 @@
 				83FCFB1D24B1DE2100B5AFFD /* CoachGoalViewController.swift in Sources */,
 				83B3BC6B247A562500057A52 /* SceneDelegate.swift in Sources */,
 				8398793124B5F37500A99B37 /* RunningIntervals.xcdatamodeld in Sources */,
+				8398793A24B73F2800A99B37 /* SettingsViewController.swift in Sources */,
 				8357ADE624B1AA0600F8A635 /* Utils.swift in Sources */,
 				830D7F572483AE3F00467227 /* MyMusicViewController.swift in Sources */,
 				83239E27247E6E1800C63760 /* UserDefaultsProvider.swift in Sources */,

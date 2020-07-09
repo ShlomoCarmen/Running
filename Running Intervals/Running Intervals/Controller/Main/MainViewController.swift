@@ -69,7 +69,8 @@ class MainViewController: UIViewController, AVAudioPlayerDelegate {
 
     func setText() {
         self.titelLabel.text = Strings.mainAppTitle
-        self.myMusicButton.setTitle(Strings.myMusic, for: .normal)
+//        self.myMusicButton.setTitle(Strings.myMusic, for: .normal)
+        self.myMusicButton.setTitle("Settings", for: .normal)
         self.selectMusicButton.setTitle(Strings.selectMusic, for: .normal)
         
         self.runByTimeButton.setTitle(Strings.runByTime, for: .normal)
@@ -96,7 +97,8 @@ class MainViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     @IBAction func myMusicButtonPressed(_ sender: Any) {
-        self.performSegue(withIdentifier: "presentMyMusic", sender: self)
+        self.performSegue(withIdentifier: "presentSettings", sender: self)
+//        self.performSegue(withIdentifier: "presentMyMusic", sender: self)
     }
     
     @IBAction func statisticsButtonPressed(_ sender: Any) {

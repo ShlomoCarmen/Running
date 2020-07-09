@@ -17,5 +17,20 @@ class Storyboards {
             return self.mainStoryboard().instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
         }
         
+        class var  musicViewController: MyMusicViewController {
+            return self.mainStoryboard().instantiateViewController(withIdentifier: "MyMusicViewController") as! MyMusicViewController
+        }
+    }
+    
+    class Settings {
+        private class func settingsStoryboard() -> UIStoryboard { return UIStoryboard(name: "Settings", bundle: Bundle.main) }
+        
+        class var  goalViewController: CoachGoalViewController {
+            return self.settingsStoryboard().instantiateViewController(withIdentifier: "CoachGoalViewController") as! CoachGoalViewController
+        }
+        
+        class var  personalInformationViewController: PersonalInformationViewController {
+            return self.settingsStoryboard().instantiateViewController(withIdentifier: "PersonalInformationViewController") as! PersonalInformationViewController
+        }
     }
 }

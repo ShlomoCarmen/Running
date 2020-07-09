@@ -22,17 +22,23 @@ class CoachDifficultyViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        if UserDefaultsProvider.shared.user == nil {
+            self.navigateToPersonal()
+            return
+        }
+        if UserDefaultsProvider.shared.goal == nil {
+            self.navigateToGoal()
+            return
+        }
         self.training = TrainingRepository.shared.getAllTraining()
         self.goalType = GoalType(rawValue: UserDefaultsProvider.shared.goal ?? "")
-//        self.currentWeek = UserDefaultsProvider.shared.week
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.setText()
         self.setWeeks()
-//        self.getTraining()
-    }
-    override func viewWillAppear(_ animated: Bool) {
-//        self.currentWeek = UserDefaultsProvider.shared.week
         self.getTraining()
     }
     
@@ -61,14 +67,28 @@ class CoachDifficultyViewController: UIViewController {
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func changePlanButtonPressed(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+        self.navigateToGoal()
     }
     
     // MARK: Navigation
+    
+    func navigateToPersonal() {
+        let personalVC = Storyboards.Settings.personalInformationViewController
+        personalVC.modalPresentationStyle = .fullScreen
+        self.present(personalVC, animated: true, completion: nil)
+        
+    }
+    
+    func navigateToGoal() {
+        let goalVC = Storyboards.Settings.goalViewController
+        goalVC.modalPresentationStyle = .fullScreen
+        self.present(goalVC, animated: true, completion: nil)
+        
+    }
     
     func navigateToRun(_ week: Int) {
         self.performSegue(withIdentifier: "showRun", sender: week)
