@@ -424,10 +424,10 @@
             </objects>
             <point key="canvasLocation" x="809" y="893"/>
         </scene>
-        <!--Coach Goal View Controller-->
+        <!--Select Goal View Controller-->
         <scene sceneID="N8D-kG-Zir">
             <objects>
-                <viewController storyboardIdentifier="CoachGoalViewController" id="V2n-4S-zVI" customClass="CoachGoalViewController" customModule="Running_Intervals" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CoachGoalViewController" id="V2n-4S-zVI" customClass="SelectGoalViewController" customModule="Running_Intervals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sb9-RV-1uW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

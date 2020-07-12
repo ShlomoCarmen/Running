@@ -19,7 +19,7 @@ class MainViewController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var buildProgramButton: UIButton!
     
     @IBOutlet weak var selectMusicButton: UIButton!
-    @IBOutlet weak var myMusicButton: UIButton!
+    @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var statisticsButton: UIButton!
     
     let allMediaItems = MPMediaQuery.songs().items
@@ -58,9 +58,9 @@ class MainViewController: UIViewController, AVAudioPlayerDelegate {
         self.selectMusicButton.layer.borderWidth = 2
         self.selectMusicButton.layer.borderColor = #colorLiteral(red: 0, green: 0.3012604127, blue: 0.6312049279, alpha: 1)
         
-        self.myMusicButton.layer.cornerRadius = self.myMusicButton.bounds.height / 2
-        self.myMusicButton.layer.borderWidth = 2
-        self.myMusicButton.layer.borderColor = #colorLiteral(red: 0, green: 0.3012604127, blue: 0.6312049279, alpha: 1)
+        self.settingsButton.layer.cornerRadius = self.settingsButton.bounds.height / 2
+        self.settingsButton.layer.borderWidth = 2
+        self.settingsButton.layer.borderColor = #colorLiteral(red: 0, green: 0.3012604127, blue: 0.6312049279, alpha: 1)
         
         self.statisticsButton.layer.cornerRadius = self.statisticsButton.bounds.height / 2
         self.statisticsButton.layer.borderWidth = 2
@@ -69,8 +69,7 @@ class MainViewController: UIViewController, AVAudioPlayerDelegate {
 
     func setText() {
         self.titelLabel.text = Strings.mainAppTitle
-//        self.myMusicButton.setTitle(Strings.myMusic, for: .normal)
-        self.myMusicButton.setTitle("Settings", for: .normal)
+        self.settingsButton.setTitle(Strings.settings, for: .normal)
         self.selectMusicButton.setTitle(Strings.selectMusic, for: .normal)
         
         self.runByTimeButton.setTitle(Strings.runByTime, for: .normal)
@@ -96,9 +95,8 @@ class MainViewController: UIViewController, AVAudioPlayerDelegate {
         self.performSegue(withIdentifier: "presentSelectMusic", sender: self)
     }
     
-    @IBAction func myMusicButtonPressed(_ sender: Any) {
+    @IBAction func settingsButtonPressed(_ sender: Any) {
         self.performSegue(withIdentifier: "presentSettings", sender: self)
-//        self.performSegue(withIdentifier: "presentMyMusic", sender: self)
     }
     
     @IBAction func statisticsButtonPressed(_ sender: Any) {
