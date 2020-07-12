@@ -14,7 +14,7 @@ enum GoalType: String {
     case hard = "hard"
 }
 
-class CoachGoalViewController: UIViewController {
+class SelectGoalViewController: UIViewController {
 
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var headerLabel: UILabel!

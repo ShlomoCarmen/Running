@@ -25,8 +25,8 @@ class Storyboards {
     class Settings {
         private class func settingsStoryboard() -> UIStoryboard { return UIStoryboard(name: "Settings", bundle: Bundle.main) }
         
-        class var  goalViewController: CoachGoalViewController {
-            return self.settingsStoryboard().instantiateViewController(withIdentifier: "CoachGoalViewController") as! CoachGoalViewController
+        class var  goalViewController: SelectGoalViewController {
+            return self.settingsStoryboard().instantiateViewController(withIdentifier: "CoachGoalViewController") as! SelectGoalViewController
         }
         
         class var  personalInformationViewController: PersonalInformationViewController {

@@ -53,7 +53,7 @@
 		83CCA87F2487E28500B9B0E8 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CCA87E2487E28500B9B0E8 /* HealthKitManager.swift */; };
 		83CCA8812488D59100B9B0E8 /* CoachDifficultyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CCA8802488D59100B9B0E8 /* CoachDifficultyViewController.swift */; };
 		83CCA8832488D66500B9B0E8 /* CoachRunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CCA8822488D66500B9B0E8 /* CoachRunViewController.swift */; };
-		83FCFB1D24B1DE2100B5AFFD /* CoachGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FCFB1C24B1DE2100B5AFFD /* CoachGoalViewController.swift */; };
+		83FCFB1D24B1DE2100B5AFFD /* SelectGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FCFB1C24B1DE2100B5AFFD /* SelectGoalViewController.swift */; };
 		83FCFB1F24B1EE5800B5AFFD /* Training.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FCFB1E24B1EE5800B5AFFD /* Training.swift */; };
 		83FE419324ACDC820028744F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FE419224ACDC820028744F /* User.swift */; };
 /* End PBXBuildFile section */
@@ -111,7 +111,7 @@
 		83CCA87E2487E28500B9B0E8 /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
 		83CCA8802488D59100B9B0E8 /* CoachDifficultyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachDifficultyViewController.swift; sourceTree = "<group>"; };
 		83CCA8822488D66500B9B0E8 /* CoachRunViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachRunViewController.swift; sourceTree = "<group>"; };
-		83FCFB1C24B1DE2100B5AFFD /* CoachGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachGoalViewController.swift; sourceTree = "<group>"; };
+		83FCFB1C24B1DE2100B5AFFD /* SelectGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGoalViewController.swift; sourceTree = "<group>"; };
 		83FCFB1E24B1EE5800B5AFFD /* Training.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Training.swift; sourceTree = "<group>"; };
 		83FE419224ACDC820028744F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -214,7 +214,7 @@
 			children = (
 				8398793924B73F2800A99B37 /* SettingsViewController.swift */,
 				83CCA87C2487C1FB00B9B0E8 /* PersonalInformationViewController.swift */,
-				83FCFB1C24B1DE2100B5AFFD /* CoachGoalViewController.swift */,
+				83FCFB1C24B1DE2100B5AFFD /* SelectGoalViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -469,7 +469,7 @@
 				83B3BC96247D3BE000057A52 /* SelectSongCell.swift in Sources */,
 				8398AF6924B598D0001420AC /* LastRunViewController.swift in Sources */,
 				83CCA8812488D59100B9B0E8 /* CoachDifficultyViewController.swift in Sources */,
-				83FCFB1D24B1DE2100B5AFFD /* CoachGoalViewController.swift in Sources */,
+				83FCFB1D24B1DE2100B5AFFD /* SelectGoalViewController.swift in Sources */,
 				83B3BC6B247A562500057A52 /* SceneDelegate.swift in Sources */,
 				8398793124B5F37500A99B37 /* RunningIntervals.xcdatamodeld in Sources */,
 				8398793A24B73F2800A99B37 /* SettingsViewController.swift in Sources */,
