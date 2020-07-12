@@ -10,6 +10,7 @@
 "runByTime" = "Run By Time";
 "runByDistance" = "Run By Distance";
 "buildProgram" = "Build a Training Program";
+"settings" = "Settings";
 "statistics" = "Statistics";
 
 "insertTimeForRuning" = "Insert Time For Runing:";
@@ -64,3 +65,18 @@
 "kilogram" = "kg";
 "continue" = "Continue";
 "missingUserInfo" = "You must fill all fields in order to continue";
+"changePlane" = "Change Plane";
+"trainingWeek" = "Training Week";
+"week" = "Week";
+"training" = "Training";
+
+"done" = "Done";
+"times" = "Times";
+"start" = "Start";
+"minuts" = "Minuts";
+"running" = "Running";
+"runningFor" = "Running For";
+"walking" = "Walking";
+"walkingFor" = "Walking For";
+"trainingCompletedMessage" = "Congratulations, you have reached your goal";
+"showStatistics" = "Show Statistics";

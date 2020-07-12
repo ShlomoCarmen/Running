@@ -26,6 +26,10 @@ class Strings {
         return NSLocalizedString("buildProgram", comment: "")
     }
     
+    class var settings: String {
+        return NSLocalizedString("settings", comment: "")
+    }
+    
     class var statistics: String {
         return NSLocalizedString("statistics", comment: "")
     }
@@ -206,6 +210,61 @@ class Strings {
     class var missingUserInfo: String {
         return NSLocalizedString("missingUserInfo", comment: "")
     }
-    
 
+    class var changePlane: String {
+        return NSLocalizedString("changePlane", comment: "")
+    }
+    
+    class var trainingWeek: String {
+        return NSLocalizedString("trainingWeek", comment: "")
+    }
+    
+    class var week: String {
+        return NSLocalizedString("week", comment: "")
+    }
+    
+    class var training: String {
+        return NSLocalizedString("training", comment: "")
+    }
+    
+    class var start: String {
+        return NSLocalizedString("start", comment: "")
+    }
+    
+    class var minuts: String {
+        return NSLocalizedString("minuts", comment: "")
+    }
+    
+    class var running: String {
+        return NSLocalizedString("running", comment: "")
+    }
+    
+    class var runningFor: String {
+        return NSLocalizedString("runningFor", comment: "")
+    }
+
+    class var walking: String {
+        return NSLocalizedString("walking", comment: "")
+    }
+    
+    class var walkingFor: String {
+        return NSLocalizedString("walkingFor", comment: "")
+    }
+    
+    class var times: String {
+        return NSLocalizedString("times", comment: "")
+    }
+    
+    class var done: String {
+        return NSLocalizedString("done", comment: "")
+    }
+    
+    class var trainingCompletedMessage: String {
+        return NSLocalizedString("trainingCompletedMessage", comment: "")
+    }
+    
+    class var showStatistics: String {
+        return NSLocalizedString("showStatistics", comment: "")
+    }
+    
 }

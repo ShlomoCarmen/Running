@@ -1,5 +1,5 @@
 //
-//  CoachGoalViewController.swift
+//  SelectGoalViewController.swift
 //  Running Intervals
 //
 //  Created by Shlomo Carmen on 05/07/2020.

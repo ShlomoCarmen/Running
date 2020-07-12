@@ -10,6 +10,7 @@
 "runByTime" = "רוץ לפי זמן";
 "runByDistance" = "רוץ לפי מרחק";
 "buildProgram" = "בנה תוכנית אימון";
+"settings" = "הגדרות";
 "statistics" = "סטטיסטיקה";
 
 "insertTimeForRuning" = "הכנס זמן לריצה:";
@@ -65,3 +66,18 @@
 "kilogram" = "ק״ג";
 "continue" = "המשך";
 "missingUserInfo" = "לפני שנמשיך, עליך למלא את כל השדות";
+"changePlane" = "שנה תוכנית";
+"trainingWeek" = "שבוע אימון";
+"week" = "שבוע";
+"training" = "אימון";
+
+"done" = "סיימת";
+"times" = "פעמים";
+"start" = "התחל";
+"minuts" = "דקות";
+"running" = "ריצה";
+"runningFor" = "ריצה";
+"walking" = "הליכה";
+"walkingFor" = "הליכה";
+"trainingCompletedMessage" = "ברכות, השגת את המטרה";
+"showStatistics" = "הצג סטטיסטיקה";

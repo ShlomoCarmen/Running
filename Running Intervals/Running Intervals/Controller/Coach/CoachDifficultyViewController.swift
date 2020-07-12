@@ -63,7 +63,10 @@ class CoachDifficultyViewController: UIViewController {
     }
     
     func setText() {
-        self.changePlanButton.setTitle("Change Plane", for: .normal)
+        self.changePlanButton.setTitle(Strings.changePlane, for: .normal)
+        self.backButton.setTitle(Strings.back, for: .normal)
+        self.headerLabel.text = Strings.trainingWeek
+        
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {
@@ -114,7 +117,7 @@ extension CoachDifficultyViewController: UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "selectDifficultyCell", for: indexPath) as! SelectDifficultyCell
         let index = indexPath.row + 1
-        cell.weekLabel.text = "Week \(index)"
+        cell.weekLabel.text = "\(Strings.week) \(index)"
         if let currentWeek = self.currentWeek {
             if currentWeek == index {
                 cell.containerView.backgroundColor = #colorLiteral(red: 0, green: 0.3012604127, blue: 0.6312049279, alpha: 1)
