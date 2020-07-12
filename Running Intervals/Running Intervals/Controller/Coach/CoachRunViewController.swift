@@ -15,13 +15,19 @@ class CoachRunViewController: UIViewController {
     
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var headerLabel: UILabel!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var runningLabel: UILabel!
+    @IBOutlet weak var runningTitleLabel: UILabel!
+    @IBOutlet weak var runningView: UIView!
+    @IBOutlet weak var walkingLabel: UILabel!
+    @IBOutlet weak var walkingTitleLabel: UILabel!
+    @IBOutlet weak var walkingView: UIView!
+    @IBOutlet weak var intervalsLabel: UILabel!
+    @IBOutlet weak var intervalsView: UIView!
 
     @IBOutlet weak var startButton: UIButton!
-    @IBOutlet weak var doneButton: UIButton!
     
     @IBOutlet weak var timeLeftTitleLabel: UILabel!
+    @IBOutlet weak var timeLeftLabel: UILabel!
     @IBOutlet weak var totalTimeLeftLabel: UILabel!
     
     @IBOutlet weak var trainingDoneView: UIView!
@@ -39,6 +45,7 @@ class CoachRunViewController: UIViewController {
     var fastSongsPersistentID: [String] = []
     var slowSongsPersistentID: [String] = []
     var isPlaying: Bool = false
+    var isRunning: Bool = false
     var player = MPMusicPlayerController.applicationQueuePlayer
     private var seconds = 0
     private var timer: Timer?
@@ -66,16 +73,26 @@ class CoachRunViewController: UIViewController {
     
     func setText() {
         let trainingNumber = UserDefaultsProvider.shared.training - 1
-        guard let traning = self.training?[trainingNumber] else { return }
-        self.currentTraining = traning
-        self.headerLabel.text = traning.goal
-        self.titleLabel.text = "Week \(traning.week), Training \(traning.training)"
-        self.descriptionLabel.text = traning.descreption
+        guard let training = self.training?[trainingNumber] else { return }
+        self.currentTraining = training
+        self.headerLabel.text = "\(Strings.week) \(training.week) - \(Strings.training) \(training.training)" //traning.goal
+        self.runningLabel.text = "\(training.timeForRun) \(Strings.minuts)"
+        self.runningTitleLabel.text = "\(Strings.running)"
+        self.walkingLabel.text = "\(training.timeForWalk) \(Strings.minuts)"
+        self.walkingTitleLabel.text = "\(Strings.walking)"
+        self.intervalsLabel.text = "\(training.intervals) \(Strings.times)"
+        self.startButton.setTitle("\(Strings.start)", for: .normal)
         
     }
     
     func setCornerRadius() {
         self.startButton.layer.cornerRadius = self.startButton.bounds.height / 2
+        self.runningView.layer.cornerRadius = 20
+        self.walkingView.layer.cornerRadius = 20
+        self.intervalsView.layer.cornerRadius = self.intervalsView.bounds.height / 2
+        self.trainingDoneButton.layer.cornerRadius = self.trainingDoneButton.bounds.height / 2
+        self.trainingDoneButton.layer.borderWidth = 2
+        self.trainingDoneButton.layer.borderColor = #colorLiteral(red: 0, green: 0.3012604127, blue: 0.6312049279, alpha: 1)
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {
@@ -84,13 +101,9 @@ class CoachRunViewController: UIViewController {
     
     @IBAction func startButtonPressed(_ sender: Any) {
         self.isPlaying = true
+        self.startButton.setTitle("", for: .normal)
+        self.startButton.isEnabled = false
         self.play()
-    }
-    
-    @IBAction func doneButtonPressed(_ sender: Any) {
-        if UserDefaultsProvider.shared.training <= 120 {
-            UserDefaultsProvider.shared.training += 1            
-        }  
     }
     
     @IBAction func trainingDoneButtonPressed(_ sender: Any) {
@@ -121,16 +134,27 @@ class CoachRunViewController: UIViewController {
         self.totalTimeLeftLabel.text = "\(Strings.totalTimeLeft) \(minutesString):\(secondsString)"
     }
     
+    func setTimeLabel(time: TimeInterval) {
+        let minutes = Int(time/60)
+        let seconds = Int(time.truncatingRemainder(dividingBy: 60))
+        let minutesString = minutes < 10 ? "0\(minutes)" : "\(minutes)"
+        let secondsString = seconds < 10 ? "0\(seconds)" : "\(seconds)"
+        self.timeLeftLabel.text = "\(minutesString):\(secondsString)"
+    }
+    
     func playSlowSong(withDuration: Double) {
         guard let training = self.currentTraining else { return }
         self.locationManager.startUpdatingLocation()
         DispatchQueue.main.asyncAfter(deadline: .now() + withDuration, execute: {
             if !self.isPlaying { return }
+            self.startButton.backgroundColor = #colorLiteral(red: 1, green: 0.231372549, blue: 0.1882352941, alpha: 1)
             self.timeLeftTitleLabel.isHidden = false
             var counter = training.timeForWalk * 60
             Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (timer) in
-                let string = String(format:Strings.walkingTimeLeft, "\(counter)")
-                self.timeLeftTitleLabel.text = string
+//                let string = String(format:Strings.walkingTimeLeft, "\(counter)")
+//                self.timeLeftTitleLabel.text = string
+                self.timeLeftTitleLabel.text = "\(Strings.walkingFor)"
+                self.setTimeLabel(time: Double(counter))
                 counter -= 1
                 if counter < 0 {
                     timer.invalidate()
@@ -149,10 +173,13 @@ class CoachRunViewController: UIViewController {
         guard let training = self.currentTraining else { return }
         DispatchQueue.main.asyncAfter(deadline: .now() + withDuration, execute: {
             if !self.isPlaying { return }
+            self.startButton.backgroundColor = #colorLiteral(red: 0.2039215686, green: 0.7803921569, blue: 0.3490196078, alpha: 1)
             var counter = training.timeForRun * 60
             Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (timer) in
-                let string = String(format:Strings.runningTimeLeft, "\(counter)")
-                self.timeLeftTitleLabel.text = string
+//                let string = String(format:Strings.runningTimeLeft, "\(counter)")
+//                self.timeLeftTitleLabel.text = string
+                self.timeLeftTitleLabel.text = "\(Strings.runningFor)"
+                self.setTimeLabel(time: Double(counter))
                 counter -= 1
                 if counter < 0 {
                     timer.invalidate()
@@ -167,11 +194,12 @@ class CoachRunViewController: UIViewController {
     }
     
     func trainingCompleted(_ total: Double) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 20) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 80) {
             self.startButton.isEnabled = false
-            self.startButton.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-            self.startButton.setTitle("Done", for: .normal)
+            self.startButton.backgroundColor = #colorLiteral(red: 0, green: 0.3019607843, blue: 0.631372549, alpha: 1)
+            self.startButton.setTitle("\(Strings.done)", for: .normal)
             self.timeLeftTitleLabel.isHidden = true
+            self.timeLeftLabel.isHidden = true
             self.totalTimeLeftLabel.isHidden = true
             self.isPlaying = false
             self.player.stop()
@@ -188,8 +216,8 @@ class CoachRunViewController: UIViewController {
     func trainingDone() {
         self.saveRun()
         self.trainingDoneView.isHidden = false
-        self.trainingDoneLabel.text = "Congratulations, you have reached your goal"
-        self.trainingDoneButton.setTitle("Show Statistics", for: .normal)
+        self.trainingDoneLabel.text = "\(Strings.trainingCompletedMessage)"
+        self.trainingDoneButton.setTitle("\(Strings.showStatistics)", for: .normal)
     }
     
     private func saveRun() {
