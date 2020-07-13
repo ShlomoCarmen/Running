@@ -13,18 +13,18 @@
 "settings" = "הגדרות";
 "statistics" = "סטטיסטיקה";
 
-"insertTimeForRuning" = "הכנס זמן לריצה:";
+"insertTimeForRunning" = "הכנס זמן לריצה:";
 "insertTimeForWalking" = "הכנס זמן להליכה:";
 "insertTotalTime" = "סה״כ זמן לאימון:";
 
 "timeInSecons" = "זמן בשניות";
 "timeInMinuts" = "זמן בדקות";
 
-"insertDistanceForRuning" = "הכנס מרחק לריצה:";
+"insertDistanceForRunning" = "הכנס מרחק לריצה:";
 "insertDistanceForWalking" = "הכנס מרחק להליכה:";
 "insertTotalDistance" = "הכנס סה״כ מרחק לאימון:";
 
-"distanceInMetter" = "מרחק במטרים";
+"distanceInMeter" = "מרחק במטרים";
 "distanceInKM" = "מרחק בקילומטרים";
 
 "runCaps" = "רוץ!";
@@ -81,3 +81,4 @@
 "walkingFor" = "הליכה";
 "trainingCompletedMessage" = "ברכות, השגת את המטרה";
 "showStatistics" = "הצג סטטיסטיקה";
+"meter" = "מטר";

@@ -13,18 +13,18 @@
 "settings" = "Settings";
 "statistics" = "Statistics";
 
-"insertTimeForRuning" = "Insert Time For Runing:";
+"insertTimeForRunning" = "Insert Time For Running:";
 "insertTimeForWalking" = "Insert Time For Walking:";
 "insertTotalTime" = "Insert Total Training Time:";
 
 "timeInSecons" = "In Secons";
 "timeInMinuts" = "In Minuts";
 
-"insertDistanceForRuning" = "Insert Distance For Runing:";
+"insertDistanceForRunning" = "Insert Distance For Running:";
 "insertDistanceForWalking" = "Insert Distance For Walking:";
 "insertTotalDistance" = "Insert Total Distance:";
 
-"distanceInMetter" = "In Meters";
+"distanceInMeter" = "In Meters";
 "distanceInKM" = "In Kilometers";
 
 "runCaps" = "RUN!";
@@ -80,3 +80,4 @@
 "walkingFor" = "Walking For";
 "trainingCompletedMessage" = "Congratulations, you have reached your goal";
 "showStatistics" = "Show Statistics";
+"meter" = "Meter";

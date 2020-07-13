@@ -34,8 +34,8 @@ class Strings {
         return NSLocalizedString("statistics", comment: "")
     }
     
-    class var insertTimeForRuning: String {
-        return NSLocalizedString("insertTimeForRuning", comment: "")
+    class var insertTimeForRunning: String {
+        return NSLocalizedString("insertTimeForRunning", comment: "")
     }
     
     class var insertTimeForWalking: String {
@@ -54,8 +54,8 @@ class Strings {
         return NSLocalizedString("timeInMinuts", comment: "")
     }
     
-    class var insertDistanceForRuning: String {
-        return NSLocalizedString("insertDistanceForRuning", comment: "")
+    class var insertDistanceForRunning: String {
+        return NSLocalizedString("insertDistanceForRunning", comment: "")
     }
     
     class var insertDistanceForWalking: String {
@@ -66,8 +66,8 @@ class Strings {
         return NSLocalizedString("insertTotalDistance", comment: "")
     }
     
-    class var distanceInMetter: String {
-        return NSLocalizedString("distanceInMetter", comment: "")
+    class var distanceInMeter: String {
+        return NSLocalizedString("distanceInMeter", comment: "")
     }
     
     class var distanceInKM: String {
@@ -265,6 +265,10 @@ class Strings {
     
     class var showStatistics: String {
         return NSLocalizedString("showStatistics", comment: "")
+    }
+    
+    class var meter: String {
+        return NSLocalizedString("meter", comment: "")
     }
     
 }
