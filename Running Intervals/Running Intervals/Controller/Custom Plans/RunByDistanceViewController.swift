@@ -63,12 +63,12 @@ class RunByDistanceViewController: UIViewController {
     
     
     func setText() {
-        self.distanceForRuningLabel.text = Strings.insertDistanceForRuning
+        self.distanceForRuningLabel.text = Strings.insertDistanceForRunning
         self.distanceForWalkingLabel.text = Strings.insertDistanceForWalking
         self.totalDistanceLabel.text = Strings.insertTotalDistance
         
-        self.fastTF.placeholder = Strings.distanceInMetter
-        self.slowTF.placeholder = Strings.distanceInMetter
+        self.fastTF.placeholder = Strings.distanceInMeter
+        self.slowTF.placeholder = Strings.distanceInMeter
         self.totalDistanceTF.placeholder = Strings.distanceInKM
         
         self.runButton.setTitle(Strings.runCaps, for: .normal)
