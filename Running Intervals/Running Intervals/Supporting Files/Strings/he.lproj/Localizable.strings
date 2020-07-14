@@ -82,3 +82,9 @@
 "trainingCompletedMessage" = "ברכות, השגת את המטרה";
 "showStatistics" = "הצג סטטיסטיקה";
 "meter" = "מטר";
+"myGoal"= "המטרה שלי";
+
+"lowBmi"= "ה BMI שלך הוא %@ זה נמוך מידי";
+"averageBmi"= "ה BMI שלך %@ כל הכבוד זה תקין 👏";
+"highBmi"= "ה BMI שלך %@ קצת גבוה";
+"veryHighBmi"= "ה BMI שלך הוא %@ זה מאוד גבוה";

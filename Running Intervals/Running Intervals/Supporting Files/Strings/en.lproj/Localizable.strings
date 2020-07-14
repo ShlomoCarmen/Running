@@ -81,3 +81,9 @@
 "trainingCompletedMessage" = "Congratulations, you have reached your goal";
 "showStatistics" = "Show Statistics";
 "meter" = "Meter";
+"myGoal"= "My Goal";
+
+"lowBmi"= "your BNI is %@ It's too low";
+"averageBmi"= "your BNI is %@ You're on average 👏";
+"highBmi"= "your BNI is %@ It's a bit high";
+"veryHighBmi"= "your BNI is %@ It's very high";

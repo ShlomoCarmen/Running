@@ -27,6 +27,9 @@ class SettingsViewController: UIViewController {
     func setText() {
         self.backButton.setTitle(Strings.back, for: .normal)
         self.headerLabel.text = Strings.settings
+        self.myMusicButton.setTitle(Strings.myMusic, for: .normal)
+        self.personalInfoButton.setTitle(Strings.personalInformaition, for: .normal)
+        self.myGoalButton.setTitle(Strings.myGoal, for: .normal)
 
     }
     

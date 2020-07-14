@@ -271,4 +271,24 @@ class Strings {
         return NSLocalizedString("meter", comment: "")
     }
     
+    class var myGoal: String {
+        return NSLocalizedString("myGoal", comment: "")
+    }
+    
+    class var lowBmi: String {
+        return NSLocalizedString("lowBmi", comment: "")
+    }
+    
+    class var averageBmi: String {
+        return NSLocalizedString("averageBmi", comment: "")
+    }
+    
+    class var highBmi: String {
+        return NSLocalizedString("highBmi", comment: "")
+    }
+    
+    class var veryHighBmi: String {
+        return NSLocalizedString("veryHighBmi", comment: "")
+    }
+    
 }

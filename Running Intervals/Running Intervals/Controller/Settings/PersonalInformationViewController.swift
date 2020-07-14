@@ -87,7 +87,7 @@ class PersonalInformationViewController: UIViewController {
         self.genderTitelLabel.text = Strings.gender
         self.heightTitelLabel.text = Strings.height
         self.weightTitelLabel.text = Strings.weight
-        self.continueButton.setTitle(Strings.continueTitle, for: .normal)
+        self.continueButton.setTitle(Strings.save, for: .normal)
     }
     
     func setUserInfoText() {
@@ -130,8 +130,11 @@ class PersonalInformationViewController: UIViewController {
               let age = self.selectedAgeLabel.text,
               let height = self.selectedHeightLabel.text,
               let weight = self.selectedWeightLabel.text else { return }
+        guard let intAge = Int(age) else { return }
         if let userHeight = height.components(separatedBy: " ").first, let userWeight = weight.components(separatedBy: " ").first {
-            let values = ["gender": gender, "age": Int(age), "height": Int(userHeight), "weight": Int(userWeight)] as [String : Any]
+            guard let intHeight = Int(userHeight) else { return }
+            guard let intWeight = Int(userWeight) else { return }
+            let values = ["gender": gender, "age": intAge, "height": intHeight, "weight": intWeight] as [String : Any]
             self.user = User(values: values)
             UserDefaultsProvider.shared.user = self.user
             setBmi()
@@ -144,16 +147,20 @@ class PersonalInformationViewController: UIViewController {
         let bmi = Double(user.weight) / (height * height)
         if bmi < 18.5 {
             self.bmiLabel.textColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
-            self.bmiLabel.text = "your BNI is \(Int(bmi)) It's too low, you better start eating 😉"
+            let string = String(format:Strings.lowBmi, "\(Int(bmi))")
+            self.bmiLabel.text = string
         } else if bmi >= 18.5 && bmi < 25 {
             self.bmiLabel.textColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
-            self.bmiLabel.text = "your BNI is \(Int(bmi)) You're on average, well done 👏"
+            let string = String(format:Strings.averageBmi, "\(Int(bmi))")
+            self.bmiLabel.text = string
         } else if bmi > 24  && bmi < 30 {
-            self.bmiLabel.text = "your BNI is \(Int(bmi)) It's a bit high, if you have background illnesses think seriously about a diet 🤔"
             self.bmiLabel.textColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
+            let string = String(format:Strings.highBmi, "\(Int(bmi))")
+            self.bmiLabel.text = string
         } else {
-            self.bmiLabel.text = "your BNI is \(Int(bmi)) It's a to high, you realy need to start a serious diet 😡, unless you are a bodybuilder 💪"
             self.bmiLabel.textColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
+            let string = String(format:Strings.veryHighBmi, "\(Int(bmi))")
+            self.bmiLabel.text = string
         }
         
     }
@@ -205,12 +212,6 @@ class PersonalInformationViewController: UIViewController {
             return
         }
         self.dismiss(animated: true, completion: nil)
-//        self.performSegue(withIdentifier: "showGoal", sender: self)
-//        if UserDefaultsProvider.shared.goal != nil {
-//            self.performSegue(withIdentifier: "showDifficulty", sender: self)
-//        } else {
-//        }
-        
     }
     
     //============================================================
@@ -220,7 +221,6 @@ class PersonalInformationViewController: UIViewController {
     @objc func keyboardDonePressed(_ sender: Any) {
         if let pickerView = self.dataPicker {
             if let index = self.dataPicker?.selectedRow(inComponent: 0) {
-                print(index)
                 if pickerView.tag == 0 {
                     self.selectedAgeLabel.text = "\(index + 10)"
                 } else if pickerView.tag == 1 {
@@ -264,8 +264,28 @@ class PersonalInformationViewController: UIViewController {
             pickerView.autoresizingMask = .flexibleWidth
             pickerView.contentMode = .center
             pickerView.tag = tag
+            if tag == 0 {
+                if let user = self.user {
+                    pickerView.selectRow(user.age - 10, inComponent: 0, animated: true)
+                } else {
+                    pickerView.selectRow(20, inComponent: 0, animated: true)                    
+                }
+            }
+            if tag == 2 {
+                if let user = self.user {
+                    pickerView.selectRow(user.height - 50, inComponent: 0, animated: true)
+                } else {
+                    pickerView.selectRow(120, inComponent: 0, animated: true)
+                }
+            }
+            if tag == 3 {
+                if let user = self.user {
+                    pickerView.selectRow(user.weight - 50, inComponent: 0, animated: true)
+                } else {
+                    pickerView.selectRow(20, inComponent: 0, animated: true)
+                }
+            }
             self.view.addSubview(pickerView)
-            
             self.setToolBar()
         }
     }
