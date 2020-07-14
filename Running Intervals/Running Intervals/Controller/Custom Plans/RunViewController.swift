@@ -234,9 +234,12 @@ class RunViewController: UIViewController {
 
     func setTimeLabelForDistanceMode(time: TimeInterval) {
         if time < 1000.0 {
-            self.timeLeftLabel.text = "\(time)"
+//            let displayTotal = String(format: "%.2f", time)
+            self.timeLeftLabel.text = "\(Int(time))"
         } else {
-            self.timeLeftLabel.text = "\(time / 1000)"
+            let total = time / 1000
+            let displayTotal = String(format: "%.2f", total)
+            self.timeLeftLabel.text = displayTotal
         }
     }
     
@@ -321,6 +324,7 @@ class RunViewController: UIViewController {
             self.runButton.backgroundColor = #colorLiteral(red: 0, green: 0.3019607843, blue: 0.631372549, alpha: 1)
             self.runButton.setTitle(Strings.done, for: .normal)
             self.timeLeftTitleLabel.isHidden = true
+            self.timeLeftLabel.isHidden = true
             self.totalTimeLeftLabel.isHidden = true
             self.isPlaying = false
             self.player.stop()
@@ -405,16 +409,16 @@ extension RunViewController: UITextFieldDelegate {
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        if self.runningMediaItems.count == 0 || self.walkingMediaItems.count == 0 {
-            let alertController = UIAlertController(title: "", message: Strings.mustSelectMusic, preferredStyle: .alert)
-            let okAction = UIAlertAction(title: Strings.cancel, style: .cancel, handler: nil)
-            let selectMusic = UIAlertAction(title: Strings.selectMusic, style: .default) { (action) in
-                self.performSegue(withIdentifier: "presentSelectMusic", sender: self)
-            }
-            alertController.addAction(selectMusic)
-            alertController.addAction(okAction)
-            self.present(alertController, animated: true, completion: nil)
-        }
+//        if self.runningMediaItems.count == 0 || self.walkingMediaItems.count == 0 {
+//            let alertController = UIAlertController(title: "", message: Strings.mustSelectMusic, preferredStyle: .alert)
+//            let okAction = UIAlertAction(title: Strings.cancel, style: .cancel, handler: nil)
+//            let selectMusic = UIAlertAction(title: Strings.selectMusic, style: .default) { (action) in
+//                self.performSegue(withIdentifier: "presentSelectMusic", sender: self)
+//            }
+//            alertController.addAction(selectMusic)
+//            alertController.addAction(okAction)
+//            self.present(alertController, animated: true, completion: nil)
+//        }
         return true
     }
     
@@ -477,7 +481,7 @@ extension RunViewController: CLLocationManagerDelegate {
                             }
                         }
                     }
-                    let total = totalDoubel * 100.0
+                    let total = totalDoubel * 1000.0
                     if total - totalDistance.value <= 0 {
                         self.trainingCompleted(0.0)
                     }
