@@ -9,9 +9,9 @@
 import UIKit
 
 enum GoalType: String {
-    case eazy = "eazy"
-    case medium = "medium"
-    case hard = "hard"
+    case eazy = "5 km"
+    case medium = "10 km"
+    case hard = "21 km"
 }
 
 class SelectGoalViewController: UIViewController {
@@ -40,23 +40,25 @@ class SelectGoalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        self.backButton.isHidden = true
         self.setText()
         self.setCornerRadius()
 
     }
     
     func setText() {
-        self.headerLabel.text = "Select Yore Goal"
+        self.headerLabel.text = Strings.goalTitle
         
-        self.eazyTitleLabel.text = "From 0 to 5 km"
-        self.eazyDescriptionLabel.text = "8 weeks plan"
+        self.eazyTitleLabel.text = Strings.eazyGoalTitle
+        self.eazyDescriptionLabel.text = Strings.eazyGoalDescription
+        self.eazySelectButton.setTitle(Strings.select, for: .normal)
         
-        self.mediumTitleLabel.text = "From 5 to 10 km"
-        self.mediumDescriptionLabel.text = "14 weeks plan"
+        self.mediumTitleLabel.text = Strings.mediumGoalTitle
+        self.mediumDescriptionLabel.text = Strings.mediumGoalDescription
+        self.mediumSelectButton.setTitle(Strings.select, for: .normal)
         
-        self.hardTitleLabel.text = "From 10 to 21 km"
-        self.hardDescriptionLabel.text = "18 weeks plan"
+        self.hardTitleLabel.text = Strings.hardGoalTitle
+        self.hardDescriptionLabel.text = Strings.hardGoalDescription
+        self.hardSelectButton.setTitle(Strings.select, for: .normal)
     }
     
     func setCornerRadius() {
@@ -88,47 +90,25 @@ class SelectGoalViewController: UIViewController {
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {
-//        self.navigationController?.popViewController(animated: true)
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func eazyButtonPressed(_ sender: Any) {
         self.goalType = .eazy
         UserDefaultsProvider.shared.goal = self.goalType?.rawValue
-        UserDefaultsProvider.shared.week = 1
-        UserDefaultsProvider.shared.training = 1
-//        self.navigateToSelectWeek()
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func mediumButtonPressed(_ sender: Any) {
         self.goalType = .medium
         UserDefaultsProvider.shared.goal = self.goalType?.rawValue
-        UserDefaultsProvider.shared.week = 1
-        UserDefaultsProvider.shared.training = 24
-//        self.navigateToSelectWeek()
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func hardButtonPressed(_ sender: Any) {
         self.goalType = .hard
         UserDefaultsProvider.shared.goal = self.goalType?.rawValue
-        UserDefaultsProvider.shared.week = 1
-        UserDefaultsProvider.shared.training = 65
-//        self.navigateToSelectWeek()
         self.dismiss(animated: true, completion: nil)
     }
     
-    //MARK: Navigation
-    
-    func navigateToSelectWeek() {
-        self.performSegue(withIdentifier: "showDifficulty", sender: self)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showDifficulty" {
-            let difficultyVC = segue.destination as! CoachDifficultyViewController
-            difficultyVC.goalType = self.goalType
-        }
-    }
 }

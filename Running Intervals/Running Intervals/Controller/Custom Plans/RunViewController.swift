@@ -369,13 +369,14 @@ class RunViewController: UIViewController {
         run.distance = totalDistance.value
         run.duration = Int16(seconds)
         run.timestamp = Date()
+        run.sessionId = "NA"
         
         for location in locationList {
             let locationObject = Location(context: CoreDataManager.context)
             locationObject.timestamp = location.timestamp
             locationObject.latitude = location.coordinate.latitude
             locationObject.longitude = location.coordinate.longitude
-            run.addToLocation(locationObject)
+            run.addToLocations(locationObject)
         }
         
         CoreDataManager.saveContext()
@@ -387,8 +388,6 @@ class RunViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "presentStatistics" {
             let statisticsVC = segue.destination as! LastRunViewController
-            statisticsVC.locationList = self.locationList
-            statisticsVC.totalDistance = self.totalDistance
             statisticsVC.run = self.newRun
         }
     }
@@ -409,16 +408,16 @@ extension RunViewController: UITextFieldDelegate {
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-//        if self.runningMediaItems.count == 0 || self.walkingMediaItems.count == 0 {
-//            let alertController = UIAlertController(title: "", message: Strings.mustSelectMusic, preferredStyle: .alert)
-//            let okAction = UIAlertAction(title: Strings.cancel, style: .cancel, handler: nil)
-//            let selectMusic = UIAlertAction(title: Strings.selectMusic, style: .default) { (action) in
-//                self.performSegue(withIdentifier: "presentSelectMusic", sender: self)
-//            }
-//            alertController.addAction(selectMusic)
-//            alertController.addAction(okAction)
-//            self.present(alertController, animated: true, completion: nil)
-//        }
+        if self.runningMediaItems.count == 0 || self.walkingMediaItems.count == 0 {
+            let alertController = UIAlertController(title: "", message: Strings.mustSelectMusic, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: Strings.cancel, style: .cancel, handler: nil)
+            let selectMusic = UIAlertAction(title: Strings.selectMusic, style: .default) { (action) in
+                self.performSegue(withIdentifier: "presentSelectMusic", sender: self)
+            }
+            alertController.addAction(selectMusic)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
         return true
     }
     

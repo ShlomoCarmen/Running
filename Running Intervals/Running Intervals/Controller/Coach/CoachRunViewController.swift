@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 import MediaPlayer
 import CoreLocation
+import CoreData
 
 class CoachRunViewController: UIViewController {
     
@@ -38,6 +39,7 @@ class CoachRunViewController: UIViewController {
     var training: [Training]?
     var currentTraining: Training?
     var goalType: GoalType?
+    var trainingNumber: Int?
     
     var runningMediaItems: [MPMediaItem] = []
     var walkingMediaItems: [MPMediaItem] = []
@@ -57,6 +59,7 @@ class CoachRunViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.training = TrainingRepository.shared.getAllTraining()
+        self.getCurrentTraining()
         self.setText()
         self.setCornerRadius()
         self.trainingDoneView.isHidden = true
@@ -72,9 +75,8 @@ class CoachRunViewController: UIViewController {
     }
     
     func setText() {
-        let trainingNumber = UserDefaultsProvider.shared.training - 1
-        guard let training = self.training?[trainingNumber] else { return }
-        self.currentTraining = training
+
+        guard let training = self.currentTraining else { return }
         self.headerLabel.text = "\(Strings.week) \(training.week) - \(Strings.training) \(training.training)" //traning.goal
         self.runningLabel.text = "\(training.timeForRun) \(Strings.minuts)"
         self.runningTitleLabel.text = "\(Strings.running)"
@@ -93,6 +95,39 @@ class CoachRunViewController: UIViewController {
         self.trainingDoneButton.layer.cornerRadius = self.trainingDoneButton.bounds.height / 2
         self.trainingDoneButton.layer.borderWidth = 2
         self.trainingDoneButton.layer.borderColor = #colorLiteral(red: 0, green: 0.3012604127, blue: 0.6312049279, alpha: 1)
+    }
+    
+    func getCurrentTraining() {
+        guard let goalType = self.goalType?.rawValue, let week = self.weekNumber, let trainingNumber = self.trainingNumber else { return }
+        guard let allTraining = self.training else { return }
+        for training in allTraining {
+            if training.goal == goalType && training.week == week && training.training == trainingNumber {
+                self.currentTraining = training
+                let sessionId = training.sessionId
+                self.getCompletedRun(sessionId: sessionId)
+            }
+        }
+    }
+    
+    func getCompletedRun(sessionId: String) {
+        let request: NSFetchRequest<Run> = Run.fetchRequest()
+        do {
+            var runs: [Run] = []
+            let result = try CoreDataManager.context.fetch(request)
+            for data in result {
+                if data.sessionId == sessionId {
+                    runs.append(data)
+                }
+            }
+            let sortedRun = runs.sorted(by: {$0.timestamp!.timeIntervalSince1970 < $1.timestamp!.timeIntervalSince1970})
+            self.newRun = sortedRun.last
+            if self.newRun != nil {
+                self.performSegue(withIdentifier: "presentStatistics", sender: self)
+            }
+        } catch {
+            print("Failed")
+        }
+        
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {
@@ -151,8 +186,7 @@ class CoachRunViewController: UIViewController {
             self.timeLeftTitleLabel.isHidden = false
             var counter = training.timeForWalk * 60
             Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (timer) in
-//                let string = String(format:Strings.walkingTimeLeft, "\(counter)")
-//                self.timeLeftTitleLabel.text = string
+
                 self.timeLeftTitleLabel.text = "\(Strings.walkingFor)"
                 self.setTimeLabel(time: Double(counter))
                 counter -= 1
@@ -176,8 +210,7 @@ class CoachRunViewController: UIViewController {
             self.startButton.backgroundColor = #colorLiteral(red: 0.2039215686, green: 0.7803921569, blue: 0.3490196078, alpha: 1)
             var counter = training.timeForRun * 60
             Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (timer) in
-//                let string = String(format:Strings.runningTimeLeft, "\(counter)")
-//                self.timeLeftTitleLabel.text = string
+
                 self.timeLeftTitleLabel.text = "\(Strings.runningFor)"
                 self.setTimeLabel(time: Double(counter))
                 counter -= 1
@@ -194,8 +227,7 @@ class CoachRunViewController: UIViewController {
     }
     
     func trainingCompleted(_ total: Double) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 80) {
-            self.startButton.isEnabled = false
+        DispatchQueue.main.asyncAfter(deadline: .now() + 20) {
             self.startButton.backgroundColor = #colorLiteral(red: 0, green: 0.3019607843, blue: 0.631372549, alpha: 1)
             self.startButton.setTitle("\(Strings.done)", for: .normal)
             self.timeLeftTitleLabel.isHidden = true
@@ -206,9 +238,6 @@ class CoachRunViewController: UIViewController {
             self.locationManager.stopUpdatingLocation()
             self.timer?.invalidate()
             
-            if UserDefaultsProvider.shared.training <= 120 {
-                UserDefaultsProvider.shared.training += 1
-            }
             self.trainingDone()
         }
     }
@@ -218,33 +247,36 @@ class CoachRunViewController: UIViewController {
         self.trainingDoneView.isHidden = false
         self.trainingDoneLabel.text = "\(Strings.trainingCompletedMessage)"
         self.trainingDoneButton.setTitle("\(Strings.showStatistics)", for: .normal)
+        
     }
     
     private func saveRun() {
+        guard let training = self.currentTraining else { return }
         let run = Run(context: CoreDataManager.context)
         run.distance = totalDistance.value
         run.duration = Int16(seconds)
         run.timestamp = Date()
+        run.sessionId = training.sessionId
         
         for location in locationList {
             let locationObject = Location(context: CoreDataManager.context)
             locationObject.timestamp = location.timestamp
             locationObject.latitude = location.coordinate.latitude
             locationObject.longitude = location.coordinate.longitude
-            run.addToLocation(locationObject)
+            run.addToLocations(locationObject)
         }
         
         CoreDataManager.saveContext()
         
         self.newRun = run
+
     }
+    
     
     // MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "presentStatistics" {
             let statisticsVC = segue.destination as! LastRunViewController
-            statisticsVC.locationList = self.locationList
-            statisticsVC.totalDistance = self.totalDistance
             statisticsVC.run = self.newRun
         }
     }

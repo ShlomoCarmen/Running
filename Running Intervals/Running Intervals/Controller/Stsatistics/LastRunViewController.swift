@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import CoreData
 
 class LastRunViewController: UIViewController {
 
@@ -16,13 +17,17 @@ class LastRunViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var informationView: UIView!
     @IBOutlet weak var informationTitleLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var speedLabel: UILabel!
     @IBOutlet weak var averageTimeLabel: UILabel!
     @IBOutlet weak var caloriesLabel: UILabel!
     
-    var locationList: [CLLocation] = []
-    var totalDistance = Measurement(value: 0, unit: UnitLength.meters)
+    @IBOutlet weak var screenshotButton: UIButton!
+    @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var repitButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
+
     var run: Run?
     var user: User?
     
@@ -34,43 +39,79 @@ class LastRunViewController: UIViewController {
         self.setText()
     }
     
-    func loadMap() {
-        guard let run = self.run else { return }
-        if self.locationList.count > 1 {
-            let centerLocation = locationList[locationList.count / 2]
-            let region = MKCoordinateRegion(center: centerLocation.coordinate, latitudinalMeters: 50 +  run.distance, longitudinalMeters: 50 + run.distance)
-            self.mapView.setRegion(region, animated: true)
-            var locations: [CLLocationCoordinate2D] = []
-            for location in self.locationList {
-                locations.append(location.coordinate)
-            }
-            
-            let polyLine = MKGeodesicPolyline(coordinates: locations, count: locationList.count)
-            self.mapView.addOverlay(polyLine)
+    private func mapRegion() -> MKCoordinateRegion? {
+        guard let run = self.run else { return nil }
+        guard let locations = run.locations, locations.count > 0
+            else { return nil }
+        
+        let latitudes = locations.map { location -> Double in
+            let location = location as! Location
+            return location.latitude
         }
+        
+        let longitudes = locations.map { location -> Double in
+            let location = location as! Location
+            return location.longitude
+        }
+        
+        let maxLat = latitudes.max()!
+        let minLat = latitudes.min()!
+        let maxLong = longitudes.max()!
+        let minLong = longitudes.min()!
+        
+        let center = CLLocationCoordinate2D(latitude: (minLat + maxLat) / 2,
+                                            longitude: (minLong + maxLong) / 2)
+        let span = MKCoordinateSpan(latitudeDelta: (maxLat - minLat) * 2,
+                                    longitudeDelta: (maxLong - minLong) * 2)
+        return MKCoordinateRegion(center: center, span: span)
+    }
+
+    private func loadMap() {
+        guard let run = self.run else { return }
+        guard let locations = run.locations, locations.count > 0, let region = mapRegion() else { return }
+        
+        mapView.setRegion(region, animated: true)
+        
+        mapView.addOverlay(polyLine())
+    }
+    
+    private func polyLine() -> MKPolyline {
+        guard let run = self.run else { return MKPolyline() }
+        guard let locations = run.locations else {
+            return MKPolyline()
+        }
+        
+        let coords: [CLLocationCoordinate2D] = locations.map { location in
+            let location = location as! Location
+            return CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
+        }
+        return MKPolyline(coordinates: coords, count: coords.count)
     }
     
     func setText() {
         guard let run = self.run else { return }
-        if self.locationList.count > 0 {
-            
-            let seconds = Int(run.duration)
-            let formattedTime = FormatDisplay.time(seconds)
-            let formattedPace = FormatDisplay.pace(distance: totalDistance, seconds: seconds, outputUnit: UnitSpeed.kilometersPerHour)
-
-            self.informationTitleLabel.text = "Your Last Run"
-            self.distanceLabel.text = "Total Dictance: \(Int(self.totalDistance.value)) Meter"
-            self.speedLabel.text = "Total Duration: \(formattedTime)"
-            self.averageTimeLabel.text = "Average Speed: \(formattedPace)"
-            self.caloriesLabel.text = "Calories: \(self.getCalories(duration: Double(seconds) / 60.0))"
-        }
+        let distance = Measurement(value: run.distance, unit: UnitLength.meters)
+        
+        let seconds = Int(run.duration)
+        let formattedTime = FormatDisplay.time(seconds)
+        let formattedPace = FormatDisplay.pace(distance: distance, seconds: seconds, outputUnit: UnitSpeed.kilometersPerHour)
+        let formattedDate = FormatDisplay.date(run.timestamp)
+        
+        self.informationTitleLabel.text = "Your Last Run"
+        self.dateLabel.text = formattedDate
+        self.distanceLabel.text = "Total Dictance: \(Int(distance.value)) Meter"
+        self.speedLabel.text = "Total Duration: \(formattedTime)"
+        self.averageTimeLabel.text = "Average Speed: \(formattedPace)"
+        self.caloriesLabel.text = "Calories: \(self.getCalories(duration: Double(seconds) / 60.0))"
+        
     }
     
     func getCalories(duration: Double) -> String {
         guard let user = self.user else { return "No Info"}
         let met = Double(duration) * 6.0 * (3.5 * Double(user.weight))
-        let calories = "\(met / 200)"
-        return calories
+        let calories = (met / 200)
+        let displayCalories = String(format: "%.2f", calories)
+        return displayCalories
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {
@@ -79,6 +120,18 @@ class LastRunViewController: UIViewController {
     
     @IBAction func screenshotButtonPressed(_ sender: Any) {
         self.takeScreenshot(true)
+    }
+    
+    @IBAction func shareButtonPressed(_ sender: Any) {
+
+    }
+
+    @IBAction func repitButtonPressed(_ sender: Any) {
+        
+    }
+    
+    @IBAction func cancelButtonPressed(_ sender: Any) {
+        
     }
     
     func takeScreenshot(_ shouldSave: Bool = true) {
@@ -100,10 +153,13 @@ class LastRunViewController: UIViewController {
 extension LastRunViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        let polylineRender = MKPolylineRenderer(overlay: overlay)
-        polylineRender.strokeColor = UIColor.blue.withAlphaComponent(0.8)
-        polylineRender.lineWidth = 3
+        guard let polyline = overlay as? MKPolyline else {
+          return MKOverlayRenderer(overlay: overlay)
+        }
+        let renderer = MKPolylineRenderer(polyline: polyline)
+        renderer.strokeColor = UIColor.blue.withAlphaComponent(0.8)
+        renderer.lineWidth = 3
 
-        return polylineRender
+        return renderer
     }
 }

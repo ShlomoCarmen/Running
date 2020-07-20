@@ -8,10 +8,13 @@
 
 import UIKit
 
-class SelectDifficultyCell: UITableViewCell {
+class SelectWeekCell: UITableViewCell {
 
     @IBOutlet weak var weekLabel: UILabel!
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var firstView: UIView!
+    @IBOutlet weak var secondView: UIView!
+    @IBOutlet weak var thirdView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,6 +29,9 @@ class SelectDifficultyCell: UITableViewCell {
     
     func setCornerRadius() {
         self.containerView.layer.cornerRadius = self.containerView.bounds.height / 2
+        self.firstView.layer.cornerRadius = self.firstView.bounds.height / 2
+        self.secondView.layer.cornerRadius = self.secondView.bounds.height / 2
+        self.thirdView.layer.cornerRadius = self.thirdView.bounds.height / 2
     }
 
 }
