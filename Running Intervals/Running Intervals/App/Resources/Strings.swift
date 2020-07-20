@@ -291,4 +291,36 @@ class Strings {
         return NSLocalizedString("veryHighBmi", comment: "")
     }
     
+    class var goalTitle: String {
+        return NSLocalizedString("goalTitle", comment: "")
+    }
+    
+    class var eazyGoalTitle: String {
+        return NSLocalizedString("eazyGoalTitle", comment: "")
+    }
+    
+    class var eazyGoalDescription: String {
+        return NSLocalizedString("eazyGoalDescription", comment: "")
+    }
+    
+    class var mediumGoalTitle: String {
+        return NSLocalizedString("mediumGoalTitle", comment: "")
+    }
+    
+    class var mediumGoalDescription: String {
+        return NSLocalizedString("mediumGoalDescription", comment: "")
+    }
+    
+    class var hardGoalTitle: String {
+        return NSLocalizedString("hardGoalTitle", comment: "")
+    }
+    
+    class var hardGoalDescription: String {
+        return NSLocalizedString("hardGoalDescription", comment: "")
+    }
+    
+    class var select: String {
+        return NSLocalizedString("select", comment: "")
+    }
+    
 }

@@ -79,7 +79,7 @@
 "walking" = "Walking";
 "walkingFor" = "Walking For";
 "trainingCompletedMessage" = "Congratulations, you have reached your goal";
-"showStatistics" = "Show Statistics";
+"showStatistics" = "Show Results";
 "meter" = "Meter";
 "myGoal"= "My Goal";
 
@@ -87,3 +87,12 @@
 "averageBmi"= "your BNI is %@ You're on average 👏";
 "highBmi"= "your BNI is %@ It's a bit high";
 "veryHighBmi"= "your BNI is %@ It's very high";
+
+"goalTitle" = "Select Yore Goal";
+"eazyGoalTitle" = "From 0 to 5 km";
+"eazyGoalDescription" = "8 weeks plan";
+"mediumGoalTitle" = "From 5 to 10 km";
+"mediumGoalDescription" = "14 weeks plan";
+"hardGoalTitle" = "From 10 to 21 km";
+"hardGoalDescription" = "18 weeks plan";
+"select" = "Select";

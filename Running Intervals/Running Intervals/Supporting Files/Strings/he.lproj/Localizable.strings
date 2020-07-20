@@ -80,7 +80,7 @@
 "walking" = "הליכה";
 "walkingFor" = "הליכה";
 "trainingCompletedMessage" = "ברכות, השגת את המטרה";
-"showStatistics" = "הצג סטטיסטיקה";
+"showStatistics" = "הצג תוצאות";
 "meter" = "מטר";
 "myGoal"= "המטרה שלי";
 
@@ -88,3 +88,12 @@
 "averageBmi"= "ה BMI שלך %@ כל הכבוד זה תקין 👏";
 "highBmi"= "ה BMI שלך %@ קצת גבוה";
 "veryHighBmi"= "ה BMI שלך הוא %@ זה מאוד גבוה";
+
+"goalTitle" = "בחר את המטרה שלך";
+"eazyGoalTitle" = "מ 0 עד 5 ק״מ";
+"eazyGoalDescription" = "תוכנית אימון של 8 שבועות";
+"mediumGoalTitle" = "מ 5 עד 10 ק״מ";
+"mediumGoalDescription" = "תוכנית אימון של 14 שבועות";
+"hardGoalTitle" = "מ 10 עד 21 ק״מ";
+"hardGoalDescription" = "תוכנית אימון של 18 שבועות";
+"select" = "בחר";
