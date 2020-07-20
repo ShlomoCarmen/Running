@@ -13,6 +13,7 @@ struct Training {
     var goal: String
     var week: Int
     var training: Int
+    var sessionId: String
     var descreption: String
     var timeForRun: Int
     var timeForWalk: Int
@@ -29,6 +30,10 @@ struct Training {
         
         if let training = values["training"] as? Int {
             self.training = training
+        } else { return nil }
+        
+        if let sessionId = values["sessionId"] as? String {
+            self.sessionId = sessionId
         } else { return nil }
         
         if let descreption = values["descreption"] as? String {
@@ -54,6 +59,7 @@ struct Training {
         values["goal"] = self.goal
         values["week"] = self.week
         values["training"] = self.training
+        values["sessionId"] = self.sessionId
         values["descreption"] = self.descreption
         values["timeForRun"] = self.timeForRun
         values["timeForWalk"] = self.timeForWalk
