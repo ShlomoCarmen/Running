@@ -10,11 +10,12 @@
 		830D7F572483AE3F00467227 /* MyMusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830D7F562483AE3F00467227 /* MyMusicViewController.swift */; };
 		830D7F592483B4A400467227 /* MyMusicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830D7F582483B4A400467227 /* MyMusicCell.swift */; };
 		830D7F632484CF4200467227 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830D7F622484CF4200467227 /* Strings.swift */; };
+		832051DE24BDC34D0076EBD3 /* SelectTrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832051DD24BDC34D0076EBD3 /* SelectTrainingViewController.swift */; };
 		83239E27247E6E1800C63760 /* UserDefaultsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83239E26247E6E1800C63760 /* UserDefaultsProvider.swift */; };
 		83239E2C247EB95900C63760 /* MySong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83239E2B247EB95900C63760 /* MySong.swift */; };
 		83239E2F2483794600C63760 /* MusicRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83239E2E2483794600C63760 /* MusicRepository.swift */; };
 		8357ADE624B1AA0600F8A635 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8357ADE524B1AA0600F8A635 /* Utils.swift */; };
-		8357ADE924B1B61C00F8A635 /* SelectDifficultyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8357ADE824B1B61C00F8A635 /* SelectDifficultyCell.swift */; };
+		8357ADE924B1B61C00F8A635 /* SelectWeekCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8357ADE824B1B61C00F8A635 /* SelectWeekCell.swift */; };
 		8398792E24B5ED5800A99B37 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8398792D24B5ED5800A99B37 /* CoreDataManager.swift */; };
 		8398793124B5F37500A99B37 /* RunningIntervals.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8398792F24B5F37500A99B37 /* RunningIntervals.xcdatamodeld */; };
 		8398793324B5FB7A00A99B37 /* FormatDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8398793224B5FB7A00A99B37 /* FormatDisplay.swift */; };
@@ -44,14 +45,13 @@
 		83B3BC96247D3BE000057A52 /* SelectSongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B3BC95247D3BE000057A52 /* SelectSongCell.swift */; };
 		83CCA8622484F45200B9B0E8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 83CCA8642484F45200B9B0E8 /* Localizable.strings */; };
 		83CCA86A2485769F00B9B0E8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CCA8692485769F00B9B0E8 /* MainViewController.swift */; };
-		83CCA86E24861FA600B9B0E8 /* RunByDistanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CCA86D24861FA600B9B0E8 /* RunByDistanceViewController.swift */; };
 		83CCA8712486226C00B9B0E8 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83CCA8702486226C00B9B0E8 /* HealthKit.framework */; };
 		83CCA8742486631900B9B0E8 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CCA8732486631900B9B0E8 /* Storyboards.swift */; };
 		83CCA878248688C400B9B0E8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83CCA877248688C400B9B0E8 /* MapKit.framework */; };
 		83CCA87A2487C1BA00B9B0E8 /* Coach.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83CCA8792487C1B900B9B0E8 /* Coach.storyboard */; };
 		83CCA87D2487C1FB00B9B0E8 /* PersonalInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CCA87C2487C1FB00B9B0E8 /* PersonalInformationViewController.swift */; };
 		83CCA87F2487E28500B9B0E8 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CCA87E2487E28500B9B0E8 /* HealthKitManager.swift */; };
-		83CCA8812488D59100B9B0E8 /* CoachDifficultyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CCA8802488D59100B9B0E8 /* CoachDifficultyViewController.swift */; };
+		83CCA8812488D59100B9B0E8 /* SelectWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CCA8802488D59100B9B0E8 /* SelectWeekViewController.swift */; };
 		83CCA8832488D66500B9B0E8 /* CoachRunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CCA8822488D66500B9B0E8 /* CoachRunViewController.swift */; };
 		83FCFB1D24B1DE2100B5AFFD /* SelectGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FCFB1C24B1DE2100B5AFFD /* SelectGoalViewController.swift */; };
 		83FCFB1F24B1EE5800B5AFFD /* Training.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FCFB1E24B1EE5800B5AFFD /* Training.swift */; };
@@ -62,11 +62,12 @@
 		830D7F562483AE3F00467227 /* MyMusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMusicViewController.swift; sourceTree = "<group>"; };
 		830D7F582483B4A400467227 /* MyMusicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMusicCell.swift; sourceTree = "<group>"; };
 		830D7F622484CF4200467227 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		832051DD24BDC34D0076EBD3 /* SelectTrainingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTrainingViewController.swift; sourceTree = "<group>"; };
 		83239E26247E6E1800C63760 /* UserDefaultsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProvider.swift; sourceTree = "<group>"; };
 		83239E2B247EB95900C63760 /* MySong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySong.swift; sourceTree = "<group>"; };
 		83239E2E2483794600C63760 /* MusicRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicRepository.swift; sourceTree = "<group>"; };
 		8357ADE524B1AA0600F8A635 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		8357ADE824B1B61C00F8A635 /* SelectDifficultyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDifficultyCell.swift; sourceTree = "<group>"; };
+		8357ADE824B1B61C00F8A635 /* SelectWeekCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectWeekCell.swift; sourceTree = "<group>"; };
 		8398792D24B5ED5800A99B37 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		8398793024B5F37500A99B37 /* RunningIntervals.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RunningIntervals.xcdatamodel; sourceTree = "<group>"; };
 		8398793224B5FB7A00A99B37 /* FormatDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatDisplay.swift; sourceTree = "<group>"; };
@@ -101,7 +102,6 @@
 		83CCA8662484F4C400B9B0E8 /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = he.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		83CCA8672484F4C500B9B0E8 /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = he.lproj/Localizable.strings; sourceTree = "<group>"; };
 		83CCA8692485769F00B9B0E8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		83CCA86D24861FA600B9B0E8 /* RunByDistanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunByDistanceViewController.swift; sourceTree = "<group>"; };
 		83CCA86F2486226C00B9B0E8 /* Running Intervals.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Running Intervals.entitlements"; sourceTree = "<group>"; };
 		83CCA8702486226C00B9B0E8 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		83CCA8732486631900B9B0E8 /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 		83CCA8792487C1B900B9B0E8 /* Coach.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Coach.storyboard; sourceTree = "<group>"; };
 		83CCA87C2487C1FB00B9B0E8 /* PersonalInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInformationViewController.swift; sourceTree = "<group>"; };
 		83CCA87E2487E28500B9B0E8 /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
-		83CCA8802488D59100B9B0E8 /* CoachDifficultyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachDifficultyViewController.swift; sourceTree = "<group>"; };
+		83CCA8802488D59100B9B0E8 /* SelectWeekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectWeekViewController.swift; sourceTree = "<group>"; };
 		83CCA8822488D66500B9B0E8 /* CoachRunViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachRunViewController.swift; sourceTree = "<group>"; };
 		83FCFB1C24B1DE2100B5AFFD /* SelectGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGoalViewController.swift; sourceTree = "<group>"; };
 		83FCFB1E24B1EE5800B5AFFD /* Training.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Training.swift; sourceTree = "<group>"; };
@@ -195,7 +195,7 @@
 		8357ADE724B1B5CE00F8A635 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				8357ADE824B1B61C00F8A635 /* SelectDifficultyCell.swift */,
+				8357ADE824B1B61C00F8A635 /* SelectWeekCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -339,7 +339,6 @@
 			isa = PBXGroup;
 			children = (
 				83B3BC6C247A562500057A52 /* RunViewController.swift */,
-				83CCA86D24861FA600B9B0E8 /* RunByDistanceViewController.swift */,
 			);
 			path = "Custom Plans";
 			sourceTree = "<group>";
@@ -358,7 +357,8 @@
 			isa = PBXGroup;
 			children = (
 				8357ADE724B1B5CE00F8A635 /* Cells */,
-				83CCA8802488D59100B9B0E8 /* CoachDifficultyViewController.swift */,
+				83CCA8802488D59100B9B0E8 /* SelectWeekViewController.swift */,
+				832051DD24BDC34D0076EBD3 /* SelectTrainingViewController.swift */,
 				83CCA8822488D66500B9B0E8 /* CoachRunViewController.swift */,
 			);
 			path = Coach;
@@ -468,7 +468,7 @@
 				83CCA87F2487E28500B9B0E8 /* HealthKitManager.swift in Sources */,
 				83B3BC96247D3BE000057A52 /* SelectSongCell.swift in Sources */,
 				8398AF6924B598D0001420AC /* LastRunViewController.swift in Sources */,
-				83CCA8812488D59100B9B0E8 /* CoachDifficultyViewController.swift in Sources */,
+				83CCA8812488D59100B9B0E8 /* SelectWeekViewController.swift in Sources */,
 				83FCFB1D24B1DE2100B5AFFD /* SelectGoalViewController.swift in Sources */,
 				83B3BC6B247A562500057A52 /* SceneDelegate.swift in Sources */,
 				8398793124B5F37500A99B37 /* RunningIntervals.xcdatamodeld in Sources */,
@@ -476,9 +476,9 @@
 				8357ADE624B1AA0600F8A635 /* Utils.swift in Sources */,
 				830D7F572483AE3F00467227 /* MyMusicViewController.swift in Sources */,
 				83239E27247E6E1800C63760 /* UserDefaultsProvider.swift in Sources */,
-				83CCA86E24861FA600B9B0E8 /* RunByDistanceViewController.swift in Sources */,
+				832051DE24BDC34D0076EBD3 /* SelectTrainingViewController.swift in Sources */,
 				83FE419324ACDC820028744F /* User.swift in Sources */,
-				8357ADE924B1B61C00F8A635 /* SelectDifficultyCell.swift in Sources */,
+				8357ADE924B1B61C00F8A635 /* SelectWeekCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
