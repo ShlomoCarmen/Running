@@ -74,44 +74,80 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Dictance: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blg-u8-Muc">
-                                        <rect key="frame" x="20" y="78" width="129" height="20.5"/>
+                                        <rect key="frame" x="50" y="78" width="129" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mappin.and.ellipse" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="DEl-gQ-KV3">
+                                        <rect key="frame" x="10" y="73" width="30" height="30.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="3SA-2C-IAv"/>
+                                            <constraint firstAttribute="width" constant="30" id="k8u-SY-OHN"/>
+                                        </constraints>
+                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Duration: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lEs-4P-uhP">
-                                        <rect key="frame" x="20" y="118.5" width="126.5" height="20.5"/>
+                                        <rect key="frame" x="50" y="118.5" width="126.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="CR5-UI-HPV">
+                                        <rect key="frame" x="10" y="114.5" width="30" height="29"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="6s9-S5-HDV"/>
+                                            <constraint firstAttribute="width" constant="30" id="Iay-5J-9GG"/>
+                                        </constraints>
+                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average Speed: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TxX-6t-FXi">
-                                        <rect key="frame" x="20" y="159" width="135" height="20.5"/>
+                                        <rect key="frame" x="50" y="159" width="135" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="speedometer" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Z8C-gC-Dz3">
+                                        <rect key="frame" x="10" y="155" width="30" height="29"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="KnX-cf-N0B"/>
+                                            <constraint firstAttribute="height" constant="30" id="ujc-Yt-xMS"/>
+                                        </constraints>
+                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LYQ-sV-YNC">
-                                        <rect key="frame" x="20" y="199.5" width="81.5" height="20.5"/>
+                                        <rect key="frame" x="50" y="199.5" width="81.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Xs5-M0-ESi">
+                                        <rect key="frame" x="10" y="195.5" width="30" height="29"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="s7a-X8-Bda"/>
+                                            <constraint firstAttribute="height" constant="30" id="yG1-Bz-a3f"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstItem="LYQ-sV-YNC" firstAttribute="leading" secondItem="8zL-Ju-Mvh" secondAttribute="leading" constant="20" id="7yb-A7-44G"/>
+                                    <constraint firstItem="LYQ-sV-YNC" firstAttribute="leading" secondItem="Xs5-M0-ESi" secondAttribute="trailing" constant="10" id="7yb-A7-44G"/>
                                     <constraint firstItem="lEs-4P-uhP" firstAttribute="top" secondItem="blg-u8-Muc" secondAttribute="bottom" constant="20" id="AUJ-lL-HPP"/>
                                     <constraint firstItem="TxX-6t-FXi" firstAttribute="top" secondItem="lEs-4P-uhP" secondAttribute="bottom" constant="20" id="D9z-Sq-2Zm"/>
+                                    <constraint firstItem="DEl-gQ-KV3" firstAttribute="centerY" secondItem="blg-u8-Muc" secondAttribute="centerY" id="DCP-FH-4UH"/>
+                                    <constraint firstItem="Z8C-gC-Dz3" firstAttribute="centerY" secondItem="TxX-6t-FXi" secondAttribute="centerY" id="DPm-c2-Uww"/>
+                                    <constraint firstItem="Xs5-M0-ESi" firstAttribute="leading" secondItem="8zL-Ju-Mvh" secondAttribute="leading" constant="10" id="MKh-NB-6Fl"/>
                                     <constraint firstItem="CtJ-lY-hjC" firstAttribute="centerX" secondItem="8zL-Ju-Mvh" secondAttribute="centerX" id="Ob3-3B-wA4"/>
+                                    <constraint firstItem="DEl-gQ-KV3" firstAttribute="leading" secondItem="8zL-Ju-Mvh" secondAttribute="leading" constant="10" id="VO5-yA-Mny"/>
                                     <constraint firstItem="LYQ-sV-YNC" firstAttribute="top" secondItem="TxX-6t-FXi" secondAttribute="bottom" constant="20" id="WSh-Ic-zzt"/>
-                                    <constraint firstItem="lEs-4P-uhP" firstAttribute="leading" secondItem="8zL-Ju-Mvh" secondAttribute="leading" constant="20" id="hqK-fU-yQ2"/>
-                                    <constraint firstItem="TxX-6t-FXi" firstAttribute="leading" secondItem="8zL-Ju-Mvh" secondAttribute="leading" constant="20" id="jHe-Zu-2BA"/>
-                                    <constraint firstItem="blg-u8-Muc" firstAttribute="leading" secondItem="8zL-Ju-Mvh" secondAttribute="leading" constant="20" id="mm3-qf-vmC"/>
+                                    <constraint firstItem="CR5-UI-HPV" firstAttribute="centerY" secondItem="lEs-4P-uhP" secondAttribute="centerY" id="fb5-wb-M3m"/>
+                                    <constraint firstItem="CR5-UI-HPV" firstAttribute="leading" secondItem="8zL-Ju-Mvh" secondAttribute="leading" constant="10" id="fg6-qe-fRe"/>
+                                    <constraint firstItem="lEs-4P-uhP" firstAttribute="leading" secondItem="CR5-UI-HPV" secondAttribute="trailing" constant="10" id="hqK-fU-yQ2"/>
+                                    <constraint firstItem="TxX-6t-FXi" firstAttribute="leading" secondItem="Z8C-gC-Dz3" secondAttribute="trailing" constant="10" id="jHe-Zu-2BA"/>
+                                    <constraint firstItem="Z8C-gC-Dz3" firstAttribute="leading" secondItem="8zL-Ju-Mvh" secondAttribute="leading" constant="10" id="lKF-Eg-Bgx"/>
+                                    <constraint firstItem="blg-u8-Muc" firstAttribute="leading" secondItem="DEl-gQ-KV3" secondAttribute="trailing" constant="10" id="mm3-qf-vmC"/>
                                     <constraint firstItem="CtJ-lY-hjC" firstAttribute="top" secondItem="O0o-XC-sKP" secondAttribute="bottom" constant="10" id="nWA-kF-Mbb"/>
                                     <constraint firstItem="O0o-XC-sKP" firstAttribute="centerX" secondItem="8zL-Ju-Mvh" secondAttribute="centerX" id="ppm-l9-nuK"/>
                                     <constraint firstItem="O0o-XC-sKP" firstAttribute="top" secondItem="8zL-Ju-Mvh" secondAttribute="top" constant="5" id="sxm-SB-Wsl"/>
                                     <constraint firstItem="blg-u8-Muc" firstAttribute="top" secondItem="CtJ-lY-hjC" secondAttribute="bottom" constant="10" id="vRt-0W-vzK"/>
+                                    <constraint firstItem="Xs5-M0-ESi" firstAttribute="centerY" secondItem="LYQ-sV-YNC" secondAttribute="centerY" id="zgj-Es-oaN"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="bQ5-uC-r6t">
@@ -189,12 +225,16 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PeQ-vb-ky9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-22" y="81"/>
+            <point key="canvasLocation" x="-23.188405797101453" y="80.357142857142847"/>
         </scene>
     </scenes>
     <resources>
         <image name="arrow.left" catalog="system" width="128" height="98"/>
         <image name="arrowshape.turn.up.right" catalog="system" width="128" height="106"/>
         <image name="camera" catalog="system" width="128" height="96"/>
+        <image name="clock" catalog="system" width="128" height="121"/>
+        <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
+        <image name="person.crop.circle" catalog="system" width="128" height="121"/>
+        <image name="speedometer" catalog="system" width="128" height="121"/>
     </resources>
 </document>

@@ -18,6 +18,9 @@ class CardView: UIView {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var cardView: UIView!
     
+    @IBOutlet weak var screenShotButton: UIButton!
+    @IBOutlet weak var shareButton: UIButton!
+    
     
     //========================================
     // MARK: - LifeCycle
@@ -75,4 +78,27 @@ class CardView: UIView {
         let color = #colorLiteral(red: 0.157, green: 0.166, blue: 0.393, alpha: 0.2)
         Utils.dropViewShadow(view: self.cardView, shadowColor: color, shadowRadius: 14, shadowOffset: CGSize(width: 0, height: 14))
     }
+    
+    @IBAction func screenshotButtonPressed(_ sender: Any) {
+        self.takeScreenshot()
+    }
+    
+    @IBAction func shareButtonPressed(_ sender: Any) {
+     
+    }
+    
+    func takeScreenshot(_ shouldSave: Bool = true) {
+        var screenshotImage :UIImage?
+        let layer = UIApplication.shared.windows[0].layer
+        let scale = UIScreen.main.scale
+        UIGraphicsBeginImageContextWithOptions(layer.frame.size, false, scale);
+        guard let context = UIGraphicsGetCurrentContext() else { return }
+        layer.render(in:context)
+        screenshotImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        if let image = screenshotImage, shouldSave {
+            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        }
+    }
+
 }
