@@ -64,9 +64,9 @@
         "week": 3,
         "training": 1,
         "sessionId": "1_3_1",
-        "descreption": "Intervalse of 1.5 minutes walk, and 12 minutes run",
+        "descreption": "Intervalse of 2 minutes walk, and 12 minutes run",
         "timeForRun": 12,
-        "timeForWalk": 1.5,
+        "timeForWalk": 2,
         "intervals": 2
     },
     {

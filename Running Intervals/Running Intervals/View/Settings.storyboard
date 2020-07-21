@@ -146,12 +146,22 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kht-Qp-nfX">
+                                        <rect key="frame" x="0.0" y="69" width="414" height="1"/>
+                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="9sP-Wc-cyL"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="Iiq-Ha-wmv" firstAttribute="centerX" secondItem="oSx-CY-XIs" secondAttribute="centerX" id="5ll-Xd-xZW"/>
+                                    <constraint firstItem="Kht-Qp-nfX" firstAttribute="leading" secondItem="oSx-CY-XIs" secondAttribute="leading" id="6op-9e-G7i"/>
+                                    <constraint firstAttribute="bottom" secondItem="Kht-Qp-nfX" secondAttribute="bottom" id="KtY-Cb-uHb"/>
                                     <constraint firstItem="dfL-zO-00f" firstAttribute="centerY" secondItem="oSx-CY-XIs" secondAttribute="centerY" id="NZF-OI-OWu"/>
                                     <constraint firstItem="Iiq-Ha-wmv" firstAttribute="centerY" secondItem="oSx-CY-XIs" secondAttribute="centerY" id="UG1-IR-wya"/>
+                                    <constraint firstAttribute="trailing" secondItem="Kht-Qp-nfX" secondAttribute="trailing" id="dqM-QX-vOo"/>
                                     <constraint firstItem="dfL-zO-00f" firstAttribute="leading" secondItem="oSx-CY-XIs" secondAttribute="leading" constant="20" id="eHS-eg-4ZH"/>
                                     <constraint firstAttribute="height" constant="70" id="thE-Uu-Fwa"/>
                                 </constraints>
@@ -446,6 +456,13 @@
                                             <action selector="backButtonPressed:" destination="V2n-4S-zVI" eventType="touchUpInside" id="WEY-IP-fCT"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wGi-Tx-jm5">
+                                        <rect key="frame" x="0.0" y="69" width="414" height="1"/>
+                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="GaJ-k3-pnw"/>
+                                        </constraints>
+                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Yore Goal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQw-Ma-g73">
                                         <rect key="frame" x="111.5" y="20" width="191" height="30"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
@@ -455,11 +472,14 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
+                                    <constraint firstItem="wGi-Tx-jm5" firstAttribute="leading" secondItem="ruA-Tx-wFV" secondAttribute="leading" id="ES5-zF-ypg"/>
+                                    <constraint firstAttribute="trailing" secondItem="wGi-Tx-jm5" secondAttribute="trailing" id="P3u-mR-Nex"/>
                                     <constraint firstItem="FQw-Ma-g73" firstAttribute="centerY" secondItem="ruA-Tx-wFV" secondAttribute="centerY" id="XWO-8t-tMC"/>
                                     <constraint firstItem="dye-XI-6j3" firstAttribute="centerY" secondItem="ruA-Tx-wFV" secondAttribute="centerY" id="owZ-dN-qm3"/>
                                     <constraint firstAttribute="height" constant="70" id="sy7-eh-UJp"/>
                                     <constraint firstItem="FQw-Ma-g73" firstAttribute="centerX" secondItem="ruA-Tx-wFV" secondAttribute="centerX" id="y9f-9x-ann"/>
                                     <constraint firstItem="dye-XI-6j3" firstAttribute="leading" secondItem="ruA-Tx-wFV" secondAttribute="leading" constant="20" id="yqS-Od-5Kv"/>
+                                    <constraint firstAttribute="bottom" secondItem="wGi-Tx-jm5" secondAttribute="bottom" id="z6d-hw-vam"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EQn-X2-hle">

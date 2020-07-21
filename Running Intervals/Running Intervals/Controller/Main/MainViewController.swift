@@ -20,7 +20,7 @@ class MainViewController: UIViewController, AVAudioPlayerDelegate {
     
     @IBOutlet weak var selectMusicButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!
-    @IBOutlet weak var statisticsButton: UIButton!
+    @IBOutlet weak var historyButton: UIButton!
     
     let allMediaItems = MPMediaQuery.songs().items
     
@@ -62,9 +62,9 @@ class MainViewController: UIViewController, AVAudioPlayerDelegate {
         self.settingsButton.layer.borderWidth = 2
         self.settingsButton.layer.borderColor = #colorLiteral(red: 0, green: 0.3012604127, blue: 0.6312049279, alpha: 1)
         
-        self.statisticsButton.layer.cornerRadius = self.statisticsButton.bounds.height / 2
-        self.statisticsButton.layer.borderWidth = 2
-        self.statisticsButton.layer.borderColor = #colorLiteral(red: 0, green: 0.3012604127, blue: 0.6312049279, alpha: 1)
+        self.historyButton.layer.cornerRadius = self.historyButton.bounds.height / 2
+        self.historyButton.layer.borderWidth = 2
+        self.historyButton.layer.borderColor = #colorLiteral(red: 0, green: 0.3012604127, blue: 0.6312049279, alpha: 1)
     }
 
     func setText() {
@@ -75,7 +75,7 @@ class MainViewController: UIViewController, AVAudioPlayerDelegate {
         self.runByTimeButton.setTitle(Strings.runByTime, for: .normal)
         self.runByDistanceButton.setTitle(Strings.runByDistance, for: .normal)
         self.buildProgramButton.setTitle(Strings.buildProgram, for: .normal)
-        self.statisticsButton.setTitle(Strings.statistics, for: .normal)
+        self.historyButton.setTitle(Strings.history, for: .normal)
     }
     
     @IBAction func runByTimeButtonPressed(_ sender: Any) {
@@ -83,7 +83,6 @@ class MainViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     @IBAction func runByDistanceButtonPressed(_ sender: Any) {
-//        self.performSegue(withIdentifier: "presentRunByDistanse", sender: self)
         self.performSegue(withIdentifier: "presentRunByTime", sender: false)
     }
     
@@ -99,8 +98,8 @@ class MainViewController: UIViewController, AVAudioPlayerDelegate {
         self.performSegue(withIdentifier: "presentSettings", sender: self)
     }
     
-    @IBAction func statisticsButtonPressed(_ sender: Any) {
-        
+    @IBAction func historyButtonPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "presentHistory", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

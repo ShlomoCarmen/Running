@@ -34,6 +34,10 @@ class Strings {
         return NSLocalizedString("statistics", comment: "")
     }
     
+    class var history: String {
+        return NSLocalizedString("history", comment: "")
+    }
+    
     class var insertTimeForRunning: String {
         return NSLocalizedString("insertTimeForRunning", comment: "")
     }

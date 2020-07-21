@@ -12,6 +12,7 @@
 "buildProgram" = "בנה תוכנית אימון";
 "settings" = "הגדרות";
 "statistics" = "סטטיסטיקה";
+"history" = "היסטוריה";
 
 "insertTimeForRunning" = "הכנס זמן לריצה:";
 "insertTimeForWalking" = "הכנס זמן להליכה:";

@@ -7,13 +7,21 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--History-->
+        <scene sceneID="YLY-yl-60o">
+            <objects>
+                <viewControllerPlaceholder storyboardName="History" id="DIy-sL-3nf" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wyd-Zi-FFI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1764" y="512"/>
+        </scene>
         <!--Coach-->
         <scene sceneID="hHD-pc-gcp">
             <objects>
                 <viewControllerPlaceholder storyboardName="Coach" id="01p-ho-6uc" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DBB-KO-LWn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2354" y="518"/>
+            <point key="canvasLocation" x="-2344" y="512"/>
         </scene>
         <!--Statistics-->
         <scene sceneID="fLH-z1-6RJ">
@@ -130,7 +138,7 @@
                                     <color key="titleColor" red="0.0" green="0.30126041269999998" blue="0.63120492790000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="statisticsButtonPressed:" destination="2Ve-t8-ZJP" eventType="touchUpInside" id="5KW-t3-M0W"/>
+                                    <action selector="historyButtonPressed:" destination="2Ve-t8-ZJP" eventType="touchUpInside" id="5KW-t3-M0W"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -165,16 +173,17 @@
                     <connections>
                         <outlet property="appImage" destination="46H-8U-Xhb" id="oaS-ON-9e0"/>
                         <outlet property="buildProgramButton" destination="Onj-7P-fj5" id="0Yv-pM-UoU"/>
+                        <outlet property="historyButton" destination="0zB-WX-Unf" id="GU9-l6-eww"/>
                         <outlet property="runByDistanceButton" destination="tzk-Io-saY" id="T9r-WK-eDo"/>
                         <outlet property="runByTimeButton" destination="LhR-vy-fZn" id="W89-hp-kjY"/>
                         <outlet property="selectMusicButton" destination="V89-e7-pAu" id="mHf-aI-gbF"/>
                         <outlet property="settingsButton" destination="zQK-bW-jrd" id="Muh-Qn-VdU"/>
-                        <outlet property="statisticsButton" destination="0zB-WX-Unf" id="GU9-l6-eww"/>
                         <outlet property="titelLabel" destination="WDj-K9-83u" id="WBb-pl-925"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="presentRunByTime" id="pCy-W6-R6Q"/>
                         <segue destination="zFr-66-ZLm" kind="presentation" identifier="presentSelectMusic" modalPresentationStyle="fullScreen" id="I2a-jC-MIR"/>
                         <segue destination="01p-ho-6uc" kind="presentation" identifier="presentTraining" modalPresentationStyle="fullScreen" id="d4s-tq-nYd"/>
                         <segue destination="TND-YS-GpK" kind="presentation" identifier="presentSettings" modalPresentationStyle="fullScreen" id="Lds-UO-RtP"/>
+                        <segue destination="DIy-sL-3nf" kind="presentation" identifier="presentHistory" modalPresentationStyle="fullScreen" id="5xk-tB-K3J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iAZ-wa-Dhs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -547,6 +556,13 @@
                                             <action selector="doneButtonPressed:" destination="zFr-66-ZLm" eventType="touchUpInside" id="nQM-Rn-KcM"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hDX-Xh-tzV">
+                                        <rect key="frame" x="0.0" y="69" width="414" height="1"/>
+                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="d6G-Vw-Ags"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
@@ -556,7 +572,10 @@
                                     <constraint firstItem="44q-rL-749" firstAttribute="leading" secondItem="oa4-1I-XmM" secondAttribute="leading" constant="20" id="KSu-LQ-BGg"/>
                                     <constraint firstItem="jhg-Zl-26t" firstAttribute="centerY" secondItem="oa4-1I-XmM" secondAttribute="centerY" id="Whn-Ec-kM0"/>
                                     <constraint firstItem="44q-rL-749" firstAttribute="centerY" secondItem="oa4-1I-XmM" secondAttribute="centerY" id="bOy-Io-FJ2"/>
+                                    <constraint firstItem="hDX-Xh-tzV" firstAttribute="leading" secondItem="oa4-1I-XmM" secondAttribute="leading" id="iVw-H5-z8m"/>
+                                    <constraint firstAttribute="bottom" secondItem="hDX-Xh-tzV" secondAttribute="bottom" id="mcB-Ds-WKc"/>
                                     <constraint firstItem="HDu-p3-hgj" firstAttribute="centerX" secondItem="oa4-1I-XmM" secondAttribute="centerX" id="pcx-6x-XQj"/>
+                                    <constraint firstAttribute="trailing" secondItem="hDX-Xh-tzV" secondAttribute="trailing" id="qPm-Rp-xjQ"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Eww-fZ-xgN">
@@ -686,12 +705,22 @@
                                             <action selector="doneButtonPressed:" destination="Wvn-4h-Thq" eventType="touchUpInside" id="xpc-ia-7Ja"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ul-RG-oHN">
+                                        <rect key="frame" x="0.0" y="69" width="414" height="1"/>
+                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="09j-Eo-zI8"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="7ul-RG-oHN" secondAttribute="trailing" id="3V3-xR-ahQ"/>
                                     <constraint firstAttribute="trailing" secondItem="un2-mU-bW0" secondAttribute="trailing" constant="20" id="FlN-qw-yi2"/>
                                     <constraint firstItem="un2-mU-bW0" firstAttribute="centerY" secondItem="5vt-ST-SFI" secondAttribute="centerY" id="LRc-25-HSO"/>
+                                    <constraint firstAttribute="bottom" secondItem="7ul-RG-oHN" secondAttribute="bottom" id="Oaf-0V-iSi"/>
                                     <constraint firstItem="bDV-Gb-8fo" firstAttribute="leading" secondItem="5vt-ST-SFI" secondAttribute="leading" constant="20" id="RkB-d1-2MV"/>
+                                    <constraint firstItem="7ul-RG-oHN" firstAttribute="leading" secondItem="5vt-ST-SFI" secondAttribute="leading" id="cXM-q0-y4K"/>
                                     <constraint firstItem="CQh-b5-JVk" firstAttribute="centerX" secondItem="5vt-ST-SFI" secondAttribute="centerX" id="fVR-x2-BRW"/>
                                     <constraint firstItem="bDV-Gb-8fo" firstAttribute="centerY" secondItem="5vt-ST-SFI" secondAttribute="centerY" id="mN1-dO-qWT"/>
                                     <constraint firstItem="CQh-b5-JVk" firstAttribute="centerY" secondItem="5vt-ST-SFI" secondAttribute="centerY" id="prk-57-u4N"/>

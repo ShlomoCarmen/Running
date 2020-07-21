@@ -29,6 +29,13 @@
                                             <action selector="backButtonPressed:" destination="cMC-S6-Tvy" eventType="touchUpInside" id="YJ7-Uv-6SS"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hjp-F6-8d3">
+                                        <rect key="frame" x="0.0" y="69" width="414" height="1"/>
+                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="cxt-x2-Glv"/>
+                                        </constraints>
+                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Difficulty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hv2-Dd-Yqj">
                                         <rect key="frame" x="153.5" y="20" width="107.5" height="30"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
@@ -45,10 +52,13 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="hjp-F6-8d3" secondAttribute="trailing" id="1va-4T-9k7"/>
                                     <constraint firstAttribute="bottom" secondItem="c6j-aD-IQG" secondAttribute="bottom" id="2Kv-CI-xsD"/>
                                     <constraint firstAttribute="height" constant="70" id="7x5-DT-UfT"/>
                                     <constraint firstItem="c6j-aD-IQG" firstAttribute="top" secondItem="HJF-11-HOE" secondAttribute="top" id="93i-Zu-NWf"/>
+                                    <constraint firstItem="hjp-F6-8d3" firstAttribute="leading" secondItem="HJF-11-HOE" secondAttribute="leading" id="SSZ-6M-J1a"/>
                                     <constraint firstItem="AsE-DQ-KPP" firstAttribute="leading" secondItem="HJF-11-HOE" secondAttribute="leading" constant="20" id="UDZ-lN-02i"/>
+                                    <constraint firstAttribute="bottom" secondItem="hjp-F6-8d3" secondAttribute="bottom" id="Y06-JH-UX9"/>
                                     <constraint firstAttribute="trailing" secondItem="c6j-aD-IQG" secondAttribute="trailing" constant="20" id="bSt-51-y7r"/>
                                     <constraint firstItem="Hv2-Dd-Yqj" firstAttribute="centerX" secondItem="HJF-11-HOE" secondAttribute="centerX" id="etL-WB-t0b"/>
                                     <constraint firstItem="Hv2-Dd-Yqj" firstAttribute="centerY" secondItem="HJF-11-HOE" secondAttribute="centerY" id="mDM-Xe-xfa"/>
@@ -293,10 +303,20 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HhL-bO-RtO">
+                                        <rect key="frame" x="0.0" y="69" width="414" height="1"/>
+                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="xvj-xj-tFC"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
+                                    <constraint firstItem="HhL-bO-RtO" firstAttribute="leading" secondItem="OjE-19-UN0" secondAttribute="leading" id="4Hr-jx-dpt"/>
+                                    <constraint firstAttribute="bottom" secondItem="HhL-bO-RtO" secondAttribute="bottom" id="LFZ-xr-hHI"/>
                                     <constraint firstItem="qCK-ij-Rkb" firstAttribute="centerY" secondItem="OjE-19-UN0" secondAttribute="centerY" id="RyW-fQ-I5S"/>
+                                    <constraint firstAttribute="trailing" secondItem="HhL-bO-RtO" secondAttribute="trailing" id="WlP-zx-o2v"/>
                                     <constraint firstItem="qCK-ij-Rkb" firstAttribute="leading" secondItem="OjE-19-UN0" secondAttribute="leading" constant="20" id="f1r-6w-xXE"/>
                                     <constraint firstItem="U8e-2W-IRF" firstAttribute="centerX" secondItem="OjE-19-UN0" secondAttribute="centerX" id="g4a-Qc-vhj"/>
                                     <constraint firstAttribute="height" constant="70" id="nNH-cN-2zv"/>

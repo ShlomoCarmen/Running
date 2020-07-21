@@ -12,6 +12,7 @@
 "buildProgram" = "Build a Training Program";
 "settings" = "Settings";
 "statistics" = "Statistics";
+"history" = "History";
 
 "insertTimeForRunning" = "Insert Time For Running:";
 "insertTimeForWalking" = "Insert Time For Walking:";
