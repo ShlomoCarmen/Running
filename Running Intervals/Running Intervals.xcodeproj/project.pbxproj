@@ -14,6 +14,9 @@
 		83239E27247E6E1800C63760 /* UserDefaultsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83239E26247E6E1800C63760 /* UserDefaultsProvider.swift */; };
 		83239E2C247EB95900C63760 /* MySong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83239E2B247EB95900C63760 /* MySong.swift */; };
 		83239E2F2483794600C63760 /* MusicRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83239E2E2483794600C63760 /* MusicRepository.swift */; };
+		83310AAE24C6146F0091F0CF /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83310AAD24C6146F0091F0CF /* History.storyboard */; };
+		83310AB024C614940091F0CF /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83310AAF24C614940091F0CF /* HistoryViewController.swift */; };
+		83310AB324C624D70091F0CF /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83310AB224C624D70091F0CF /* HistoryCell.swift */; };
 		8357ADE624B1AA0600F8A635 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8357ADE524B1AA0600F8A635 /* Utils.swift */; };
 		8357ADE924B1B61C00F8A635 /* SelectWeekCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8357ADE824B1B61C00F8A635 /* SelectWeekCell.swift */; };
 		8398792E24B5ED5800A99B37 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8398792D24B5ED5800A99B37 /* CoreDataManager.swift */; };
@@ -66,6 +69,9 @@
 		83239E26247E6E1800C63760 /* UserDefaultsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProvider.swift; sourceTree = "<group>"; };
 		83239E2B247EB95900C63760 /* MySong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySong.swift; sourceTree = "<group>"; };
 		83239E2E2483794600C63760 /* MusicRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicRepository.swift; sourceTree = "<group>"; };
+		83310AAD24C6146F0091F0CF /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
+		83310AAF24C614940091F0CF /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		83310AB224C624D70091F0CF /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 		8357ADE524B1AA0600F8A635 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		8357ADE824B1B61C00F8A635 /* SelectWeekCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectWeekCell.swift; sourceTree = "<group>"; };
 		8398792D24B5ED5800A99B37 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -192,6 +198,14 @@
 			path = Repositories;
 			sourceTree = "<group>";
 		};
+		83310AB124C624B60091F0CF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				83310AB224C624D70091F0CF /* HistoryCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		8357ADE724B1B5CE00F8A635 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,7 +236,9 @@
 		8398AF6724B598B3001420AC /* Stsatistics */ = {
 			isa = PBXGroup;
 			children = (
+				83310AB124C624B60091F0CF /* Cells */,
 				8398AF6824B598D0001420AC /* LastRunViewController.swift */,
+				83310AAF24C614940091F0CF /* HistoryViewController.swift */,
 			);
 			path = Stsatistics;
 			sourceTree = "<group>";
@@ -304,6 +320,7 @@
 				83CCA8792487C1B900B9B0E8 /* Coach.storyboard */,
 				8398AF6524B5987F001420AC /* Statistics.storyboard */,
 				8398793624B73EDD00A99B37 /* Settings.storyboard */,
+				83310AAD24C6146F0091F0CF /* History.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -439,6 +456,7 @@
 				83B3BC7F247A57FF00057A52 /* slow-1.mp3 in Resources */,
 				83B3BC70247A562500057A52 /* Main.storyboard in Resources */,
 				83B3BC87247AB7A100057A52 /* slow-2.mp3 in Resources */,
+				83310AAE24C6146F0091F0CF /* History.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +468,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83239E2C247EB95900C63760 /* MySong.swift in Sources */,
+				83310AB024C614940091F0CF /* HistoryViewController.swift in Sources */,
 				8398793324B5FB7A00A99B37 /* FormatDisplay.swift in Sources */,
 				830D7F632484CF4200467227 /* Strings.swift in Sources */,
 				83FCFB1F24B1EE5800B5AFFD /* Training.swift in Sources */,
@@ -478,6 +497,7 @@
 				83239E27247E6E1800C63760 /* UserDefaultsProvider.swift in Sources */,
 				832051DE24BDC34D0076EBD3 /* SelectTrainingViewController.swift in Sources */,
 				83FE419324ACDC820028744F /* User.swift in Sources */,
+				83310AB324C624D70091F0CF /* HistoryCell.swift in Sources */,
 				8357ADE924B1B61C00F8A635 /* SelectWeekCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
