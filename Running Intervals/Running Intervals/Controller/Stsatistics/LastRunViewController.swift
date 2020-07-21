@@ -102,16 +102,8 @@ class LastRunViewController: UIViewController {
         self.distanceLabel.text = "Total Dictance: \(Int(distance.value)) Meter"
         self.speedLabel.text = "Total Duration: \(formattedTime)"
         self.averageTimeLabel.text = "Average Speed: \(formattedPace)"
-        self.caloriesLabel.text = "Calories: \(self.getCalories(duration: Double(seconds) / 60.0))"
+        self.caloriesLabel.text = "Calories: \(run.calories ?? "No Info")"
         
-    }
-    
-    func getCalories(duration: Double) -> String {
-        guard let user = self.user else { return "No Info"}
-        let met = Double(duration) * 6.0 * (3.5 * Double(user.weight))
-        let calories = (met / 200)
-        let displayCalories = String(format: "%.2f", calories)
-        return displayCalories
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {

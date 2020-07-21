@@ -40,7 +40,7 @@ class CoachRunViewController: UIViewController {
     var currentTraining: Training?
     var goalType: GoalType?
     var trainingNumber: Int?
-    
+    var user: User?
     var runningMediaItems: [MPMediaItem] = []
     var walkingMediaItems: [MPMediaItem] = []
     
@@ -58,6 +58,7 @@ class CoachRunViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.user = UserDefaultsProvider.shared.user
         self.training = TrainingRepository.shared.getAllTraining()
         self.getCurrentTraining()
         self.setText()
@@ -257,6 +258,7 @@ class CoachRunViewController: UIViewController {
         run.duration = Int16(seconds)
         run.timestamp = Date()
         run.sessionId = training.sessionId
+        run.calories = self.getCalories(duration: Double(seconds) / 60)
         
         for location in locationList {
             let locationObject = Location(context: CoreDataManager.context)
@@ -272,6 +274,13 @@ class CoachRunViewController: UIViewController {
 
     }
     
+    func getCalories(duration: Double) -> String {
+        guard let user = self.user else { return "No Info"}
+        let met = Double(duration) * 6.0 * (3.5 * Double(user.weight))
+        let calories = (met / 200)
+        let displayCalories = String(format: "%.2f", calories)
+        return displayCalories
+    }
     
     // MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
