@@ -72,4 +72,16 @@ class Utils {
             return nil
         }
     }
+    
+    // MARK: - UI
+    
+    class func dropViewShadow(view: UIView, shadowColor: UIColor, shadowRadius: CGFloat, shadowOffset: CGSize) {
+        view.layer.shadowColor = shadowColor.cgColor
+        view.layer.shadowOffset = shadowOffset
+        view.layer.shadowOpacity = 1.0
+        view.layer.shadowRadius = shadowRadius
+        view.layer.masksToBounds = false
+        view.translatesAutoresizingMaskIntoConstraints = false
+
+    }
 }
