@@ -46,9 +46,12 @@ class HistoryViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "presentStatistics" {
-            let statisticsVC = segue.destination as! LastRunViewController
-            statisticsVC.run = sender as? Run
+        if segue.identifier == "showCards" {
+            let cardVC = segue.destination as! HistoryCardsViewController
+            if let currentRun = sender as? Int {
+                cardVC.currentRun = currentRun
+            }
+            cardVC.allRuns = self.allRuns
         }
     }
 }
@@ -77,8 +80,7 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let run = self.allRuns[indexPath.row]
-        self.performSegue(withIdentifier: "presentStatistics", sender: run)
+        self.performSegue(withIdentifier: "showCards", sender: indexPath.row)
     }
     
     
