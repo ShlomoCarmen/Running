@@ -52,6 +52,7 @@
 "back" = "חזור";
 "save" = "שמור";
 "cancel"= "ביטול";
+"repit" = "חזור שנית";
 
 "personalInformaition" = "נתונים אישיים";
 "descreptionTitle" = "הכנס/י מדדים פיזיים על מנת שנוכל ליצור לך את התוכנית הטובה ביותר בשבילך";
@@ -98,3 +99,11 @@
 "hardGoalTitle" = "מ 10 עד 21 ק״מ";
 "hardGoalDescription" = "תוכנית אימון של 18 שבועות";
 "select" = "בחר";
+
+"selectTrainingTitle" = "בחר אימון";
+"trainingNumber" = "אימון מספר";
+"totalDistance" = "סה״כ מרחק";
+"totalDuration" = "סה״כ זמן";
+"avrerageSpeed" = "מהירות ממוצעת";
+"calories" = "קלוריות";
+"trainingResults" = "תוצאות האימון";

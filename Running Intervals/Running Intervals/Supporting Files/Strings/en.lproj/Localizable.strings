@@ -50,7 +50,8 @@
 
 "back" = "Back";
 "save" = "Save";
-"cancel"= "Cancel";
+"cancel" = "Cancel";
+"repit" = "Repit";
 
 "personalInformaition" = "Personal Informaition";
 "descreptionTitle" = "Enter physical metrics so we can create the best plan for you";
@@ -97,3 +98,11 @@
 "hardGoalTitle" = "From 10 to 21 km";
 "hardGoalDescription" = "18 weeks plan";
 "select" = "Select";
+"selectTrainingTitle" = "Select Training";
+"trainingNumber" = "Training #";
+
+"totalDistance" = "Total Distance";
+"totalDuration" = "Total Duration";
+"avrerageSpeed" = "Avrerage Speed";
+"calories" = "calories";
+"trainingResults" = "Training Results";

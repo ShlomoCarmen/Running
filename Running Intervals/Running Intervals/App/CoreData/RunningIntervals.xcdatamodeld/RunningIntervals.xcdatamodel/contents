@@ -19,8 +19,8 @@
         <attribute name="programId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <elements>
-        <element name="Location" positionX="-54" positionY="18" width="128" height="103"/>
+        <element name="Location" positionX="298.06640625" positionY="4.33203125" width="128" height="103"/>
         <element name="Run" positionX="-63" positionY="-18" width="128" height="133"/>
-        <element name="TrainingProgram" positionX="-54" positionY="45" width="128" height="73"/>
+        <element name="TrainingProgram" positionX="93.26171875" positionY="-180.8671875" width="128" height="73"/>
     </elements>
 </model>

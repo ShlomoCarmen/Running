@@ -72,7 +72,7 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.dateLabel.text = formattedDate
         cell.timeLabel.text = formattedTime
-        cell.distanceLabel.text = "\(Int(distance.value))"
+        cell.distanceLabel.text = "\(Int(distance.value)) ֿ\(Strings.meter)"
         cell.speedLabel.text = formattedPace
         cell.caloriesLabel.text = run.calories
         

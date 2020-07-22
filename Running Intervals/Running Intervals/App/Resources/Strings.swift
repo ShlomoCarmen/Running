@@ -158,6 +158,9 @@ class Strings {
         return NSLocalizedString("cancel", comment: "")
     }
     
+    class var repit: String {
+        return NSLocalizedString("repit", comment: "")
+    }
     
     class var personalInformaition: String {
         return NSLocalizedString("personalInformaition", comment: "")
@@ -325,6 +328,38 @@ class Strings {
     
     class var select: String {
         return NSLocalizedString("select", comment: "")
+    }
+    
+    class var selectTrainingTitle: String {
+        return NSLocalizedString("selectTrainingTitle", comment: "")
+    }
+    
+    class var trainingNumber: String {
+       return NSLocalizedString("trainingNumber", comment: "")
+    }
+    
+    class var informationTitleLabel: String {
+       return NSLocalizedString("informationTitleLabel", comment: "")
+    }
+      
+    class var totalDistance: String {
+        return NSLocalizedString("totalDistance", comment: "")
+    }
+    
+    class var totalDuration: String {
+        return NSLocalizedString("totalDuration", comment: "")
+    }
+    
+    class var avrerageSpeed: String {
+        return NSLocalizedString("avrerageSpeed", comment: "")
+    }
+    
+    class var calories: String {
+        return NSLocalizedString("calories", comment: "")
+    }
+    
+    class var trainingResults: String {
+        return NSLocalizedString("trainingResults", comment: "")
     }
     
 }

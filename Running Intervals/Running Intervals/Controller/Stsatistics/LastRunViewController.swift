@@ -16,7 +16,6 @@ class LastRunViewController: UIViewController {
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var informationView: UIView!
-    @IBOutlet weak var informationTitleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var speedLabel: UILabel!
@@ -97,13 +96,15 @@ class LastRunViewController: UIViewController {
         let formattedPace = FormatDisplay.pace(distance: distance, seconds: seconds, outputUnit: UnitSpeed.kilometersPerHour)
         let formattedDate = FormatDisplay.date(run.timestamp)
         
-        self.informationTitleLabel.text = "Your Last Run"
+        self.headerLabel.text = Strings.trainingResults
         self.dateLabel.text = formattedDate
-        self.distanceLabel.text = "Total Dictance: \(Int(distance.value)) Meter"
-        self.speedLabel.text = "Total Duration: \(formattedTime)"
-        self.averageTimeLabel.text = "Average Speed: \(formattedPace)"
-        self.caloriesLabel.text = "Calories: \(run.calories ?? "No Info")"
+        self.distanceLabel.text = "\(Strings.totalDistance): \(Int(distance.value)) \(Strings.meter)"
+        self.speedLabel.text = "\(Strings.totalDuration): \(formattedTime)"
+        self.averageTimeLabel.text = "\(Strings.avrerageSpeed): \(formattedPace)"
+        self.caloriesLabel.text = "\(Strings.calories): \(run.calories ?? "---")"
         
+        self.cancelButton.setTitle(Strings.cancel, for: .normal)
+        self.repitButton.setTitle(Strings.repit, for: .normal)
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {

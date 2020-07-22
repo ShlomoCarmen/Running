@@ -15,8 +15,6 @@ class HistoryCardsViewController: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var backButton: UIButton!
-    @IBOutlet weak var rightButton: UIButton!
-    @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var cardView: iCarousel!
     
     var allRuns: [Run] = []
@@ -26,6 +24,7 @@ class HistoryCardsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setCarousel()
+        self.setText()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,6 +36,10 @@ class HistoryCardsViewController: UIViewController {
         self.cardView.reloadData()
         self.view.layoutIfNeeded()
         self.cardView.currentItemIndex = self.currentRun
+    }
+    
+    func setText() {
+        self.backButton.setTitle(Strings.back, for: .normal)
     }
     
     func setCarousel() {
@@ -56,11 +59,11 @@ class HistoryCardsViewController: UIViewController {
         let formattedTime = FormatDisplay.time(seconds)
         let distance = Measurement(value: run.distance, unit: UnitLength.meters)
         let formattedPace = FormatDisplay.pace(distance: distance, seconds: seconds, outputUnit: UnitSpeed.kilometersPerHour)
-        
-        view.timeLabel.text = "Total Duration: \(formattedTime)"
-        view.distanceLabel.text = "Total Dictance: \(Int(distance.value)) Meter"
-        view.speedLabel.text = "Average Speed: \(formattedPace)"
-        view.caloriesLabel.text = "Calories: \(run.calories ?? "No Info")"
+         
+        view.timeLabel.text = "\(Strings.totalDuration): \(formattedTime)"
+        view.distanceLabel.text = "\(Strings.totalDistance): \(Int(distance.value)) \(Strings.meter)"
+        view.speedLabel.text = "\(Strings.avrerageSpeed): \(formattedPace)"
+        view.caloriesLabel.text = "\(Strings.calories): \(run.calories ?? "---")"
         view.setCornerRadius()
         
         self.views.append(view)
@@ -199,16 +202,6 @@ extension HistoryCardsViewController: iCarouselDataSource, iCarouselDelegate {
             let run = self.allRuns[carousel.currentItemIndex]
             let formattedDate = FormatDisplay.date(run.timestamp)
             self.titleLabel.text = formattedDate
-        }
-        if carousel.currentItemIndex > 0 {
-            self.leftButton.isHidden = false
-        } else {
-            self.leftButton.isHidden = true
-        }
-        if carousel.currentItemIndex == self.views.count - 1 {
-            self.rightButton.isHidden = true
-        } else {
-            self.rightButton.isHidden = false
         }
     }
 }

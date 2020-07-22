@@ -39,6 +39,10 @@ class SelectTrainingViewController: UIViewController {
     
     func setText() {
         self.backButton.setTitle(Strings.back, for: .normal)
+        self.headerLabel.text = Strings.selectTrainingTitle
+        self.firstButton.setTitle("\(Strings.trainingNumber) 1", for: .normal)
+        self.secondButton.setTitle("\(Strings.trainingNumber) 2", for: .normal)
+        self.thirdButton.setTitle("\(Strings.trainingNumber) 3", for: .normal)
     }
     
     func setCornerRadius() {
