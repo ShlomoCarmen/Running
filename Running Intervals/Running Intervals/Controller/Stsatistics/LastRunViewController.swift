@@ -10,6 +10,10 @@ import UIKit
 import MapKit
 import CoreData
 
+protocol LastRunDelegate {
+    func canclePressed()
+}
+
 class LastRunViewController: UIViewController {
 
     @IBOutlet weak var headerLabel: UILabel!
@@ -21,14 +25,13 @@ class LastRunViewController: UIViewController {
     @IBOutlet weak var speedLabel: UILabel!
     @IBOutlet weak var averageTimeLabel: UILabel!
     @IBOutlet weak var caloriesLabel: UILabel!
-    
-    @IBOutlet weak var screenshotButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var repitButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
 
     var run: Run?
     var user: User?
+    var delegate: LastRunDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,36 +114,32 @@ class LastRunViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func screenshotButtonPressed(_ sender: Any) {
-        self.takeScreenshot(true)
-    }
-    
     @IBAction func shareButtonPressed(_ sender: Any) {
-
+        self.shareResults()
     }
 
     @IBAction func repitButtonPressed(_ sender: Any) {
-        
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func cancelButtonPressed(_ sender: Any) {
-        
+        self.delegate?.canclePressed()
+        self.dismiss(animated: true, completion: nil)
     }
     
-    func takeScreenshot(_ shouldSave: Bool = true) {
-        var screenshotImage :UIImage?
-        let layer = UIApplication.shared.windows[0].layer
-        let scale = UIScreen.main.scale
-        UIGraphicsBeginImageContextWithOptions(layer.frame.size, false, scale);
-        guard let context = UIGraphicsGetCurrentContext() else { return }
-        layer.render(in:context)
-        screenshotImage = UIGraphicsGetImageFromCurrentImageContext()
+    func shareResults() {
+        
+        let bounds = UIScreen.main.bounds
+        UIGraphicsBeginImageContextWithOptions(bounds.size, true, 0.0)
+        self.view.drawHierarchy(in: bounds, afterScreenUpdates: false)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        if let image = screenshotImage, shouldSave {
-            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-        }
-    }
+        let activityViewController = UIActivityViewController(activityItems: [image!], applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        self.present(activityViewController, animated: true, completion: nil)
 
+    }
+    
 }
 
 extension LastRunViewController: MKMapViewDelegate {

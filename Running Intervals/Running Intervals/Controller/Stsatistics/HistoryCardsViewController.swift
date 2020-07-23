@@ -11,7 +11,7 @@ import CoreData
 import MapKit
 import iCarousel
 
-class HistoryCardsViewController: UIViewController {
+class HistoryCardsViewController: UIViewController, CardViewDelegate {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var backButton: UIButton!
@@ -54,6 +54,7 @@ class HistoryCardsViewController: UIViewController {
         let view = CardView()
         view.mapView.delegate = self
         view.mapView.clipsToBounds = true
+        view.delegate = self
         self.loadMap(run, view.mapView)
         let seconds = Int(run.duration)
         let formattedTime = FormatDisplay.time(seconds)
@@ -74,6 +75,20 @@ class HistoryCardsViewController: UIViewController {
             self.setCardView(run)
         }
     }
+    
+    func shareResults() {
+        
+        let bounds = UIScreen.main.bounds
+        UIGraphicsBeginImageContextWithOptions(bounds.size, true, 0.0)
+        self.view.drawHierarchy(in: bounds, afterScreenUpdates: false)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        let activityViewController = UIActivityViewController(activityItems: [image!], applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        self.present(activityViewController, animated: true, completion: nil)
+        
+    }
+
     
     @IBAction func backButtonPressed(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)

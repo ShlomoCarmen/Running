@@ -9,6 +9,9 @@
 import UIKit
 import MapKit
 
+protocol CardViewDelegate {
+    func shareResults()
+}
 class CardView: UIView {
     
     @IBOutlet weak var timeLabel: UILabel!
@@ -17,11 +20,9 @@ class CardView: UIView {
     @IBOutlet weak var caloriesLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var cardView: UIView!
-    
-    @IBOutlet weak var screenShotButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
     
-    
+    var delegate: CardViewDelegate?
     //========================================
     // MARK: - LifeCycle
     //========================================
@@ -79,26 +80,8 @@ class CardView: UIView {
         Utils.dropViewShadow(view: self.cardView, shadowColor: color, shadowRadius: 14, shadowOffset: CGSize(width: 0, height: 14))
     }
     
-    @IBAction func screenshotButtonPressed(_ sender: Any) {
-        self.takeScreenshot()
-    }
-    
     @IBAction func shareButtonPressed(_ sender: Any) {
-     
-    }
-    
-    func takeScreenshot(_ shouldSave: Bool = true) {
-        var screenshotImage :UIImage?
-        let layer = UIApplication.shared.windows[0].layer
-        let scale = UIScreen.main.scale
-        UIGraphicsBeginImageContextWithOptions(layer.frame.size, false, scale);
-        guard let context = UIGraphicsGetCurrentContext() else { return }
-        layer.render(in:context)
-        screenshotImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        if let image = screenshotImage, shouldSave {
-            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-        }
+        self.delegate?.shareResults()
     }
 
 }

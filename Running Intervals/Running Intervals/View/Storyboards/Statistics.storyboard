@@ -145,29 +145,22 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="bQ5-uC-r6t">
                                 <rect key="frame" x="0.0" y="762" width="414" height="100"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qMA-Og-gBu">
-                                        <rect key="frame" x="0.0" y="0.0" width="103.5" height="100"/>
-                                        <state key="normal" image="camera" catalog="system"/>
-                                        <connections>
-                                            <action selector="screenshotButtonPressed:" destination="mY0-m9-fAt" eventType="touchUpInside" id="WUf-Kk-ug4"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JVU-2I-pNL">
-                                        <rect key="frame" x="103.5" y="0.0" width="103.5" height="100"/>
-                                        <state key="normal" image="arrowshape.turn.up.right" catalog="system"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="138" height="100"/>
+                                        <state key="normal" image="square.and.arrow.up" catalog="system"/>
                                         <connections>
                                             <action selector="shareButtonPressed:" destination="mY0-m9-fAt" eventType="touchUpInside" id="I8S-56-sYM"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KNv-va-Lc7">
-                                        <rect key="frame" x="207" y="0.0" width="103.5" height="100"/>
+                                        <rect key="frame" x="138" y="0.0" width="138" height="100"/>
                                         <state key="normal" title="Repit"/>
                                         <connections>
                                             <action selector="repitButtonPressed:" destination="mY0-m9-fAt" eventType="touchUpInside" id="luy-eq-I93"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D24-Ku-gi8">
-                                        <rect key="frame" x="310.5" y="0.0" width="103.5" height="100"/>
+                                        <rect key="frame" x="276" y="0.0" width="138" height="100"/>
                                         <state key="normal" title="Cancel"/>
                                         <connections>
                                             <action selector="cancelButtonPressed:" destination="mY0-m9-fAt" eventType="touchUpInside" id="Dfs-Rw-P2d"/>
@@ -209,7 +202,6 @@
                         <outlet property="informationView" destination="8zL-Ju-Mvh" id="f4n-NC-8O7"/>
                         <outlet property="mapView" destination="EmH-UE-aCb" id="DxQ-8n-H98"/>
                         <outlet property="repitButton" destination="KNv-va-Lc7" id="JsF-nR-aHd"/>
-                        <outlet property="screenshotButton" destination="qMA-Og-gBu" id="jRj-Da-I04"/>
                         <outlet property="shareButton" destination="JVU-2I-pNL" id="Wyj-NU-NpN"/>
                         <outlet property="speedLabel" destination="lEs-4P-uhP" id="Xnw-He-0dp"/>
                     </connections>
@@ -221,11 +213,10 @@
     </scenes>
     <resources>
         <image name="arrow.left" catalog="system" width="128" height="98"/>
-        <image name="arrowshape.turn.up.right" catalog="system" width="128" height="106"/>
-        <image name="camera" catalog="system" width="128" height="96"/>
         <image name="clock" catalog="system" width="128" height="121"/>
         <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
         <image name="person.crop.circle" catalog="system" width="128" height="121"/>
         <image name="speedometer" catalog="system" width="128" height="121"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
     </resources>
 </document>

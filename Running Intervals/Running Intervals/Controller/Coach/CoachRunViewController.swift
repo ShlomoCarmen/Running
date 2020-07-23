@@ -12,7 +12,7 @@ import MediaPlayer
 import CoreLocation
 import CoreData
 
-class CoachRunViewController: UIViewController {
+class CoachRunViewController: UIViewController, LastRunDelegate {
     
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var headerLabel: UILabel!
@@ -55,6 +55,7 @@ class CoachRunViewController: UIViewController {
     var locationList: [CLLocation] = []
     let locationManager = CLLocationManager()
     var newRun: Run?
+    var delegate: LastRunDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,21 +65,20 @@ class CoachRunViewController: UIViewController {
         self.setText()
         self.setCornerRadius()
         self.trainingDoneView.isHidden = true
-    
         self.locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        self.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.runningMediaItems = MusicRepository.shared.runningMediaItems
         self.walkingMediaItems = MusicRepository.shared.walkingMediaItems
-
     }
     
     func setText() {
 
         guard let training = self.currentTraining else { return }
-        self.headerLabel.text = "\(Strings.week) \(training.week) - \(Strings.training) \(training.training)" //traning.goal
+        self.headerLabel.text = "\(Strings.week) \(training.week) - \(Strings.training) \(training.training)"
         self.runningLabel.text = "\(training.timeForRun) \(Strings.minuts)"
         self.runningTitleLabel.text = "\(Strings.running)"
         self.walkingLabel.text = "\(training.timeForWalk) \(Strings.minuts)"
@@ -282,11 +282,17 @@ class CoachRunViewController: UIViewController {
         return displayCalories
     }
     
+    func canclePressed() {
+        self.navigationController?.popViewController(animated: false)
+    }
+    
+    
     // MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "presentStatistics" {
             let statisticsVC = segue.destination as! LastRunViewController
             statisticsVC.run = self.newRun
+            statisticsVC.delegate = self
         }
     }
 }

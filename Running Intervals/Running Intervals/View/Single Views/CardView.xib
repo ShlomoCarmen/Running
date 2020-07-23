@@ -13,7 +13,6 @@
                 <outlet property="cardView" destination="o9R-S3-Yhz" id="V7l-PG-qsr"/>
                 <outlet property="distanceLabel" destination="3e5-uW-0Dj" id="w9Z-TH-EAj"/>
                 <outlet property="mapView" destination="p5t-pw-NBe" id="HFk-08-A2m"/>
-                <outlet property="screenShotButton" destination="ymO-Bs-c3w" id="KZm-wx-QGm"/>
                 <outlet property="shareButton" destination="fHm-pX-lxc" id="j2t-ZQ-OGD"/>
                 <outlet property="speedLabel" destination="itA-3X-I5J" id="BjS-3m-4Si"/>
                 <outlet property="timeLabel" destination="PeF-fI-CPc" id="E59-Xn-kCB"/>
@@ -140,16 +139,9 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Rdo-XC-zgo">
                                     <rect key="frame" x="0.0" y="180" width="415" height="30"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ymO-Bs-c3w">
-                                            <rect key="frame" x="0.0" y="0.0" width="207.5" height="30"/>
-                                            <state key="normal" image="camera.on.rectangle" catalog="system"/>
-                                            <connections>
-                                                <action selector="screenshotButtonPressed:" destination="-1" eventType="touchUpInside" id="hgx-Xk-Qi6"/>
-                                            </connections>
-                                        </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHm-pX-lxc">
-                                            <rect key="frame" x="207.5" y="0.0" width="207.5" height="30"/>
-                                            <state key="normal" image="arrowshape.turn.up.right" catalog="system"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="415" height="30"/>
+                                            <state key="normal" image="square.and.arrow.up" catalog="system"/>
                                             <connections>
                                                 <action selector="shareButtonPressed:" destination="-1" eventType="touchUpInside" id="meR-kM-kT6"/>
                                             </connections>
@@ -205,11 +197,10 @@
         </view>
     </objects>
     <resources>
-        <image name="arrowshape.turn.up.right" catalog="system" width="128" height="106"/>
-        <image name="camera.on.rectangle" catalog="system" width="128" height="96"/>
         <image name="clock" catalog="system" width="128" height="121"/>
         <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
         <image name="person.crop.circle" catalog="system" width="128" height="121"/>
         <image name="speedometer" catalog="system" width="128" height="121"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
     </resources>
 </document>
