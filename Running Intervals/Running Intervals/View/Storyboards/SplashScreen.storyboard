@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jsh-vr-22V">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Splash Screen View Controller-->
+        <scene sceneID="75p-wA-wTc">
+            <objects>
+                <viewController storyboardIdentifier="SplashScreenViewController" id="jsh-vr-22V" customClass="SplashScreenViewController" customModule="Running_Intervals" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GgE-Xj-Qtf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SplashScreenImage" translatesAutoresizingMaskIntoConstraints="NO" id="P88-4b-KSX">
+                                <rect key="frame" x="0.0" y="248" width="414" height="400"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="Cak-F4-tRq"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="P88-4b-KSX" firstAttribute="leading" secondItem="ocQ-B1-ZSq" secondAttribute="leading" id="UIk-qD-ylX"/>
+                            <constraint firstItem="P88-4b-KSX" firstAttribute="centerY" secondItem="GgE-Xj-Qtf" secondAttribute="centerY" id="e0J-7C-7wt"/>
+                            <constraint firstItem="ocQ-B1-ZSq" firstAttribute="trailing" secondItem="P88-4b-KSX" secondAttribute="trailing" id="k18-hS-1Tg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ocQ-B1-ZSq"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ucn-mD-OZN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138" y="90"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="SplashScreenImage" width="400" height="200"/>
+    </resources>
+</document>

@@ -14,6 +14,11 @@
 		83239E27247E6E1800C63760 /* UserDefaultsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83239E26247E6E1800C63760 /* UserDefaultsProvider.swift */; };
 		83239E2C247EB95900C63760 /* MySong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83239E2B247EB95900C63760 /* MySong.swift */; };
 		83239E2F2483794600C63760 /* MusicRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83239E2E2483794600C63760 /* MusicRepository.swift */; };
+		832AE52824C9914C003994AD /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 832AE52724C9914B003994AD /* SplashScreen.storyboard */; };
+		832AE52C24C99193003994AD /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832AE52B24C99193003994AD /* SplashScreenViewController.swift */; };
+		832AE52E24C9A3B9003994AD /* WalkThrough.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 832AE52D24C9A3B8003994AD /* WalkThrough.storyboard */; };
+		832AE53124C9AC95003994AD /* WalkThroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832AE53024C9AC95003994AD /* WalkThroughViewController.swift */; };
+		832AE53324C9CBA3003994AD /* WalkThroughCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832AE53224C9CBA3003994AD /* WalkThroughCell.swift */; };
 		83310AAE24C6146F0091F0CF /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83310AAD24C6146F0091F0CF /* History.storyboard */; };
 		83310AB024C614940091F0CF /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83310AAF24C614940091F0CF /* HistoryViewController.swift */; };
 		83310AB324C624D70091F0CF /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83310AB224C624D70091F0CF /* HistoryCell.swift */; };
@@ -76,6 +81,11 @@
 		83239E26247E6E1800C63760 /* UserDefaultsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProvider.swift; sourceTree = "<group>"; };
 		83239E2B247EB95900C63760 /* MySong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySong.swift; sourceTree = "<group>"; };
 		83239E2E2483794600C63760 /* MusicRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicRepository.swift; sourceTree = "<group>"; };
+		832AE52724C9914B003994AD /* SplashScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
+		832AE52B24C99193003994AD /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
+		832AE52D24C9A3B8003994AD /* WalkThrough.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WalkThrough.storyboard; sourceTree = "<group>"; };
+		832AE53024C9AC95003994AD /* WalkThroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughViewController.swift; sourceTree = "<group>"; };
+		832AE53224C9CBA3003994AD /* WalkThroughCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughCell.swift; sourceTree = "<group>"; };
 		83310AAD24C6146F0091F0CF /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
 		83310AAF24C614940091F0CF /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		83310AB224C624D70091F0CF /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
@@ -218,6 +228,23 @@
 			path = Repositories;
 			sourceTree = "<group>";
 		};
+		832AE52A24C99172003994AD /* SplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+				832AE52B24C99193003994AD /* SplashScreenViewController.swift */,
+			);
+			path = SplashScreen;
+			sourceTree = "<group>";
+		};
+		832AE52F24C9AC6B003994AD /* WalkThrough */ = {
+			isa = PBXGroup;
+			children = (
+				832AE53024C9AC95003994AD /* WalkThroughViewController.swift */,
+				832AE53224C9CBA3003994AD /* WalkThroughCell.swift */,
+			);
+			path = WalkThrough;
+			sourceTree = "<group>";
+		};
 		83310AB124C624B60091F0CF /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -281,6 +308,8 @@
 				8398AF6524B5987F001420AC /* Statistics.storyboard */,
 				8398793624B73EDD00A99B37 /* Settings.storyboard */,
 				83310AAD24C6146F0091F0CF /* History.storyboard */,
+				832AE52724C9914B003994AD /* SplashScreen.storyboard */,
+				832AE52D24C9A3B8003994AD /* WalkThrough.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -347,6 +376,8 @@
 		83B3BC93247D363400057A52 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				832AE52F24C9AC6B003994AD /* WalkThrough */,
+				832AE52A24C99172003994AD /* SplashScreen */,
 				8398AF6724B598B3001420AC /* Stsatistics */,
 				83CCA8682485767D00B9B0E8 /* Main */,
 				83CCA87B2487C1DB00B9B0E8 /* Coach */,
@@ -492,8 +523,10 @@
 				83B3BC8B247AB7D100057A52 /* fast-3.mp3 in Resources */,
 				83B3BC89247AB7BF00057A52 /* slow-3.mp3 in Resources */,
 				83A87B8A24C7049B008E9869 /* CardView.xib in Resources */,
+				832AE52E24C9A3B9003994AD /* WalkThrough.storyboard in Resources */,
 				83B3BC85247AB77E00057A52 /* fast-2.mp3 in Resources */,
 				83B3BC72247A562C00057A52 /* Assets.xcassets in Resources */,
+				832AE52824C9914C003994AD /* SplashScreen.storyboard in Resources */,
 				83B3BC8D247AB7F400057A52 /* fast-4.mp3 in Resources */,
 				8398793724B73EDD00A99B37 /* Settings.storyboard in Resources */,
 				83B3BC8F247AB81900057A52 /* slow-4.mp3 in Resources */,
@@ -561,7 +594,9 @@
 				83239E2F2483794600C63760 /* MusicRepository.swift in Sources */,
 				83CCA8832488D66500B9B0E8 /* CoachRunViewController.swift in Sources */,
 				83CCA86A2485769F00B9B0E8 /* MainViewController.swift in Sources */,
+				832AE53324C9CBA3003994AD /* WalkThroughCell.swift in Sources */,
 				8398792E24B5ED5800A99B37 /* CoreDataManager.swift in Sources */,
+				832AE53124C9AC95003994AD /* WalkThroughViewController.swift in Sources */,
 				8398793524B6010500A99B37 /* UnitConverterPace.swift in Sources */,
 				83CCA87D2487C1FB00B9B0E8 /* PersonalInformationViewController.swift in Sources */,
 				83ADB94824B31726009671A2 /* TrainingRepository.swift in Sources */,
@@ -576,6 +611,7 @@
 				8398AF6924B598D0001420AC /* LastRunViewController.swift in Sources */,
 				83CCA8812488D59100B9B0E8 /* SelectWeekViewController.swift in Sources */,
 				83FCFB1D24B1DE2100B5AFFD /* SelectGoalViewController.swift in Sources */,
+				832AE52C24C99193003994AD /* SplashScreenViewController.swift in Sources */,
 				83B3BC6B247A562500057A52 /* SceneDelegate.swift in Sources */,
 				8398793124B5F37500A99B37 /* RunningIntervals.xcdatamodeld in Sources */,
 				8398793A24B73F2800A99B37 /* SettingsViewController.swift in Sources */,
