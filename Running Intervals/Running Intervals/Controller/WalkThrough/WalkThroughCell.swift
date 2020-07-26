@@ -25,16 +25,22 @@ class WalkThroughCell: UICollectionViewCell {
         switch index {
         case 0:
             self.titleLabel.text = "Music"
-            
-//            self.textLabel.text = Strings.walkthrough1Text
+            self.selectButton.setTitle(Strings.selectMusic, for: .normal)
         case 1:
             self.titleLabel.text = "Prsonal Info"
-//            self.textLabel.text = Strings.walkthrough2Text
+            self.selectButton.setTitle(Strings.personalInformaition, for: .normal)
         case 2:
             self.titleLabel.text = "Goal"
-//            self.textLabel.text = Strings.walkthrough3Text
+            self.selectButton.setTitle(Strings.goalTitle, for: .normal)
+
         default:
             break
         }
+    }
+    
+    func setCornerRadius() {
+        self.selectButton.layer.cornerRadius = self.selectButton.bounds.height / 2
+        self.selectButton.layer.borderWidth = 2
+        self.selectButton.layer.borderColor = #colorLiteral(red: 0.2115887702, green: 0.4200505018, blue: 0.7173388004, alpha: 1)
     }
 }

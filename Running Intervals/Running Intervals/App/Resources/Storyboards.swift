@@ -10,7 +10,15 @@ import UIKit
 
 class Storyboards {
     
-    class Music {
+    class WalkThrough {
+        private class func walkThroughStoryboard() -> UIStoryboard { return UIStoryboard(name: "WalkThrough", bundle: Bundle.main) }
+        
+        class var  walkThroughViewController: WalkThroughViewController {
+            return self.walkThroughStoryboard().instantiateViewController(withIdentifier: "WalkThroughViewController") as! WalkThroughViewController
+        }
+    }
+    
+    class Main {
         private class func mainStoryboard() -> UIStoryboard { return UIStoryboard(name: "Main", bundle: Bundle.main) }
         
         class var  mainViewController: MainViewController {
@@ -19,6 +27,10 @@ class Storyboards {
         
         class var  musicViewController: MyMusicViewController {
             return self.mainStoryboard().instantiateViewController(withIdentifier: "MyMusicViewController") as! MyMusicViewController
+        }
+        
+        class var  selectMusicViewController: SelectMusicViewController {
+            return self.mainStoryboard().instantiateViewController(withIdentifier: "SelectMusicViewController") as! SelectMusicViewController
         }
     }
     

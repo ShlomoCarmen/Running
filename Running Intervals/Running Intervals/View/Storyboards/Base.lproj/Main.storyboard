@@ -42,7 +42,7 @@
         <!--Main View Controller-->
         <scene sceneID="NCH-ZJ-h96">
             <objects>
-                <viewController id="2Ve-t8-ZJP" customClass="MainViewController" customModule="Running_Intervals" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="2Ve-t8-ZJP" customClass="MainViewController" customModule="Running_Intervals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dqO-JY-sPD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -528,7 +528,7 @@
         <!--Select Music View Controller-->
         <scene sceneID="sOK-RV-X4O">
             <objects>
-                <viewController id="zFr-66-ZLm" customClass="SelectMusicViewController" customModule="Running_Intervals" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SelectMusicViewController" id="zFr-66-ZLm" customClass="SelectMusicViewController" customModule="Running_Intervals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gM9-fq-7iX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

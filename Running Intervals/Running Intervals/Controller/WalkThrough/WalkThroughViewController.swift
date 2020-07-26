@@ -7,20 +7,53 @@
 //
 
 import UIKit
+import MediaPlayer
 
 class WalkThroughViewController: UIViewController {
 
     @IBOutlet weak private var collectionView: UICollectionView!
     @IBOutlet weak private var pageControl: UIPageControl!
     
+    let allMediaItems = MPMediaQuery.songs().items
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
+    @objc func selectButtonPreesed(_ button: UIButton) {
+        if button.tag == 0 {
+            self.presentSelectMusic()
+        } else if button.tag == 1 {
+            self.presentPersonalInformation()
+        } else {
+            self.presentGoal()
+        }
+    }
+    
+    func navigateToMain() {
+        let mainViewController = Storyboards.Main.mainViewController
+        appDelegate.setRootViewController(viewController: mainViewController, animated: true)
+    }
+    
+    func presentSelectMusic() {
+        let selectMusicViewController = Storyboards.Main.selectMusicViewController
+        self.present(selectMusicViewController, animated: true, completion: nil)
+    }
+    
+    func presentGoal() {
+        let goalViewController = Storyboards.Settings.goalViewController
+        self.present(goalViewController, animated: true, completion: nil)
+    }
+    
+    func presentPersonalInformation() {
+        let personalInformationViewController = Storyboards.Settings.personalInformationViewController
+        self.present(personalInformationViewController, animated: true, completion: nil)
+    }
+    
 
 }
 
-extension WalkThroughViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension WalkThroughViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 3
@@ -31,11 +64,15 @@ extension WalkThroughViewController: UICollectionViewDelegate, UICollectionViewD
         else {
             return UICollectionViewCell()
         }
-//        cell.setIndex
+        cell.setIndex(indexPath.item)
+        cell.setCornerRadius()
+        cell.selectButton.tag = indexPath.item
+        cell.selectButton.addTarget(self, action: #selector(self.selectButtonPreesed(_:)), for: .touchUpInside)
         return cell
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+
         if scrollView.contentOffset.x < scrollView.bounds.width*0.5 {
             self.pageControl.currentPage = 0
         }
@@ -48,5 +85,14 @@ extension WalkThroughViewController: UICollectionViewDelegate, UICollectionViewD
         
     }
     
+    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.x > scrollView.bounds.width * 2 {
+            UserDefaultsProvider.shared.seenWalkThrough = true
+            self.navigateToMain()
+        }
+    }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return collectionView.bounds.size
+    }
 }

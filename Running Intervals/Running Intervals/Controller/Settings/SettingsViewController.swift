@@ -53,7 +53,7 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func myMusicButtonPressed(_ sender: Any) {
-        let myMusicVC = Storyboards.Music.musicViewController
+        let myMusicVC = Storyboards.Main.musicViewController
         self.present(myMusicVC, animated: true, completion: nil)
     }
     

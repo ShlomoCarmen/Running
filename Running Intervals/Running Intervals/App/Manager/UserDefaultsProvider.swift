@@ -18,6 +18,7 @@ class UserDefaultsProvider {
         case goal = "Goal"
         case week = "Week"
         case training = "Training"
+        case seenWalkThrough = "SeenWalkThrough"
     }
     
     static private var provider: UserDefaultsProvider?
@@ -26,6 +27,7 @@ class UserDefaultsProvider {
     
     private init() {
         self.defaults.register(defaults: [
+            UserDefaultsKeys.seenWalkThrough.rawValue: false,
             UserDefaultsKeys.appLanguages.rawValue: ["he"]
             ]
         )
@@ -106,6 +108,17 @@ class UserDefaultsProvider {
         }
         set (training){
             self.defaults.set(training, forKey: UserDefaultsKeys.training.rawValue)
+            self.defaults.synchronize()
+        }
+    }
+    
+    var seenWalkThrough: Bool {
+        get {
+            return self.defaults.bool(forKey: UserDefaultsKeys.seenWalkThrough.rawValue)
+            
+        }
+        set (value){
+            self.defaults.set(value, forKey: UserDefaultsKeys.seenWalkThrough.rawValue)
             self.defaults.synchronize()
         }
     }

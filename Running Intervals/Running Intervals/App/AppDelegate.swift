@@ -9,10 +9,12 @@
 import UIKit
 import MediaPlayer
 
+let appDelegate = UIApplication.shared.delegate as! AppDelegate
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -34,6 +36,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
-
+    func setRootViewController(viewController: UIViewController, animated: Bool) {
+        
+        
+        if let scene = UIApplication.shared.connectedScenes.first{
+            guard let windowScene = (scene as? UIWindowScene) else { return }
+            let window: UIWindow = UIWindow(windowScene: windowScene)
+            window.windowScene = windowScene //Make sure to do this
+            window.rootViewController = nil
+            window.rootViewController = viewController
+            appDelegate.window?.rootViewController = nil
+            appDelegate.window = window
+            appDelegate.window?.makeKeyAndVisible()
+        }
+    }
+    
 }
 
