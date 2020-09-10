@@ -86,10 +86,18 @@ extension WalkThroughViewController: UICollectionViewDelegate, UICollectionViewD
     }
     
     func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
-        if scrollView.contentOffset.x > scrollView.bounds.width * 2 {
-            UserDefaultsProvider.shared.seenWalkThrough = true
-            self.navigateToMain()
+        if UserDefaultsProvider.shared.appLanguageCode == "he-IL" {
+            if scrollView.contentOffset.x < 0 {
+                UserDefaultsProvider.shared.seenWalkThrough = true
+                self.navigateToMain()
+            }
+        } else {
+            if scrollView.contentOffset.x > scrollView.bounds.width * 2 {
+                UserDefaultsProvider.shared.seenWalkThrough = true
+                self.navigateToMain()
+            }
         }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
